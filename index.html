@@ -3,455 +3,616 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Английский для работы, переезда и путешествий. Индивидуальный формат. Практика с первого дня." />
-  <title>English Course — Одностраничник</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
+  <meta name="description" content="Английский для переезда, работы и путешествий. Короткие уроки, практика, домашка. Запись и уточнение деталей — в Telegram." />
+  <title>Английский без воды — быстрый старт</title>
   <style>
     :root{
-      --bg:#ffffff;
-      --text:#0f172a;
-      --muted:#475569;
-      --line:#e2e8f0;
-      --card:#f8fafc;
-      --accent:#2563eb;
-      --accent2:#1d4ed8;
-      --ok:#16a34a;
-      --max:1040px;
-      --r:18px;
-      --shadow:0 10px 30px rgba(2,6,23,.08);
+      --bg:#0b1020;
+      --card:#101a34;
+      --card2:#0e1630;
+      --text:#eaf0ff;
+      --muted:#b7c2e5;
+      --line:rgba(255,255,255,.10);
+      --brand:#7c5cff;
+      --brand2:#29d3ff;
+      --ok:#39d98a;
+      --warn:#ffcf5c;
+      --shadow: 0 16px 50px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1120px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
+    *{ box-sizing:border-box; }
     body{
       margin:0;
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:var(--bg);
+      font-family:var(--sans);
       color:var(--text);
-      line-height:1.5;
+      background:
+        radial-gradient(900px 500px at 15% 15%, rgba(124,92,255,.28), transparent 60%),
+        radial-gradient(900px 500px at 85% 20%, rgba(41,211,255,.18), transparent 60%),
+        radial-gradient(900px 500px at 70% 85%, rgba(57,217,138,.14), transparent 60%),
+        linear-gradient(180deg, #070a14 0%, var(--bg) 55%, #060915 100%);
+      line-height:1.45;
     }
-    a{color:inherit}
-    .wrap{max-width:var(--max);margin:0 auto;padding:24px}
-    .top{
-      display:flex;align-items:center;justify-content:space-between;
-      gap:16px;padding:10px 0 24px;border-bottom:1px solid var(--line);
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:22px 18px; }
+    .topbar{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(10px);
+      background: rgba(7,10,20,.65);
+      border-bottom: 1px solid var(--line);
     }
-    .brand{display:flex;gap:10px;align-items:center}
+    .topbar .wrap{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800;
+      letter-spacing:.2px;
+      white-space:nowrap;
+    }
     .logo{
-      width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#60a5fa);
-      box-shadow:var(--shadow);
+      width:34px; height:34px; border-radius:12px;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand2) 55%, var(--ok) 120%);
+      box-shadow: 0 10px 26px rgba(124,92,255,.25);
     }
-    .brand b{font-size:14px}
-    .brand small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
-    .nav{display:flex;gap:14px;flex-wrap:wrap}
-    .nav a{
-      text-decoration:none;color:var(--muted);font-size:13px;
-      padding:8px 10px;border-radius:10px;
-    }
-    .nav a:hover{background:var(--card);color:var(--text)}
-    .hero{
-      display:grid;grid-template-columns:1.2fr .8fr;gap:28px;
-      padding:36px 0 18px;
-    }
-    @media (max-width:900px){.hero{grid-template-columns:1fr}}
-    h1{font-size:44px;line-height:1.1;margin:0 0 14px}
-    @media (max-width:480px){h1{font-size:34px}}
-    .lead{color:var(--muted);font-size:16px;margin:0 0 18px}
-    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-    .btn{
-      border:1px solid var(--line);
-      background:#fff;
-      padding:12px 16px;
-      border-radius:14px;
+    .nav{
+      display:flex; gap:14px; align-items:center;
+      color:var(--muted);
       font-weight:600;
       font-size:14px;
+    }
+    .nav a{ opacity:.9; }
+    .nav a:hover{ opacity:1; color:#fff; }
+    .cta{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand2) 120%);
+      color:#081022;
+      font-weight:900;
+      border: 0;
+      box-shadow: 0 14px 34px rgba(124,92,255,.22);
       cursor:pointer;
-      text-decoration:none;
-      display:inline-flex;align-items:center;gap:10px;
+      white-space:nowrap;
     }
-    .btnPrimary{
-      background:var(--accent);
-      border-color:var(--accent);
-      color:#fff;
+    .cta.secondary{
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--line);
+      box-shadow: none;
+      font-weight:800;
     }
-    .btnPrimary:hover{background:var(--accent2);border-color:var(--accent2)}
-    .btn:hover{box-shadow:0 8px 20px rgba(2,6,23,.08)}
-    .meta{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;color:var(--muted);font-size:13px}
+
+    header.hero{ padding:44px 0 20px; }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .hero-card{
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius: var(--radius2);
+      padding:26px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-card:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(380px 220px at 20% 20%, rgba(124,92,255,.22), transparent 70%),
+                  radial-gradient(420px 260px at 90% 35%, rgba(41,211,255,.18), transparent 70%);
+      pointer-events:none;
+      opacity:.9;
+    }
+    .hero-card > *{ position:relative; }
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      font-weight:900;
+      color:#0b1020;
+      background: rgba(255,255,255,.92);
+      padding:8px 12px;
+      border-radius: 999px;
+      font-size:13px;
+    }
+    .kicker .dot{
+      width:10px; height:10px; border-radius:99px;
+      background: linear-gradient(135deg, var(--ok) 0%, var(--brand2) 100%);
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size: clamp(28px, 3.6vw, 46px);
+      line-height:1.05;
+      letter-spacing:-.6px;
+    }
+    .lead{
+      margin:0 0 18px;
+      font-size: 16.5px;
+      color: var(--muted);
+      max-width: 60ch;
+    }
+    .pill-row{ display:flex; flex-wrap:wrap; gap:10px; margin: 14px 0 18px; }
     .pill{
       border:1px solid var(--line);
-      background:var(--card);
-      padding:8px 10px;border-radius:999px;
+      background: rgba(16,26,52,.55);
+      padding:10px 12px;
+      border-radius: 999px;
+      font-weight:800;
+      color:#dbe4ff;
+      font-size:13px;
     }
+    .hero-actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 6px; }
+    .hero-actions .cta{ padding:13px 16px; border-radius: 16px; }
 
+    .side-card{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(16,26,52,.68), rgba(10,14,28,.55));
+      border-radius: var(--radius2);
+      padding:18px;
+      box-shadow: var(--shadow);
+      display:flex; flex-direction:column; gap:12px;
+      min-height: 100%;
+    }
+    .promo{
+      border:1px solid rgba(255,255,255,.12);
+      background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+      border-radius: 16px;
+      padding:14px;
+    }
+    .promo .tag{
+      display:inline-block;
+      font-family: var(--mono);
+      color:#0b1020;
+      background: rgba(255,255,255,.92);
+      padding:6px 10px;
+      border-radius: 999px;
+      font-size:12px;
+      font-weight:900;
+    }
+    .promo h3{ margin:10px 0 6px; font-size:16px; letter-spacing:-.2px; }
+    .promo p{ margin:0; color:var(--muted); font-weight:650; }
+    .small{ font-size:12px; color:rgba(183,194,229,.85); margin-top:8px; }
+
+    section{ padding:18px 0; }
+    .grid3{ display:grid; grid-template-columns: repeat(3,1fr); gap:14px; }
+    .grid2{ display:grid; grid-template-columns: repeat(2,1fr); gap:14px; }
     .card{
       border:1px solid var(--line);
-      background:var(--card);
-      border-radius:var(--r);
-      padding:18px;
-      box-shadow:var(--shadow);
+      background: rgba(16,26,52,.55);
+      border-radius: var(--radius);
+      padding:16px;
     }
-    .card h3{margin:0 0 10px;font-size:15px}
-    .card p{margin:0;color:var(--muted);font-size:13px}
-    .list{margin:12px 0 0;padding:0;list-style:none}
-    .list li{padding:8px 0;border-top:1px solid var(--line);color:var(--text);font-size:14px}
-    .list li:first-child{border-top:none}
-    .list li span{color:var(--muted)}
-
-    section{padding:34px 0;border-top:1px solid var(--line)}
-    section:first-of-type{border-top:none}
-    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    @media (max-width:900px){.grid2{grid-template-columns:1fr}}
-    h2{margin:0 0 14px;font-size:22px}
-    .muted{color:var(--muted)}
-    .steps{display:grid;gap:10px}
-    .step{
-      display:flex;gap:12px;align-items:flex-start;
-      padding:12px 14px;border:1px solid var(--line);
-      border-radius:14px;background:#fff;
+    .card h3{ margin:0 0 6px; font-size:15px; letter-spacing:-.2px; }
+    .card p{ margin:0; color:var(--muted); font-weight:650; }
+    .icon{
+      width:34px; height:34px; border-radius: 12px;
+      background: linear-gradient(135deg, rgba(124,92,255,.35), rgba(41,211,255,.22));
+      display:flex; align-items:center; justify-content:center;
+      border:1px solid rgba(255,255,255,.12);
+      margin-bottom:10px;
+      font-weight:900;
+      color:#fff;
     }
-    .num{
-      width:28px;height:28px;border-radius:10px;
-      background:rgba(37,99,235,.12);
-      color:var(--accent);
-      display:flex;align-items:center;justify-content:center;
-      font-weight:700;font-size:13px;
-      flex:0 0 28px;
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
+      margin: 0 0 12px;
     }
-    .step b{display:block;font-size:14px;margin-bottom:2px}
-    .step div{font-size:13px;color:var(--muted)}
+    .section-title h2{
+      margin:0;
+      font-size: 20px;
+      letter-spacing:-.3px;
+    }
+    .section-title .hint{
+      color: var(--muted);
+      font-weight:650;
+      font-size: 13px;
+    }
 
     .pricing{
-      display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;
+      display:grid;
+      grid-template-columns: 1.05fr .95fr .95fr;
+      gap:14px;
+      align-items:stretch;
     }
-    @media (max-width:900px){.pricing{grid-template-columns:1fr}}
     .plan{
       border:1px solid var(--line);
-      border-radius:var(--r);
+      background: linear-gradient(180deg, rgba(16,26,52,.62), rgba(10,14,28,.48));
+      border-radius: var(--radius2);
       padding:16px;
-      background:#fff;
+      box-shadow: 0 18px 48px rgba(0,0,0,.32);
+      position:relative;
+      overflow:hidden;
+      display:flex; flex-direction:column;
     }
-    .plan h3{margin:0 0 6px;font-size:15px}
-    .tag{display:inline-block;font-size:12px;color:var(--muted);border:1px solid var(--line);padding:6px 10px;border-radius:999px;background:var(--card)}
-    .price{margin:12px 0 6px;font-size:26px;font-weight:800}
-    .price small{font-size:12px;color:var(--muted);font-weight:600}
-    .plan ul{margin:10px 0 0;padding:0;list-style:none}
-    .plan li{padding:8px 0;border-top:1px solid var(--line);font-size:13px}
-    .plan li:first-child{border-top:none}
-    .ok{color:var(--ok);font-weight:700;margin-right:8px}
-    .plan .btn{margin-top:12px;width:100%;justify-content:center}
-
-    .faq{display:grid;gap:10px}
-    details{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:12px 14px;
-      background:#fff;
+    .plan.featured{
+      border-color: rgba(41,211,255,.30);
+      background: linear-gradient(180deg, rgba(41,211,255,.12), rgba(124,92,255,.09));
     }
-    summary{cursor:pointer;font-weight:700;font-size:14px}
-    details p{margin:10px 0 0;color:var(--muted);font-size:13px}
-
-    .footer{
-      padding:26px 0;
-      color:var(--muted);
+    .badge{
+      position:absolute; top:14px; right:14px;
+      background: rgba(255,255,255,.92);
+      color:#071022;
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:950;
       font-size:12px;
-      border-top:1px solid var(--line);
-      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     }
+    .plan h3{ margin:0; font-size:16px; letter-spacing:-.2px; }
+    .price{
+      margin:8px 0 10px;
+      font-size: 26px;
+      font-weight: 1000;
+      letter-spacing:-.8px;
+      line-height:1.1;
+    }
+    .price span{
+      display:block;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight:700;
+      letter-spacing:0;
+      margin-top:4px;
+    }
+    ul.features{
+      margin: 10px 0 0;
+      padding: 0;
+      list-style: none;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      color: var(--muted);
+      font-weight:650;
+    }
+    ul.features li{
+      display:flex; gap:10px; align-items:flex-start;
+      padding-top: 2px;
+    }
+    .tick{
+      width:18px; height:18px; border-radius:6px;
+      background: rgba(57,217,138,.18);
+      border: 1px solid rgba(57,217,138,.30);
+      display:flex; align-items:center; justify-content:center;
+      flex:0 0 auto;
+      font-weight:900;
+      color: var(--ok);
+      font-size:12px;
+      margin-top:1px;
+    }
+    .plan .actions{ margin-top:auto; padding-top:14px; display:flex; gap:10px; flex-wrap:wrap; }
+    .plan .actions .cta{ width:100%; border-radius: 16px; padding:13px 16px; }
 
-    .notice{
-      background:rgba(37,99,235,.08);
-      border:1px solid rgba(37,99,235,.18);
-      border-radius:14px;
-      padding:12px 14px;
-      color:var(--muted);
-      font-size:13px;
-      margin-top:14px;
+    .faq .qa{ border-top:1px solid var(--line); padding:12px 0; }
+    .faq .qa:first-child{ border-top:0; }
+    .q{ font-weight:900; letter-spacing:-.2px; }
+    .a{ color: var(--muted); font-weight:650; margin-top:6px; }
+
+    footer{
+      border-top: 1px solid var(--line);
+      margin-top: 24px;
+      padding: 16px 0 22px;
+      color: rgba(183,194,229,.85);
+      font-size: 12px;
     }
-    .notice b{color:var(--text)}
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.4fr .6fr;
+      gap:14px;
+      align-items:start;
+    }
+    .mono{ font-family: var(--mono); }
+    .sticky-cta{
+      position:fixed;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      z-index: 50;
+      display:none;
+    }
+    .sticky-cta .bar{
+      max-width: var(--max);
+      margin:0 auto;
+      border:1px solid var(--line);
+      background: rgba(7,10,20,.78);
+      backdrop-filter: blur(10px);
+      border-radius: 18px;
+      padding: 10px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      box-shadow: var(--shadow);
+    }
+    .sticky-cta .bar .t1{ font-weight:900; letter-spacing:-.2px; }
+    .sticky-cta .bar .t2{ color:var(--muted); font-weight:650; font-size:12px; }
+    .sticky-cta .bar .cta{ padding:12px 14px; border-radius: 14px; }
+
+    @media (max-width: 920px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .grid3{ grid-template-columns: 1fr; }
+      .grid2{ grid-template-columns: 1fr; }
+      .pricing{ grid-template-columns: 1fr; }
+      .nav{ display:none; }
+      .sticky-cta{ display:block; }
+    }
   </style>
 </head>
-
 <body>
-  <div class="wrap">
-    <header class="top">
+  <div class="topbar">
+    <div class="wrap">
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
-        <div>
-          <b id="brandName">English Course</b>
-          <small>Онлайн-обучение • практика с первого дня</small>
+        <div>Английский без воды</div>
+      </div>
+
+      <div class="nav" aria-label="Навигация">
+        <a href="#how">Как это работает</a>
+        <a href="#pricing">Тарифы</a>
+        <a href="#faq">Вопросы</a>
+      </div>
+
+      <a class="cta" id="ctaTop" href="https://t.me/myproj22bot?start=site" target="_blank" rel="noopener">
+        Уточнить детали в Telegram
+      </a>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-card">
+          <div class="kicker"><span class="dot"></span>Быстрый старт за 7 дней</div>
+          <h1>Прокачай английский под твою цель: работа, переезд, путешествия</h1>
+          <p class="lead">
+            Без «учебника на 500 страниц». Короткие уроки, практика, домашка и понятный план.
+            Всё начинается с быстрой диагностики в Telegram.
+          </p>
+
+          <div class="pill-row">
+            <div class="pill">Уроки 15–25 минут</div>
+            <div class="pill">Практика под реальные ситуации</div>
+            <div class="pill">План под твою цель</div>
+            <div class="pill">Поддержка по вопросам</div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="cta" href="https://t.me/myproj22bot?start=diag" target="_blank" rel="noopener">Пройти диагностику в Telegram</a>
+            <a class="cta secondary" href="#pricing">Смотреть тарифы</a>
+          </div>
+
+          <div class="small">
+            Нажимая кнопку, ты перейдёшь в Telegram-бота <span class="mono">@myproj22bot</span> для уточнения деталей и записи.
+          </div>
+        </div>
+
+        <div class="side-card">
+          <div class="promo">
+            <span class="tag">АКЦИЯ</span>
+            <h3>Час обучения от 99 ₽</h3>
+            <p>Тест-старт: короткий план + первый разбор, чтобы понять формат и уровень без риска.</p>
+            <div class="small">Условия и доступность акции — в Telegram при записи.</div>
+          </div>
+
+          <div class="promo">
+            <span class="tag">БОНУС</span>
+            <h3>Разговорный мини-набор</h3>
+            <p>Фразы, шаблоны ответов и «что сказать» для поездок/работы — под твою цель.</p>
+            <div class="small">Выдаётся после подтверждения записи в Telegram.</div>
+          </div>
+
+          <div class="promo">
+            <span class="tag">БЫСТРО</span>
+            <h3>Уточнение деталей за 2 минуты</h3>
+            <p>Бот спросит цель, текущий уровень и сроки — и предложит оптимальный формат.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Как это работает</h2>
+        <div class="hint">Без звонков и лишней переписки</div>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <div class="icon">1</div>
+          <h3>Диагностика в Telegram</h3>
+          <p>Цель, уровень, срок. Бот соберёт вводные и подготовит формат под тебя.</p>
+        </div>
+        <div class="card">
+          <div class="icon">2</div>
+          <h3>План на 7 дней</h3>
+          <p>Первые шаги: что учим, как практикуем, на что тратить время, а на что нет.</p>
+        </div>
+        <div class="card">
+          <div class="icon">3</div>
+          <h3>Учёба без перегруза</h3>
+          <p>Короткие уроки + практика. Темп подбирается под твою занятость.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Для кого это</h2>
+        <div class="hint">3 частых сценария</div>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <div class="icon">✈</div>
+          <h3>Путешествия</h3>
+          <p>Отель, аэропорт, экскурсии, бытовые ситуации — чтобы говорить без стресса.</p>
+        </div>
+        <div class="card">
+          <div class="icon">💼</div>
+          <h3>Работа</h3>
+          <p>Переписка, созвоны, встречи. Упор на понятность и уверенную речь.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🏁</div>
+          <h3>Переезд</h3>
+          <p>Документы, коммуникация, сервисы. Практика под реальные задачи.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🎓</div>
+          <h3>Экзамены</h3>
+          <p>Структура подготовки, план, контроль прогресса. Без хаоса.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Тарифы</h2>
+        <div class="hint">Выбери старт, детали уточняются в Telegram</div>
+      </div>
+
+      <div class="pricing">
+        <div class="plan">
+          <h3>Start</h3>
+          <div class="price">от 99 ₽ <span>пробный час / тест-старт</span></div>
+          <ul class="features">
+            <li><span class="tick">✓</span><span>Быстрая диагностика + рекомендация формата</span></li>
+            <li><span class="tick">✓</span><span>Первый разбор: что подтянуть в первую очередь</span></li>
+            <li><span class="tick">✓</span><span>Подходит, чтобы «пощупать» стиль и темп</span></li>
+          </ul>
+          <div class="actions">
+            <a class="cta" href="https://t.me/myproj22bot?start=tariff_start" target="_blank" rel="noopener">Уточнить Start в Telegram</a>
+          </div>
+        </div>
+
+        <div class="plan featured">
+          <div class="badge">выгодно</div>
+          <h3>Smart</h3>
+          <div class="price">от 2 990 ₽ <span>в месяц, гибкий темп</span></div>
+          <ul class="features">
+            <li><span class="tick">✓</span><span>Уроки + практика по твоей цели</span></li>
+            <li><span class="tick">✓</span><span>Домашка с короткой проверкой</span></li>
+            <li><span class="tick">✓</span><span>План на 4 недели, корректировка по прогрессу</span></li>
+            <li><span class="tick">✓</span><span>Подходит большинству: работа/переезд/поездки</span></li>
+          </ul>
+          <div class="actions">
+            <a class="cta" href="https://t.me/myproj22bot?start=tariff_smart" target="_blank" rel="noopener">Уточнить Smart в Telegram</a>
+          </div>
+        </div>
+
+        <div class="plan">
+          <h3>Pro</h3>
+          <div class="price">от 6 990 ₽ <span>интенсив + плотная практика</span></div>
+          <ul class="features">
+            <li><span class="tick">✓</span><span>Больше разговорной практики и сценариев</span></li>
+            <li><span class="tick">✓</span><span>Ускоренный прогресс при ограниченных сроках</span></li>
+            <li><span class="tick">✓</span><span>Под твой график: как удобно по времени</span></li>
+            <li><span class="tick">✓</span><span>Для тех, кому нужно «быстро и уверенно»</span></li>
+          </ul>
+          <div class="actions">
+            <a class="cta" href="https://t.me/myproj22bot?start=tariff_pro" target="_blank" rel="noopener">Уточнить Pro в Telegram</a>
+          </div>
         </div>
       </div>
 
-      <nav class="nav" aria-label="Навигация">
-        <a href="#forwho">Для кого</a>
-        <a href="#how">Как проходит</a>
-        <a href="#result">Результат</a>
-        <a href="#price">Форматы</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-    </header>
+      <div class="small" style="margin-top:10px;">
+        Цены и наполнение фиксируются при записи в Telegram: бот уточнит цель, уровень и сроки, затем предложит оптимальный вариант.
+      </div>
+    </div>
+  </section>
 
-    <main>
-      <!-- HERO -->
-      <section class="hero" id="top">
+  <section id="faq" class="faq">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Частые вопросы</h2>
+        <div class="hint">Коротко и по делу</div>
+      </div>
+
+      <div class="card">
+        <div class="qa">
+          <div class="q">Как часто будут уроки?</div>
+          <div class="a">Зависит от твоего графика. Цель — регулярность без перегруза: лучше стабильно, чем «сгореть» за неделю. В Telegram подберём темп под твою занятость.</div>
+        </div>
+        <div class="qa">
+          <div class="q">Это подходит новичкам?</div>
+          <div class="a">Да. Стартуем с понятной базы и сразу переводим в практику: фразы, диалоги, реальные ситуации.</div>
+        </div>
+        <div class="qa">
+          <div class="q">Если я сомневаюсь, какой тариф выбрать?</div>
+          <div class="a">Нажми «Уточнить детали» — бот задаст 3–5 вопросов и предложит оптимальный вариант под цель и сроки.</div>
+        </div>
+        <div class="qa">
+          <div class="q">Где уточнять детали и записываться?</div>
+          <div class="a">В Telegram-боте. Там же можно оставить контакт, чтобы ассистент уточнил детали обучения.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="hero-card" style="padding:18px;">
+        <div class="section-title" style="margin:0 0 10px;">
+          <h2 style="margin:0;">Готов начать с диагностики?</h2>
+          <div class="hint">2 минуты, без звонков</div>
+        </div>
+        <div class="hero-actions">
+          <a class="cta" href="https://t.me/myproj22bot?start=site_bottom" target="_blank" rel="noopener">Перейти в Telegram и уточнить детали</a>
+          <a class="cta secondary" href="#pricing">Сначала посмотреть тарифы</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
         <div>
-          <h1 id="heroTitle">Английский для работы, переезда и путешествий</h1>
-          <p class="lead" id="heroLead">
-            Индивидуальный формат. Короткие уроки + практика + домашка. Подстроимся под ваш график, без перегруза.
-          </p>
-
-          <div class="ctaRow">
-            <a class="btn btnPrimary" id="ctaMain" href="#" target="_blank" rel="noopener">Записаться / Узнать формат</a>
-            <a class="btn" id="ctaSupport" href="#" target="_blank" rel="noopener">Написать в поддержку</a>
-          </div>
-
-          <div class="meta">
-            <span class="pill">Без «воды» и теории ради теории</span>
-            <span class="pill">Подбор под цель и уровень</span>
-            <span class="pill">Поддержка и контроль</span>
-          </div>
-
-          <div class="notice">
-            <b>Быстрый старт:</b> оставьте контакт — ассистент уточнит цель, уровень и предложит оптимальный формат.
+          <div class="mono">Контакт и запись: @myproj22bot</div>
+          <div style="margin-top:6px;">
+            Информация на странице носит ознакомительный характер. Точные условия, наполнение и итоговая стоимость подтверждаются при записи в Telegram.
           </div>
         </div>
-
-        <aside class="card">
-          <h3>Что вы получите</h3>
-          <p>Коротко и по делу — без обещаний «чудес», только понятный результат.</p>
-          <ul class="list">
-            <li><b>Начнёте говорить</b> <span>без страха и пауз</span></li>
-            <li><b>Услышите живую речь</b> <span>и перестанете теряться</span></li>
-            <li><b>Закроете вашу задачу</b> <span>работа/переезд/поездки</span></li>
-            <li><b>Поймёте план</b> <span>на ближайшие недели</span></li>
-          </ul>
-        </aside>
-      </section>
-
-      <!-- FOR WHO -->
-      <section id="forwho">
-        <h2>Для кого</h2>
-        <div class="grid2">
-          <div class="card">
-            <h3>Подойдёт, если вы</h3>
-            <ul class="list">
-              <li>планируете <b>переезд</b> или <b>работу</b> за границей</li>
-              <li>понимаете, но <b>не говорите</b></li>
-              <li>учили раньше, но <b>всё забыли</b></li>
-              <li>хотите <b>результат</b>, а не «процесс»</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Не подойдёт, если</h3>
-            <ul class="list">
-              <li>нужны «волшебные» обещания за 7 дней</li>
-              <li>вы не готовы выделять хотя бы 15–30 минут в день</li>
-              <li>нужен академический формат с тоннами теории</li>
-            </ul>
-          </div>
+        <div>
+          <div class="mono">GitHub Pages</div>
+          <div style="margin-top:6px;">Файл: <span class="mono">index.html</span></div>
         </div>
-      </section>
+      </div>
+    </div>
+  </footer>
 
-      <!-- HOW -->
-      <section id="how">
-        <h2>Как проходит обучение</h2>
-        <p class="muted">Простой процесс: сначала цель и уровень, потом — формат под ваш график.</p>
-
-        <div class="steps" style="margin-top:14px;">
-          <div class="step">
-            <div class="num">1</div>
-            <div><b>Диагностика</b>Коротко фиксируем цель и стартовый уровень.</div>
-          </div>
-          <div class="step">
-            <div class="num">2</div>
-            <div><b>Подбор формата</b>Частота уроков и нагрузка — под ваш график и срок.</div>
-          </div>
-          <div class="step">
-            <div class="num">3</div>
-            <div><b>Уроки + практика</b>Сразу тренируем речь и реальные ситуации.</div>
-          </div>
-          <div class="step">
-            <div class="num">4</div>
-            <div><b>Контроль и поддержка</b>Проверка, корректировки, движение к результату.</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- RESULT -->
-      <section id="result">
-        <h2>Результат и сроки</h2>
-        <div class="grid2">
-          <div class="card">
-            <h3>Типовой результат</h3>
-            <ul class="list">
-              <li><span class="ok">✓</span>соберёте базу фраз и конструкций под вашу цель</li>
-              <li><span class="ok">✓</span>начнёте говорить без «замирания»</li>
-              <li><span class="ok">✓</span>будете понимать речь в реальных диалогах</li>
-              <li><span class="ok">✓</span>получите план на 2–4 недели вперёд</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Срок</h3>
-            <p>
-              Зависит от цели, стартового уровня и того, сколько времени удобно выделять.
-              Обычно ощутимый прогресс — от 2–4 недель.
-            </p>
-            <div class="notice" style="margin-top:12px;">
-              <b>Важно:</b> мы не обещаем «идеальный английский за неделю». Мы делаем измеримый прогресс под вашу задачу.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PRICING / FORMATS -->
-      <section id="price">
-        <h2>Форматы (пример)</h2>
-        <p class="muted">Цены и финальный формат можно уточнить после диагностики. Этот блок — шаблон. Заполните под себя.</p>
-
-        <div class="pricing" style="margin-top:14px;">
-          <div class="plan">
-            <span class="tag">Новичок</span>
-            <h3>Start</h3>
-            <div class="price" id="price1">— <small>/ месяц</small></div>
-            <ul>
-              <li><span class="ok">✓</span>короткие уроки</li>
-              <li><span class="ok">✓</span>база лексики под цель</li>
-              <li><span class="ok">✓</span>домашка + проверка</li>
-            </ul>
-            <a class="btn btnPrimary" href="#contact">Узнать формат</a>
-          </div>
-
-          <div class="plan">
-            <span class="tag">Продвинутый</span>
-            <h3>Boost</h3>
-            <div class="price" id="price2">— <small>/ месяц</small></div>
-            <ul>
-              <li><span class="ok">✓</span>больше разговорной практики</li>
-              <li><span class="ok">✓</span>сценарии под работу/переезд</li>
-              <li><span class="ok">✓</span>контроль прогресса</li>
-            </ul>
-            <a class="btn btnPrimary" href="#contact">Узнать формат</a>
-          </div>
-
-          <div class="plan">
-            <span class="tag">PRO</span>
-            <h3>Pro</h3>
-            <div class="price" id="price3">— <small>/ месяц</small></div>
-            <ul>
-              <li><span class="ok">✓</span>максимум практики</li>
-              <li><span class="ok">✓</span>переговоры/собеседования</li>
-              <li><span class="ok">✓</span>плотное сопровождение</li>
-            </ul>
-            <a class="btn btnPrimary" href="#contact">Узнать формат</a>
-          </div>
-        </div>
-
-        <div class="notice" style="margin-top:14px;">
-          <b>Если хотите убрать цены полностью:</b> оставьте только «Форматы» и кнопку «Узнать формат и стоимость».
-        </div>
-      </section>
-
-      <!-- CONTACT / CTA -->
-      <section id="contact">
-        <h2>Запись</h2>
-        <div class="card">
-          <p class="muted" style="margin:0 0 14px;">
-            Нажмите кнопку — откроется ваш Telegram/ссылка оплаты. Заполните ссылки внизу в блоке CONFIG.
-          </p>
-          <div class="ctaRow">
-            <a class="btn btnPrimary" id="ctaMain2" href="#" target="_blank" rel="noopener">Записаться / Узнать формат</a>
-            <a class="btn" id="ctaSupport2" href="#" target="_blank" rel="noopener">Написать в поддержку</a>
-            <a class="btn" id="ctaPay" href="#" target="_blank" rel="noopener">Оплатить</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- FAQ -->
-      <section id="faq">
-        <h2>FAQ</h2>
-        <div class="faq">
-          <details>
-            <summary>Как часто будут уроки?</summary>
-            <p>Частота зависит от вашей цели и графика. После диагностики подберём режим, который реально выдерживать.</p>
-          </details>
-          <details>
-            <summary>Если я не вижу прогресс?</summary>
-            <p>Корректируем план: темп, тип практики, объём домашки. Цель — не «марафон», а стабильный результат.</p>
-          </details>
-          <details>
-            <summary>Это подойдёт с нуля?</summary>
-            <p>Да. Начинаем с понятной базы и сразу закрепляем практикой под вашу задачу.</p>
-          </details>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div>© <span id="year"></span> <span id="brandName2">English Course</span></div>
-      <div class="muted">Сделано для GitHub Pages. Один файл: index.html</div>
-    </footer>
+  <div class="sticky-cta" aria-hidden="false">
+    <div class="bar">
+      <div>
+        <div class="t1">Уточнить формат и цену</div>
+        <div class="t2">Переход в Telegram-бота</div>
+      </div>
+      <a class="cta" href="https://t.me/myproj22bot?start=sticky" target="_blank" rel="noopener">Открыть Telegram</a>
+    </div>
   </div>
 
   <script>
-    // ===== CONFIG (ЗАПОЛНИТЕ ПОД СЕБЯ) =====
-    const CONFIG = {
-      brandName: "English Course",
-      heroTitle: "Английский для работы, переезда и путешествий",
-      heroLead: "Индивидуальный формат. Короткие уроки + практика + домашка. Подстроимся под ваш график, без перегруза.",
-
-      // Ссылка на Telegram (пример: https://t.me/bezovanton или https://t.me/yourbot?start=lead)
-      supportLink: "https://t.me/bezovanton",
-
-      // Ссылка на оплату (можно оставить пустой, тогда кнопка "Оплатить" скроется)
-      payLink: "",
-
-      // Тексты кнопок
-      ctaMainText: "Записаться / Узнать формат",
-      ctaSupportText: "Написать в поддержку",
-      ctaPayText: "Оплатить",
-
-      // Цены (опционально)
-      prices: {
-        p1: "—",
-        p2: "—",
-        p3: "—"
-      }
-    };
-
-    // ===== APPLY CONFIG =====
-    const $ = (id) => document.getElementById(id);
-
-    $("brandName").textContent = CONFIG.brandName;
-    $("brandName2").textContent = CONFIG.brandName;
-    $("heroTitle").textContent = CONFIG.heroTitle;
-    $("heroLead").textContent = CONFIG.heroLead;
-
-    $("ctaMain").textContent = CONFIG.ctaMainText;
-    $("ctaMain2").textContent = CONFIG.ctaMainText;
-    $("ctaSupport").textContent = CONFIG.ctaSupportText;
-    $("ctaSupport2").textContent = CONFIG.ctaSupportText;
-    $("ctaPay").textContent = CONFIG.ctaPayText;
-
-    $("ctaMain").href = CONFIG.supportLink;
-    $("ctaMain2").href = CONFIG.supportLink;
-    $("ctaSupport").href = CONFIG.supportLink;
-    $("ctaSupport2").href = CONFIG.supportLink;
-
-    $("price1").firstChild.textContent = CONFIG.prices.p1 + " ";
-    $("price2").firstChild.textContent = CONFIG.prices.p2 + " ";
-    $("price3").firstChild.textContent = CONFIG.prices.p3 + " ";
-
-    $("year").textContent = new Date().getFullYear();
-
-    // Hide pay button if empty
-    if (!CONFIG.payLink) {
-      $("ctaPay").style.display = "none";
-    } else {
-      $("ctaPay").href = CONFIG.payLink;
-    }
+    // Мини-аналитика без внешних сервисов: добавляет якорь, чтобы в боте можно было понять источник.
+    // Никаких cookies, ничего не собираем.
+    (function(){
+      var qs = new URLSearchParams(location.search);
+      var utm = qs.get("utm") || qs.get("src") || "";
+      if(!utm) return;
+      var links = document.querySelectorAll('a[href^="https://t.me/myproj22bot?start="]');
+      links.forEach(function(a){
+        var u = new URL(a.href);
+        var start = u.searchParams.get("start") || "site";
+        u.searchParams.set("start", start + "_"+ utm.replace(/[^a-zA-Z0-9_-]/g,"").slice(0,24));
+        a.href = u.toString();
+      });
+    })();
   </script>
 </body>
 </html>
