@@ -1,22 +1,457 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Курс английского</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Английский для работы, переезда и путешествий. Индивидуальный формат. Практика с первого дня." />
+  <title>English Course — Одностраничник</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e2e8f0;
+      --card:#f8fafc;
+      --accent:#2563eb;
+      --accent2:#1d4ed8;
+      --ok:#16a34a;
+      --max:1040px;
+      --r:18px;
+      --shadow:0 10px 30px rgba(2,6,23,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:24px}
+    .top{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:16px;padding:10px 0 24px;border-bottom:1px solid var(--line);
+    }
+    .brand{display:flex;gap:10px;align-items:center}
+    .logo{
+      width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#60a5fa);
+      box-shadow:var(--shadow);
+    }
+    .brand b{font-size:14px}
+    .brand small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+    .nav{display:flex;gap:14px;flex-wrap:wrap}
+    .nav a{
+      text-decoration:none;color:var(--muted);font-size:13px;
+      padding:8px 10px;border-radius:10px;
+    }
+    .nav a:hover{background:var(--card);color:var(--text)}
+    .hero{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:28px;
+      padding:36px 0 18px;
+    }
+    @media (max-width:900px){.hero{grid-template-columns:1fr}}
+    h1{font-size:44px;line-height:1.1;margin:0 0 14px}
+    @media (max-width:480px){h1{font-size:34px}}
+    .lead{color:var(--muted);font-size:16px;margin:0 0 18px}
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    .btn{
+      border:1px solid var(--line);
+      background:#fff;
+      padding:12px 16px;
+      border-radius:14px;
+      font-weight:600;
+      font-size:14px;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;align-items:center;gap:10px;
+    }
+    .btnPrimary{
+      background:var(--accent);
+      border-color:var(--accent);
+      color:#fff;
+    }
+    .btnPrimary:hover{background:var(--accent2);border-color:var(--accent2)}
+    .btn:hover{box-shadow:0 8px 20px rgba(2,6,23,.08)}
+    .meta{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;color:var(--muted);font-size:13px}
+    .pill{
+      border:1px solid var(--line);
+      background:var(--card);
+      padding:8px 10px;border-radius:999px;
+    }
+
+    .card{
+      border:1px solid var(--line);
+      background:var(--card);
+      border-radius:var(--r);
+      padding:18px;
+      box-shadow:var(--shadow);
+    }
+    .card h3{margin:0 0 10px;font-size:15px}
+    .card p{margin:0;color:var(--muted);font-size:13px}
+    .list{margin:12px 0 0;padding:0;list-style:none}
+    .list li{padding:8px 0;border-top:1px solid var(--line);color:var(--text);font-size:14px}
+    .list li:first-child{border-top:none}
+    .list li span{color:var(--muted)}
+
+    section{padding:34px 0;border-top:1px solid var(--line)}
+    section:first-of-type{border-top:none}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    @media (max-width:900px){.grid2{grid-template-columns:1fr}}
+    h2{margin:0 0 14px;font-size:22px}
+    .muted{color:var(--muted)}
+    .steps{display:grid;gap:10px}
+    .step{
+      display:flex;gap:12px;align-items:flex-start;
+      padding:12px 14px;border:1px solid var(--line);
+      border-radius:14px;background:#fff;
+    }
+    .num{
+      width:28px;height:28px;border-radius:10px;
+      background:rgba(37,99,235,.12);
+      color:var(--accent);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:700;font-size:13px;
+      flex:0 0 28px;
+    }
+    .step b{display:block;font-size:14px;margin-bottom:2px}
+    .step div{font-size:13px;color:var(--muted)}
+
+    .pricing{
+      display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;
+    }
+    @media (max-width:900px){.pricing{grid-template-columns:1fr}}
+    .plan{
+      border:1px solid var(--line);
+      border-radius:var(--r);
+      padding:16px;
+      background:#fff;
+    }
+    .plan h3{margin:0 0 6px;font-size:15px}
+    .tag{display:inline-block;font-size:12px;color:var(--muted);border:1px solid var(--line);padding:6px 10px;border-radius:999px;background:var(--card)}
+    .price{margin:12px 0 6px;font-size:26px;font-weight:800}
+    .price small{font-size:12px;color:var(--muted);font-weight:600}
+    .plan ul{margin:10px 0 0;padding:0;list-style:none}
+    .plan li{padding:8px 0;border-top:1px solid var(--line);font-size:13px}
+    .plan li:first-child{border-top:none}
+    .ok{color:var(--ok);font-weight:700;margin-right:8px}
+    .plan .btn{margin-top:12px;width:100%;justify-content:center}
+
+    .faq{display:grid;gap:10px}
+    details{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px 14px;
+      background:#fff;
+    }
+    summary{cursor:pointer;font-weight:700;font-size:14px}
+    details p{margin:10px 0 0;color:var(--muted);font-size:13px}
+
+    .footer{
+      padding:26px 0;
+      color:var(--muted);
+      font-size:12px;
+      border-top:1px solid var(--line);
+      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    }
+
+    .notice{
+      background:rgba(37,99,235,.08);
+      border:1px solid rgba(37,99,235,.18);
+      border-radius:14px;
+      padding:12px 14px;
+      color:var(--muted);
+      font-size:13px;
+      margin-top:14px;
+    }
+    .notice b{color:var(--text)}
+  </style>
 </head>
+
 <body>
-  <h1>Английский для работы и переезда</h1>
-  <p>Индивидуальный формат. Практика. Результат.</p>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <b id="brandName">English Course</b>
+          <small>Онлайн-обучение • практика с первого дня</small>
+        </div>
+      </div>
 
-  <h2>Как проходит обучение</h2>
-  <p>Онлайн, под ваш график. Уроки + практика + сопровождение.</p>
+      <nav class="nav" aria-label="Навигация">
+        <a href="#forwho">Для кого</a>
+        <a href="#how">Как проходит</a>
+        <a href="#result">Результат</a>
+        <a href="#price">Форматы</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </header>
 
-  <h2>Стоимость</h2>
-  <p>Формат и цена подбираются индивидуально.</p>
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div>
+          <h1 id="heroTitle">Английский для работы, переезда и путешествий</h1>
+          <p class="lead" id="heroLead">
+            Индивидуальный формат. Короткие уроки + практика + домашка. Подстроимся под ваш график, без перегруза.
+          </p>
 
-  <a href="https://your-payment-link">
-    <button>Оплатить / Узнать цену</button>
-  </a>
+          <div class="ctaRow">
+            <a class="btn btnPrimary" id="ctaMain" href="#" target="_blank" rel="noopener">Записаться / Узнать формат</a>
+            <a class="btn" id="ctaSupport" href="#" target="_blank" rel="noopener">Написать в поддержку</a>
+          </div>
+
+          <div class="meta">
+            <span class="pill">Без «воды» и теории ради теории</span>
+            <span class="pill">Подбор под цель и уровень</span>
+            <span class="pill">Поддержка и контроль</span>
+          </div>
+
+          <div class="notice">
+            <b>Быстрый старт:</b> оставьте контакт — ассистент уточнит цель, уровень и предложит оптимальный формат.
+          </div>
+        </div>
+
+        <aside class="card">
+          <h3>Что вы получите</h3>
+          <p>Коротко и по делу — без обещаний «чудес», только понятный результат.</p>
+          <ul class="list">
+            <li><b>Начнёте говорить</b> <span>без страха и пауз</span></li>
+            <li><b>Услышите живую речь</b> <span>и перестанете теряться</span></li>
+            <li><b>Закроете вашу задачу</b> <span>работа/переезд/поездки</span></li>
+            <li><b>Поймёте план</b> <span>на ближайшие недели</span></li>
+          </ul>
+        </aside>
+      </section>
+
+      <!-- FOR WHO -->
+      <section id="forwho">
+        <h2>Для кого</h2>
+        <div class="grid2">
+          <div class="card">
+            <h3>Подойдёт, если вы</h3>
+            <ul class="list">
+              <li>планируете <b>переезд</b> или <b>работу</b> за границей</li>
+              <li>понимаете, но <b>не говорите</b></li>
+              <li>учили раньше, но <b>всё забыли</b></li>
+              <li>хотите <b>результат</b>, а не «процесс»</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Не подойдёт, если</h3>
+            <ul class="list">
+              <li>нужны «волшебные» обещания за 7 дней</li>
+              <li>вы не готовы выделять хотя бы 15–30 минут в день</li>
+              <li>нужен академический формат с тоннами теории</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW -->
+      <section id="how">
+        <h2>Как проходит обучение</h2>
+        <p class="muted">Простой процесс: сначала цель и уровень, потом — формат под ваш график.</p>
+
+        <div class="steps" style="margin-top:14px;">
+          <div class="step">
+            <div class="num">1</div>
+            <div><b>Диагностика</b>Коротко фиксируем цель и стартовый уровень.</div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div><b>Подбор формата</b>Частота уроков и нагрузка — под ваш график и срок.</div>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <div><b>Уроки + практика</b>Сразу тренируем речь и реальные ситуации.</div>
+          </div>
+          <div class="step">
+            <div class="num">4</div>
+            <div><b>Контроль и поддержка</b>Проверка, корректировки, движение к результату.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESULT -->
+      <section id="result">
+        <h2>Результат и сроки</h2>
+        <div class="grid2">
+          <div class="card">
+            <h3>Типовой результат</h3>
+            <ul class="list">
+              <li><span class="ok">✓</span>соберёте базу фраз и конструкций под вашу цель</li>
+              <li><span class="ok">✓</span>начнёте говорить без «замирания»</li>
+              <li><span class="ok">✓</span>будете понимать речь в реальных диалогах</li>
+              <li><span class="ok">✓</span>получите план на 2–4 недели вперёд</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Срок</h3>
+            <p>
+              Зависит от цели, стартового уровня и того, сколько времени удобно выделять.
+              Обычно ощутимый прогресс — от 2–4 недель.
+            </p>
+            <div class="notice" style="margin-top:12px;">
+              <b>Важно:</b> мы не обещаем «идеальный английский за неделю». Мы делаем измеримый прогресс под вашу задачу.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING / FORMATS -->
+      <section id="price">
+        <h2>Форматы (пример)</h2>
+        <p class="muted">Цены и финальный формат можно уточнить после диагностики. Этот блок — шаблон. Заполните под себя.</p>
+
+        <div class="pricing" style="margin-top:14px;">
+          <div class="plan">
+            <span class="tag">Новичок</span>
+            <h3>Start</h3>
+            <div class="price" id="price1">— <small>/ месяц</small></div>
+            <ul>
+              <li><span class="ok">✓</span>короткие уроки</li>
+              <li><span class="ok">✓</span>база лексики под цель</li>
+              <li><span class="ok">✓</span>домашка + проверка</li>
+            </ul>
+            <a class="btn btnPrimary" href="#contact">Узнать формат</a>
+          </div>
+
+          <div class="plan">
+            <span class="tag">Продвинутый</span>
+            <h3>Boost</h3>
+            <div class="price" id="price2">— <small>/ месяц</small></div>
+            <ul>
+              <li><span class="ok">✓</span>больше разговорной практики</li>
+              <li><span class="ok">✓</span>сценарии под работу/переезд</li>
+              <li><span class="ok">✓</span>контроль прогресса</li>
+            </ul>
+            <a class="btn btnPrimary" href="#contact">Узнать формат</a>
+          </div>
+
+          <div class="plan">
+            <span class="tag">PRO</span>
+            <h3>Pro</h3>
+            <div class="price" id="price3">— <small>/ месяц</small></div>
+            <ul>
+              <li><span class="ok">✓</span>максимум практики</li>
+              <li><span class="ok">✓</span>переговоры/собеседования</li>
+              <li><span class="ok">✓</span>плотное сопровождение</li>
+            </ul>
+            <a class="btn btnPrimary" href="#contact">Узнать формат</a>
+          </div>
+        </div>
+
+        <div class="notice" style="margin-top:14px;">
+          <b>Если хотите убрать цены полностью:</b> оставьте только «Форматы» и кнопку «Узнать формат и стоимость».
+        </div>
+      </section>
+
+      <!-- CONTACT / CTA -->
+      <section id="contact">
+        <h2>Запись</h2>
+        <div class="card">
+          <p class="muted" style="margin:0 0 14px;">
+            Нажмите кнопку — откроется ваш Telegram/ссылка оплаты. Заполните ссылки внизу в блоке CONFIG.
+          </p>
+          <div class="ctaRow">
+            <a class="btn btnPrimary" id="ctaMain2" href="#" target="_blank" rel="noopener">Записаться / Узнать формат</a>
+            <a class="btn" id="ctaSupport2" href="#" target="_blank" rel="noopener">Написать в поддержку</a>
+            <a class="btn" id="ctaPay" href="#" target="_blank" rel="noopener">Оплатить</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq">
+        <h2>FAQ</h2>
+        <div class="faq">
+          <details>
+            <summary>Как часто будут уроки?</summary>
+            <p>Частота зависит от вашей цели и графика. После диагностики подберём режим, который реально выдерживать.</p>
+          </details>
+          <details>
+            <summary>Если я не вижу прогресс?</summary>
+            <p>Корректируем план: темп, тип практики, объём домашки. Цель — не «марафон», а стабильный результат.</p>
+          </details>
+          <details>
+            <summary>Это подойдёт с нуля?</summary>
+            <p>Да. Начинаем с понятной базы и сразу закрепляем практикой под вашу задачу.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> <span id="brandName2">English Course</span></div>
+      <div class="muted">Сделано для GitHub Pages. Один файл: index.html</div>
+    </footer>
+  </div>
+
+  <script>
+    // ===== CONFIG (ЗАПОЛНИТЕ ПОД СЕБЯ) =====
+    const CONFIG = {
+      brandName: "English Course",
+      heroTitle: "Английский для работы, переезда и путешествий",
+      heroLead: "Индивидуальный формат. Короткие уроки + практика + домашка. Подстроимся под ваш график, без перегруза.",
+
+      // Ссылка на Telegram (пример: https://t.me/bezovanton или https://t.me/yourbot?start=lead)
+      supportLink: "https://t.me/bezovanton",
+
+      // Ссылка на оплату (можно оставить пустой, тогда кнопка "Оплатить" скроется)
+      payLink: "",
+
+      // Тексты кнопок
+      ctaMainText: "Записаться / Узнать формат",
+      ctaSupportText: "Написать в поддержку",
+      ctaPayText: "Оплатить",
+
+      // Цены (опционально)
+      prices: {
+        p1: "—",
+        p2: "—",
+        p3: "—"
+      }
+    };
+
+    // ===== APPLY CONFIG =====
+    const $ = (id) => document.getElementById(id);
+
+    $("brandName").textContent = CONFIG.brandName;
+    $("brandName2").textContent = CONFIG.brandName;
+    $("heroTitle").textContent = CONFIG.heroTitle;
+    $("heroLead").textContent = CONFIG.heroLead;
+
+    $("ctaMain").textContent = CONFIG.ctaMainText;
+    $("ctaMain2").textContent = CONFIG.ctaMainText;
+    $("ctaSupport").textContent = CONFIG.ctaSupportText;
+    $("ctaSupport2").textContent = CONFIG.ctaSupportText;
+    $("ctaPay").textContent = CONFIG.ctaPayText;
+
+    $("ctaMain").href = CONFIG.supportLink;
+    $("ctaMain2").href = CONFIG.supportLink;
+    $("ctaSupport").href = CONFIG.supportLink;
+    $("ctaSupport2").href = CONFIG.supportLink;
+
+    $("price1").firstChild.textContent = CONFIG.prices.p1 + " ";
+    $("price2").firstChild.textContent = CONFIG.prices.p2 + " ";
+    $("price3").firstChild.textContent = CONFIG.prices.p3 + " ";
+
+    $("year").textContent = new Date().getFullYear();
+
+    // Hide pay button if empty
+    if (!CONFIG.payLink) {
+      $("ctaPay").style.display = "none";
+    } else {
+      $("ctaPay").href = CONFIG.payLink;
+    }
+  </script>
 </body>
 </html>
