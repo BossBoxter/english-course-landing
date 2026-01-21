@@ -1,15 +1,24 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <link rel="icon" href="/favicon.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="/favicon.png" sizes="192x192" type="image/png">
-  <link rel="apple-touch-icon" href="/favicon.png">
+  <!-- FAVICON / APP ICONS (для GitHub Pages лучше без ведущего /) -->
+  <link rel="icon" href="favicon.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="favicon.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="favicon.png">
   <meta name="theme-color" content="#0b1020">
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Английский для переезда, работы и путешествий. Короткие уроки, практика, домашка. Запись и уточнение деталей — в Telegram." />
+  <meta name="description" content="Английский без воды: короткие уроки, практика, домашка и план под твою цель. Запись и уточнение деталей — в Telegram." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Английский без воды — быстрый старт" />
+  <meta property="og:description" content="Короткие уроки, практика и понятный план. Начни с диагностики в Telegram." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="favicon.png" />
+
   <title>Английский без воды — быстрый старт</title>
+
   <style>
     :root{
       --bg:#0b1020;
@@ -43,6 +52,7 @@
     }
     a{ color:inherit; text-decoration:none; }
     .wrap{ max-width:var(--max); margin:0 auto; padding:22px 18px; }
+
     .topbar{
       position:sticky; top:0; z-index:20;
       backdrop-filter: blur(10px);
@@ -52,30 +62,42 @@
     .topbar .wrap{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
     .brand{
       display:flex; align-items:center; gap:10px;
-      font-weight:800;
+      font-weight:900;
       letter-spacing:.2px;
       white-space:nowrap;
     }
     .logo{
-      width:34px; height:34px; border-radius:12px;
-      background: linear-gradient(135deg, var(--brand) 0%, var(--brand2) 55%, var(--ok) 120%);
-      box-shadow: 0 10px 26px rgba(124,92,255,.25);
+      width:34px; height:34px;
+      border-radius:12px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 10px 26px rgba(0,0,0,.25);
+      flex: 0 0 auto;
+      background: rgba(255,255,255,.06);
+      display:flex; align-items:center; justify-content:center;
     }
+    .logo img{
+      width:100%; height:100%;
+      display:block;
+      object-fit:cover;
+    }
+
     .nav{
       display:flex; gap:14px; align-items:center;
       color:var(--muted);
-      font-weight:600;
+      font-weight:700;
       font-size:14px;
     }
     .nav a{ opacity:.9; }
     .nav a:hover{ opacity:1; color:#fff; }
+
     .cta{
       display:inline-flex; align-items:center; justify-content:center;
       padding:12px 16px;
       border-radius: 14px;
       background: linear-gradient(135deg, var(--brand) 0%, var(--brand2) 120%);
       color:#081022;
-      font-weight:900;
+      font-weight:950;
       border: 0;
       box-shadow: 0 14px 34px rgba(124,92,255,.22);
       cursor:pointer;
@@ -86,7 +108,7 @@
       color: var(--text);
       border: 1px solid var(--line);
       box-shadow: none;
-      font-weight:800;
+      font-weight:850;
     }
 
     header.hero{ padding:44px 0 20px; }
@@ -114,9 +136,10 @@
       opacity:.9;
     }
     .hero-card > *{ position:relative; }
+
     .kicker{
       display:inline-flex; gap:10px; align-items:center;
-      font-weight:900;
+      font-weight:950;
       color:#0b1020;
       background: rgba(255,255,255,.92);
       padding:8px 12px;
@@ -137,7 +160,7 @@
       margin:0 0 18px;
       font-size: 16.5px;
       color: var(--muted);
-      max-width: 60ch;
+      max-width: 64ch;
     }
     .pill-row{ display:flex; flex-wrap:wrap; gap:10px; margin: 14px 0 18px; }
     .pill{
@@ -145,7 +168,7 @@
       background: rgba(16,26,52,.55);
       padding:10px 12px;
       border-radius: 999px;
-      font-weight:800;
+      font-weight:850;
       color:#dbe4ff;
       font-size:13px;
     }
@@ -175,7 +198,7 @@
       padding:6px 10px;
       border-radius: 999px;
       font-size:12px;
-      font-weight:900;
+      font-weight:950;
     }
     .promo h3{ margin:10px 0 6px; font-size:16px; letter-spacing:-.2px; }
     .promo p{ margin:0; color:var(--muted); font-weight:650; }
@@ -184,6 +207,7 @@
     section{ padding:18px 0; }
     .grid3{ display:grid; grid-template-columns: repeat(3,1fr); gap:14px; }
     .grid2{ display:grid; grid-template-columns: repeat(2,1fr); gap:14px; }
+
     .card{
       border:1px solid var(--line);
       background: rgba(16,26,52,.55);
@@ -198,7 +222,7 @@
       display:flex; align-items:center; justify-content:center;
       border:1px solid rgba(255,255,255,.12);
       margin-bottom:10px;
-      font-weight:900;
+      font-weight:950;
       color:#fff;
     }
     .section-title{
@@ -291,8 +315,18 @@
 
     .faq .qa{ border-top:1px solid var(--line); padding:12px 0; }
     .faq .qa:first-child{ border-top:0; }
-    .q{ font-weight:900; letter-spacing:-.2px; }
+    .q{ font-weight:950; letter-spacing:-.2px; }
     .a{ color: var(--muted); font-weight:650; margin-top:6px; }
+
+    .promise{
+      border: 1px solid rgba(57,217,138,.22);
+      background: linear-gradient(135deg, rgba(57,217,138,.10), rgba(41,211,255,.06));
+      border-radius: 18px;
+      padding: 14px;
+      margin-top: 14px;
+    }
+    .promise .t1{ font-weight:950; }
+    .promise .t2{ color: var(--muted); font-weight:650; margin-top:6px; }
 
     footer{
       border-top: 1px solid var(--line);
@@ -308,6 +342,7 @@
       align-items:start;
     }
     .mono{ font-family: var(--mono); }
+
     .sticky-cta{
       position:fixed;
       left: 14px;
@@ -330,7 +365,7 @@
       gap:10px;
       box-shadow: var(--shadow);
     }
-    .sticky-cta .bar .t1{ font-weight:900; letter-spacing:-.2px; }
+    .sticky-cta .bar .t1{ font-weight:950; letter-spacing:-.2px; }
     .sticky-cta .bar .t2{ color:var(--muted); font-weight:650; font-size:12px; }
     .sticky-cta .bar .cta{ padding:12px 14px; border-radius: 14px; }
 
@@ -344,11 +379,14 @@
     }
   </style>
 </head>
+
 <body>
   <div class="topbar">
     <div class="wrap">
       <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
+        <div class="logo" aria-hidden="true">
+          <img src="favicon.png" alt="">
+        </div>
         <div>Английский без воды</div>
       </div>
 
@@ -359,7 +397,7 @@
       </div>
 
       <a class="cta" id="ctaTop" href="https://t.me/myproj22bot?start=site" target="_blank" rel="noopener">
-        Уточнить детали в Telegram
+        Написать в Telegram
       </a>
     </div>
   </div>
@@ -368,49 +406,59 @@
     <div class="wrap">
       <div class="hero-grid">
         <div class="hero-card">
-          <div class="kicker"><span class="dot"></span>Быстрый старт за 7 дней</div>
-          <h1>Прокачай английский под твою цель: работа, переезд, путешествия</h1>
+          <div class="kicker"><span class="dot"></span>Старт за 7 дней</div>
+
+          <h1>Английский под твою цель — без занудства и перегруза</h1>
+
           <p class="lead">
-            Без «учебника на 500 страниц». Короткие уроки, практика, домашка и понятный план.
-            Всё начинается с быстрой диагностики в Telegram.
+            Короткие уроки, практика на реальные ситуации и понятный план.
+            Начни с диагностики в Telegram — за 2 минуты поймём цель, уровень и сроки.
           </p>
 
           <div class="pill-row">
-            <div class="pill">Уроки 15–25 минут</div>
-            <div class="pill">Практика под реальные ситуации</div>
-            <div class="pill">План под твою цель</div>
-            <div class="pill">Поддержка по вопросам</div>
+            <div class="pill">15–25 минут в день</div>
+            <div class="pill">Практика под твои задачи</div>
+            <div class="pill">План без «воды»</div>
+            <div class="pill">Помощь по вопросам</div>
           </div>
 
           <div class="hero-actions">
-            <a class="cta" href="https://t.me/myproj22bot?start=diag" target="_blank" rel="noopener">Пройти диагностику в Telegram</a>
-            <a class="cta secondary" href="#pricing">Смотреть тарифы</a>
+            <a class="cta" href="https://t.me/myproj22bot?start=diag" target="_blank" rel="noopener">Пройти диагностику</a>
+            <a class="cta secondary" href="#pricing">Посмотреть тарифы</a>
+          </div>
+
+          <div class="promise">
+            <div class="t1">Обещание результата</div>
+            <div class="t2">
+              Если ты выполняешь план и делаешь практику, результат будет: больше уверенности, больше понимания, больше речи.
+              Конкретный темп и цель закрепим после диагностики в Telegram.
+            </div>
           </div>
 
           <div class="small">
-            Нажимая кнопку, ты перейдёшь в Telegram-бота <span class="mono">@myproj22bot</span> для уточнения деталей и записи.
+            Кнопки ведут в Telegram-бота <span class="mono">@myproj22bot</span> — там запись и уточнение деталей.
           </div>
         </div>
 
         <div class="side-card">
           <div class="promo">
             <span class="tag">АКЦИЯ</span>
-            <h3>Час обучения от 99 ₽</h3>
-            <p>Тест-старт: короткий план + первый разбор, чтобы понять формат и уровень без риска.</p>
-            <div class="small">Условия и доступность акции — в Telegram при записи.</div>
+            <h3>Час обучения от 495 ₽</h3>
+            <p>Тест-старт: быстрый разбор + понятный маршрут, чтобы увидеть формат и твой уровень без долгих вступлений.</p>
+            <div class="small">Условия акции — в Telegram при записи.</div>
           </div>
 
           <div class="promo">
             <span class="tag">БОНУС</span>
-            <h3>Разговорный мини-набор</h3>
-            <p>Фразы, шаблоны ответов и «что сказать» для поездок/работы — под твою цель.</p>
-            <div class="small">Выдаётся после подтверждения записи в Telegram.</div>
+            <h3>Набор «говорю без ступора»</h3>
+            <p>Фразы и шаблоны ответов под твою цель: поездки, работа, переезд, экзамены.</p>
+            <div class="small">Выдаётся после записи в Telegram.</div>
           </div>
 
           <div class="promo">
             <span class="tag">БЫСТРО</span>
-            <h3>Уточнение деталей за 2 минуты</h3>
-            <p>Бот спросит цель, текущий уровень и сроки — и предложит оптимальный формат.</p>
+            <h3>Детали за 2–3 минуты</h3>
+            <p>Без звонков. Просто отвечаешь на вопросы в боте — и получаешь подходящий формат.</p>
           </div>
         </div>
       </div>
@@ -421,24 +469,24 @@
     <div class="wrap">
       <div class="section-title">
         <h2>Как это работает</h2>
-        <div class="hint">Без звонков и лишней переписки</div>
+        <div class="hint">Просто и по шагам</div>
       </div>
 
       <div class="grid3">
         <div class="card">
           <div class="icon">1</div>
-          <h3>Диагностика в Telegram</h3>
-          <p>Цель, уровень, срок. Бот соберёт вводные и подготовит формат под тебя.</p>
+          <h3>Диагностика</h3>
+          <p>Цель, текущий уровень, желаемый уровень, сроки. Бот соберёт вводные.</p>
         </div>
         <div class="card">
           <div class="icon">2</div>
-          <h3>План на 7 дней</h3>
-          <p>Первые шаги: что учим, как практикуем, на что тратить время, а на что нет.</p>
+          <h3>План</h3>
+          <p>Понимаешь, что делать каждый день: уроки, практика, домашка — без хаоса.</p>
         </div>
         <div class="card">
           <div class="icon">3</div>
-          <h3>Учёба без перегруза</h3>
-          <p>Короткие уроки + практика. Темп подбирается под твою занятость.</p>
+          <h3>Прогресс</h3>
+          <p>Темп под твой график. Важно: регулярность и практика, а не «сильная мотивация».</p>
         </div>
       </div>
     </div>
@@ -447,30 +495,30 @@
   <section>
     <div class="wrap">
       <div class="section-title">
-        <h2>Для кого это</h2>
-        <div class="hint">3 частых сценария</div>
+        <h2>Кому подходит</h2>
+        <div class="hint">Частые сценарии</div>
       </div>
 
       <div class="grid2">
         <div class="card">
           <div class="icon">✈</div>
           <h3>Путешествия</h3>
-          <p>Отель, аэропорт, экскурсии, бытовые ситуации — чтобы говорить без стресса.</p>
+          <p>Аэропорт, отель, еда, экскурсии — чтобы спокойно говорить и понимать.</p>
         </div>
         <div class="card">
           <div class="icon">💼</div>
           <h3>Работа</h3>
-          <p>Переписка, созвоны, встречи. Упор на понятность и уверенную речь.</p>
+          <p>Переписка, созвоны, встречи. Упор на ясность и уверенную речь.</p>
         </div>
         <div class="card">
           <div class="icon">🏁</div>
           <h3>Переезд</h3>
-          <p>Документы, коммуникация, сервисы. Практика под реальные задачи.</p>
+          <p>Сервисы, документы, бытовые ситуации — практика под реальные задачи.</p>
         </div>
         <div class="card">
           <div class="icon">🎓</div>
           <h3>Экзамены</h3>
-          <p>Структура подготовки, план, контроль прогресса. Без хаоса.</p>
+          <p>План подготовки и контроль прогресса. Без «учусь-учусь и не ясно что».</p>
         </div>
       </div>
     </div>
@@ -480,55 +528,55 @@
     <div class="wrap">
       <div class="section-title">
         <h2>Тарифы</h2>
-        <div class="hint">Выбери старт, детали уточняются в Telegram</div>
+        <div class="hint">Цены и наполнение уточняются в Telegram</div>
       </div>
 
       <div class="pricing">
         <div class="plan">
           <h3>Start</h3>
-          <div class="price">от 99 ₽ <span>пробный час / тест-старт</span></div>
+          <div class="price">от 495 ₽ <span>пробный час / тест-старт</span></div>
           <ul class="features">
-            <li><span class="tick">✓</span><span>Быстрая диагностика + рекомендация формата</span></li>
+            <li><span class="tick">✓</span><span>Быстрая диагностика и рекомендация формата</span></li>
             <li><span class="tick">✓</span><span>Первый разбор: что подтянуть в первую очередь</span></li>
-            <li><span class="tick">✓</span><span>Подходит, чтобы «пощупать» стиль и темп</span></li>
+            <li><span class="tick">✓</span><span>Подходит, чтобы понять темп и стиль</span></li>
           </ul>
           <div class="actions">
-            <a class="cta" href="https://t.me/myproj22bot?start=tariff_start" target="_blank" rel="noopener">Уточнить Start в Telegram</a>
+            <a class="cta" href="https://t.me/myproj22bot?start=tariff_start" target="_blank" rel="noopener">Уточнить Start</a>
           </div>
         </div>
 
         <div class="plan featured">
-          <div class="badge">выгодно</div>
+          <div class="badge">лучший выбор</div>
           <h3>Smart</h3>
-          <div class="price">от 2 990 ₽ <span>в месяц, гибкий темп</span></div>
+          <div class="price">от 14 950 ₽ <span>в месяц, гибкий темп</span></div>
           <ul class="features">
-            <li><span class="tick">✓</span><span>Уроки + практика по твоей цели</span></li>
-            <li><span class="tick">✓</span><span>Домашка с короткой проверкой</span></li>
-            <li><span class="tick">✓</span><span>План на 4 недели, корректировка по прогрессу</span></li>
-            <li><span class="tick">✓</span><span>Подходит большинству: работа/переезд/поездки</span></li>
+            <li><span class="tick">✓</span><span>Уроки + практика под твою цель</span></li>
+            <li><span class="tick">✓</span><span>Домашка с быстрой обратной связью</span></li>
+            <li><span class="tick">✓</span><span>План на 4 недели и корректировка по прогрессу</span></li>
+            <li><span class="tick">✓</span><span>Работа/переезд/поездки — закрывает большинство задач</span></li>
           </ul>
           <div class="actions">
-            <a class="cta" href="https://t.me/myproj22bot?start=tariff_smart" target="_blank" rel="noopener">Уточнить Smart в Telegram</a>
+            <a class="cta" href="https://t.me/myproj22bot?start=tariff_smart" target="_blank" rel="noopener">Уточнить Smart</a>
           </div>
         </div>
 
         <div class="plan">
           <h3>Pro</h3>
-          <div class="price">от 6 990 ₽ <span>интенсив + плотная практика</span></div>
+          <div class="price">от 34 950 ₽ <span>интенсив + плотная практика</span></div>
           <ul class="features">
             <li><span class="tick">✓</span><span>Больше разговорной практики и сценариев</span></li>
             <li><span class="tick">✓</span><span>Ускоренный прогресс при ограниченных сроках</span></li>
-            <li><span class="tick">✓</span><span>Под твой график: как удобно по времени</span></li>
+            <li><span class="tick">✓</span><span>График под тебя: как удобно по времени</span></li>
             <li><span class="tick">✓</span><span>Для тех, кому нужно «быстро и уверенно»</span></li>
           </ul>
           <div class="actions">
-            <a class="cta" href="https://t.me/myproj22bot?start=tariff_pro" target="_blank" rel="noopener">Уточнить Pro в Telegram</a>
+            <a class="cta" href="https://t.me/myproj22bot?start=tariff_pro" target="_blank" rel="noopener">Уточнить Pro</a>
           </div>
         </div>
       </div>
 
       <div class="small" style="margin-top:10px;">
-        Цены и наполнение фиксируются при записи в Telegram: бот уточнит цель, уровень и сроки, затем предложит оптимальный вариант.
+        Итоговая стоимость и наполнение фиксируются при записи в Telegram: бот уточнит цель, уровень и сроки, затем предложит оптимальный вариант.
       </div>
     </div>
   </section>
@@ -537,25 +585,25 @@
     <div class="wrap">
       <div class="section-title">
         <h2>Частые вопросы</h2>
-        <div class="hint">Коротко и по делу</div>
+        <div class="hint">Коротко и ясно</div>
       </div>
 
       <div class="card">
         <div class="qa">
           <div class="q">Как часто будут уроки?</div>
-          <div class="a">Зависит от твоего графика. Цель — регулярность без перегруза: лучше стабильно, чем «сгореть» за неделю. В Telegram подберём темп под твою занятость.</div>
+          <div class="a">Под твой график. Важно идти регулярно и без перегруза. В Telegram подберём темп так, чтобы ты реально держал его месяцами.</div>
         </div>
         <div class="qa">
-          <div class="q">Это подходит новичкам?</div>
-          <div class="a">Да. Стартуем с понятной базы и сразу переводим в практику: фразы, диалоги, реальные ситуации.</div>
+          <div class="q">Подходит ли новичкам?</div>
+          <div class="a">Да. Начинаем с понятной базы и сразу переводим в практику: фразы, диалоги, реальные ситуации.</div>
         </div>
         <div class="qa">
-          <div class="q">Если я сомневаюсь, какой тариф выбрать?</div>
-          <div class="a">Нажми «Уточнить детали» — бот задаст 3–5 вопросов и предложит оптимальный вариант под цель и сроки.</div>
+          <div class="q">Как выбрать тариф?</div>
+          <div class="a">Нажми «Уточнить» — бот задаст несколько вопросов и подскажет вариант под цель и сроки.</div>
         </div>
         <div class="qa">
-          <div class="q">Где уточнять детали и записываться?</div>
-          <div class="a">В Telegram-боте. Там же можно оставить контакт, чтобы ассистент уточнил детали обучения.</div>
+          <div class="q">Где записаться?</div>
+          <div class="a">В Telegram-боте. Там же можно оставить контакт, чтобы уточнить детали обучения.</div>
         </div>
       </div>
     </div>
@@ -565,12 +613,12 @@
     <div class="wrap">
       <div class="hero-card" style="padding:18px;">
         <div class="section-title" style="margin:0 0 10px;">
-          <h2 style="margin:0;">Готов начать с диагностики?</h2>
-          <div class="hint">2 минуты, без звонков</div>
+          <h2 style="margin:0;">Готов начать?</h2>
+          <div class="hint">2–3 минуты в Telegram</div>
         </div>
         <div class="hero-actions">
-          <a class="cta" href="https://t.me/myproj22bot?start=site_bottom" target="_blank" rel="noopener">Перейти в Telegram и уточнить детали</a>
-          <a class="cta secondary" href="#pricing">Сначала посмотреть тарифы</a>
+          <a class="cta" href="https://t.me/myproj22bot?start=site_bottom" target="_blank" rel="noopener">Открыть Telegram и уточнить детали</a>
+          <a class="cta secondary" href="#pricing">Сначала тарифы</a>
         </div>
       </div>
     </div>
@@ -580,9 +628,9 @@
     <div class="wrap">
       <div class="footer-grid">
         <div>
-          <div class="mono">Контакт и запись: @myproj22bot</div>
+          <div class="mono">Запись и консультация: @myproj22bot</div>
           <div style="margin-top:6px;">
-            Информация на странице носит ознакомительный характер. Точные условия, наполнение и итоговая стоимость подтверждаются при записи в Telegram.
+            Страница даёт обзор. Точные условия, наполнение и итоговая стоимость подтверждаются при записи в Telegram.
           </div>
         </div>
         <div>
@@ -596,7 +644,7 @@
   <div class="sticky-cta" aria-hidden="false">
     <div class="bar">
       <div>
-        <div class="t1">Уточнить формат и цену</div>
+        <div class="t1">Уточнить формат и тариф</div>
         <div class="t2">Переход в Telegram-бота</div>
       </div>
       <a class="cta" href="https://t.me/myproj22bot?start=sticky" target="_blank" rel="noopener">Открыть Telegram</a>
@@ -604,8 +652,7 @@
   </div>
 
   <script>
-    // Мини-аналитика без внешних сервисов: добавляет якорь, чтобы в боте можно было понять источник.
-    // Никаких cookies, ничего не собираем.
+    // Мини-метка источника без внешних сервисов. Никаких cookies.
     (function(){
       var qs = new URLSearchParams(location.search);
       var utm = qs.get("utm") || qs.get("src") || "";
