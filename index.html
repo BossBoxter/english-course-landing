@@ -8,14 +8,14 @@
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Английский за 30 дней: короткие уроки, практика, домашка и план под твою цель. Запись и уточнение деталей - в Telegram." />
+  <meta name="description" content="Английский без воды: короткие уроки, практика, домашка и план под твою цель. Запись и уточнение деталей - в Telegram." />
 
-  <meta property="og:title" content="Английский за 30 дней - быстрый старт" />
+  <meta property="og:title" content="Английский без воды - быстрый старт" />
   <meta property="og:description" content="Короткие уроки, практика и понятный план. Начни с диагностики в Telegram." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="favicon.png" />
 
-  <title>Английский за 30 дней - быстрый старт</title>
+  <title>Английский без воды - быстрый старт</title>
 
   <!-- Inter (Medium 500) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -205,7 +205,6 @@
 
     section{ padding:18px 0; }
     .grid3{ display:grid; grid-template-columns: repeat(3,1fr); gap:14px; }
-    .grid2{ display:grid; grid-template-columns: repeat(2,1fr); gap:14px; }
 
     .card{
       border:1px solid var(--line);
@@ -240,111 +239,7 @@
       font-weight:500;
     }
 
-    .pricing{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr .95fr;
-      gap:14px;
-      align-items:stretch;
-    }
-    .plan{
-      border:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(16,26,52,.62), rgba(10,14,28,.48));
-      border-radius: var(--radius2);
-      padding:16px;
-      box-shadow: 0 18px 48px rgba(0,0,0,.32);
-      position:relative;
-      overflow:hidden;
-      display:flex; flex-direction:column;
-    }
-    .plan.featured{
-      border-color: rgba(41,211,255,.30);
-      background: linear-gradient(180deg, rgba(41,211,255,.12), rgba(124,92,255,.09));
-    }
-    .badge{
-      position:absolute; top:14px; right:14px;
-      background: rgba(255,255,255,.92);
-      color:#071022;
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:12px;
-      font-weight:500;
-    }
-    .plan h3{ margin:0; font-size:16px; letter-spacing:-.2px; font-weight:500; }
-
-    .price{
-      margin:8px 0 10px;
-      letter-spacing:-.8px;
-      line-height:1.1;
-      font-size: 26px;
-      font-weight:500;
-    }
-    .price span{
-      display:block;
-      font-size: 12px;
-      color: var(--muted);
-      font-weight:500;
-      letter-spacing:0;
-      margin-top:4px;
-    }
-
-    .price .row{
-      display:flex;
-      align-items:baseline;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-    .price .was{
-      display:inline-block;
-      font-size: 26px;
-      font-weight:500;
-      text-decoration: line-through;
-      text-decoration-color: var(--danger);
-      text-decoration-thickness: 3px;
-      color: rgba(234,240,255,.80);
-    }
-    .price .now{
-      display:inline-block;
-      font-size: 26px;
-      font-weight:500;
-      color: var(--danger);
-    }
-    .price .note{
-      margin-top:6px;
-      font-size:12px;
-      color: var(--muted);
-      font-weight:500;
-      letter-spacing:0;
-    }
-
-    ul.features{
-      margin: 10px 0 0;
-      padding: 0;
-      list-style: none;
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      color: var(--muted);
-      font-weight:500;
-    }
-    ul.features li{
-      display:flex; gap:10px; align-items:flex-start;
-      padding-top: 2px;
-    }
-    .tick{
-      width:18px; height:18px; border-radius:6px;
-      background: rgba(57,217,138,.18);
-      border: 1px solid rgba(57,217,138,.30);
-      display:flex; align-items:center; justify-content:center;
-      flex:0 0 auto;
-      font-weight:500;
-      color: var(--ok);
-      font-size:12px;
-      margin-top:1px;
-    }
-    .plan .actions{ margin-top:auto; padding-top:14px; display:flex; gap:10px; flex-wrap:wrap; }
-    .plan .actions .cta{ width:100%; border-radius: 16px; padding:13px 16px; }
-
-    /* Кому подходит (оформление) */
+    /* Кому подходит */
     .fits-grid{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -397,6 +292,206 @@
       font-weight:500;
     }
 
+    /* Тарифы */
+    .pricing{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr .95fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    .plan{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(16,26,52,.62), rgba(10,14,28,.48));
+      border-radius: var(--radius2);
+      padding:16px;
+      box-shadow: 0 18px 48px rgba(0,0,0,.32);
+      position:relative;
+      overflow:hidden;
+      display:flex; flex-direction:column;
+    }
+    .plan.featured{
+      border-color: rgba(41,211,255,.30);
+      background: linear-gradient(180deg, rgba(41,211,255,.12), rgba(124,92,255,.09));
+    }
+    .badge{
+      position:absolute; top:14px; right:14px;
+      background: rgba(255,255,255,.92);
+      color:#071022;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:500;
+    }
+    .plan h3{ margin:0; font-size:16px; letter-spacing:-.2px; font-weight:500; }
+
+    .price{
+      margin:8px 0 10px;
+      letter-spacing:-.8px;
+      line-height:1.1;
+      font-size: 26px;
+      font-weight:500;
+    }
+    .price span{
+      display:block;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight:500;
+      letter-spacing:0;
+      margin-top:4px;
+    }
+    .price .row{
+      display:flex;
+      align-items:baseline;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .price .was{
+      display:inline-block;
+      font-size: 26px;
+      font-weight:500;
+      text-decoration: line-through;
+      text-decoration-color: var(--danger);
+      text-decoration-thickness: 3px;
+      color: rgba(234,240,255,.80);
+    }
+    .price .now{
+      display:inline-block;
+      font-size: 26px;
+      font-weight:500;
+      color: var(--danger);
+    }
+    .price .note{
+      margin-top:6px;
+      font-size:12px;
+      color: var(--muted);
+      font-weight:500;
+      letter-spacing:0;
+    }
+    ul.features{
+      margin: 10px 0 0;
+      padding: 0;
+      list-style: none;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      color: var(--muted);
+      font-weight:500;
+    }
+    ul.features li{
+      display:flex; gap:10px; align-items:flex-start;
+      padding-top: 2px;
+    }
+    .tick{
+      width:18px; height:18px; border-radius:6px;
+      background: rgba(57,217,138,.18);
+      border: 1px solid rgba(57,217,138,.30);
+      display:flex; align-items:center; justify-content:center;
+      flex:0 0 auto;
+      font-weight:500;
+      color: var(--ok);
+      font-size:12px;
+      margin-top:1px;
+    }
+    .plan .actions{ margin-top:auto; padding-top:14px; display:flex; gap:10px; flex-wrap:wrap; }
+    .plan .actions .cta{ width:100%; border-radius: 16px; padding:13px 16px; }
+
+    /* Roadmap обучения */
+    .roadmap{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(16,26,52,.58), rgba(10,14,28,.42));
+      border-radius: var(--radius2);
+      padding:16px;
+      box-shadow: 0 18px 48px rgba(0,0,0,.22);
+      position:relative;
+      overflow:hidden;
+    }
+    .roadmap:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(520px 260px at 15% 15%, rgba(124,92,255,.18), transparent 70%),
+        radial-gradient(520px 260px at 85% 25%, rgba(41,211,255,.12), transparent 70%);
+      pointer-events:none;
+      opacity:.9;
+    }
+    .roadmap > *{ position:relative; }
+    .road-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      align-items:stretch;
+      margin-top:12px;
+    }
+    .step{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(16,26,52,.45);
+      border-radius: 16px;
+      padding:14px;
+      position:relative;
+      overflow:hidden;
+    }
+    .step .head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:8px;
+    }
+    .step .n{
+      width:30px; height:30px;
+      border-radius: 12px;
+      display:flex; align-items:center; justify-content:center;
+      background: linear-gradient(135deg, rgba(124,92,255,.30), rgba(41,211,255,.18));
+      border:1px solid rgba(255,255,255,.10);
+      color:#fff;
+      font-weight:500;
+      flex: 0 0 auto;
+    }
+    .step h3{
+      margin:0;
+      font-size:15px;
+      letter-spacing:-.2px;
+      font-weight:500;
+      flex: 1 1 auto;
+    }
+    .step p{
+      margin:0;
+      color: var(--muted);
+      font-weight:500;
+    }
+    .guarantee{
+      margin-top:14px;
+      border:1px solid rgba(57,217,138,.26);
+      background: rgba(57,217,138,.08);
+      border-radius: 16px;
+      padding:12px;
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+    .g-badge{
+      width:32px; height:32px;
+      border-radius: 12px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(57,217,138,.18);
+      border:1px solid rgba(57,217,138,.30);
+      color: var(--ok);
+      flex:0 0 auto;
+      font-weight:500;
+    }
+    .guarantee .t{
+      color: rgba(234,240,255,.95);
+      font-weight:500;
+    }
+    .guarantee .t span{
+      display:block;
+      color: var(--muted);
+      margin-top:4px;
+      font-weight:500;
+      font-size: 13px;
+    }
+
+    /* FAQ */
     .faq-card{
       border:1px solid var(--line);
       background: rgba(16,26,52,.55);
@@ -446,7 +541,6 @@
       color: rgba(183,194,229,.85);
       font-size: 12px;
     }
-
     .footer-legal{ width:100%; }
     .footer-nav{
       margin-top:12px;
@@ -504,9 +598,9 @@
     @media (max-width: 920px){
       .hero-grid{ grid-template-columns: 1fr; }
       .grid3{ grid-template-columns: 1fr; }
-      .grid2{ grid-template-columns: 1fr; }
       .pricing{ grid-template-columns: 1fr; }
       .fits-grid{ grid-template-columns: 1fr; }
+      .road-grid{ grid-template-columns: 1fr; }
       .nav{ display:none; }
       .sticky-cta{ display:block; }
       .topbar .cta{ display:none; }
@@ -521,13 +615,14 @@
         <div class="logo" aria-hidden="true">
           <img src="favicon.png" alt="">
         </div>
-        <div>Английский за 30 дней</div>
+        <div>Английский без воды</div>
       </div>
 
       <div class="nav" aria-label="Навигация">
         <a href="#how">Как это работает</a>
-        <a href="#pricing">Тарифы</a>
         <a href="#fits">Кому подходит</a>
+        <a href="#pricing">Тарифы</a>
+        <a href="#roadmap">Как проходит обучение</a>
         <a href="#faq">Вопросы</a>
       </div>
 
@@ -606,6 +701,58 @@
     </div>
   </section>
 
+  <!-- ПЕРЕСТАВИЛИ: сначала "Кому подходит", потом "Тарифы" -->
+  <section id="fits">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Кому подходит</h2>
+        <div class="hint">Самые частые сценарии</div>
+      </div>
+
+      <div class="fits-grid">
+        <div class="fit">
+          <div class="fit-tag"><span class="b"></span>Школа</div>
+          <h3>Ученикам 1–11 классов</h3>
+          <p>Подтянуть базу, домашку, тексты и «разговорку», чтобы уверенно закрывать темы в школе.</p>
+        </div>
+
+        <div class="fit">
+          <div class="fit-tag"><span class="b"></span>ВУЗ</div>
+          <h3>Студентам 1–4 курсов</h3>
+          <p>Английский для учёбы: чтение материалов, термины, выступления, проекты и практика.</p>
+        </div>
+
+        <div class="fit">
+          <div class="fit-tag"><span class="b"></span>Работа</div>
+          <h3>Тем, кому нужен английский для работы</h3>
+          <p>Переписка, созвоны, встречи, интервью. Упор на понятность и уверенную речь.</p>
+        </div>
+
+        <div class="fit">
+          <div class="fit-tag"><span class="b"></span>Переезд</div>
+          <h3>Тем, кто готовится к переезду</h3>
+          <p>Бытовые ситуации, сервисы, документы, коммуникация. Практика под реальные задачи.</p>
+        </div>
+
+        <div class="fit">
+          <div class="fit-tag"><span class="b"></span>Путешествия</div>
+          <h3>Тем, кто хочет свободнее путешествовать</h3>
+          <p>Аэропорт, отель, кафе, экскурсии, форс-мажоры — чтобы говорить без стресса.</p>
+        </div>
+
+        <div class="fit">
+          <div class="fit-tag"><span class="b"></span>С нуля</div>
+          <h3>Тем, кто начинает с нуля или «забыл всё»</h3>
+          <p>Понятный старт без перегруза: короткие уроки, регулярная практика и закрепление.</p>
+        </div>
+      </div>
+
+      <div class="small" style="margin-top:10px;">
+        Если твой сценарий другой — всё равно ок: в Telegram-боте уточним цель и подберём формат.
+      </div>
+    </div>
+  </section>
+
   <section id="pricing">
     <div class="wrap">
       <div class="section-title">
@@ -670,54 +817,64 @@
     </div>
   </section>
 
-  <!-- НОВЫЙ БЛОК: Кому подходит -->
-  <section id="fits">
+  <!-- НОВЫЙ БЛОК: Roadmap обучения (до FAQ) -->
+  <section id="roadmap">
     <div class="wrap">
       <div class="section-title">
-        <h2>Кому подходит</h2>
-        <div class="hint">Самые частые сценарии</div>
+        <h2>Как проходит обучение</h2>
+        <div class="hint">roadmap: понятно, без «сложных слов»</div>
       </div>
 
-      <div class="fits-grid">
-        <div class="fit">
-          <div class="fit-tag"><span class="b"></span>Школа</div>
-          <h3>Ученикам 1–11 классов</h3>
-          <p>Подтянуть базу, домашку, тексты и «разговорку», чтобы уверенно закрывать темы в школе.</p>
+      <div class="roadmap">
+        <div class="small" style="margin-top:0;">
+          Идея простая: сначала честно понимаем старт, потом подстраиваем темп под твою жизнь, и строим план под цель.
+          Никаких «универсальных расписаний» — всё подбирается под человека.
         </div>
 
-        <div class="fit">
-          <div class="fit-tag"><span class="b"></span>ВУЗ</div>
-          <h3>Студентам 1–4 курсов</h3>
-          <p>Английский для учёбы: чтение материалов, термины, выступления, проекты и практика.</p>
+        <div class="road-grid">
+          <div class="step">
+            <div class="head">
+              <div class="n">1</div>
+              <h3>Запись + пробный урок</h3>
+            </div>
+            <p>Начинаем с записи в Telegram и пробного урока: быстро смотрим уровень и «узкие места», чтобы не тратить время на лишнее.</p>
+          </div>
+
+          <div class="step">
+            <div class="head">
+              <div class="n">2</div>
+              <h3>Сколько времени реально есть в неделю</h3>
+            </div>
+            <p>Определяем твою нагрузку: сколько минут/часов в неделю ты точно готов уделять занятиям и практике.</p>
+          </div>
+
+          <div class="step">
+            <div class="head">
+              <div class="n">3</div>
+              <h3>Цель → план вместе с преподавателем</h3>
+            </div>
+            <p>От цели (школа, ВУЗ, работа, переезд, путешествия) и времени строится план: что учим, как практикуем, что сдаём на контроль.</p>
+          </div>
+
+          <div class="step">
+            <div class="head">
+              <div class="n">4</div>
+              <h3>Работа по плану + корректировки</h3>
+            </div>
+            <p>По ходу обучения корректируем план под прогресс: если тема даётся легко — ускоряемся, если «буксует» — упрощаем шаг и добиваем результат.</p>
+          </div>
         </div>
 
-        <div class="fit">
-          <div class="fit-tag"><span class="b"></span>Работа</div>
-          <h3>Тем, кому нужен английский для работы</h3>
-          <p>Переписка, созвоны, встречи, интервью. Упор на понятность и уверенную речь.</p>
+        <div class="guarantee">
+          <div class="g-badge">✓</div>
+          <div class="t">
+            Гарантия результата — в формате процесса.
+            <span>
+              Если ты выполняешь согласованный минимум (занятия + практика) и прогресс не идёт — пересобираем план, меняем нагрузку и фокус до появления стабильного роста.
+              Условия и минимальная нагрузка фиксируются при записи в Telegram.
+            </span>
+          </div>
         </div>
-
-        <div class="fit">
-          <div class="fit-tag"><span class="b"></span>Переезд</div>
-          <h3>Тем, кто готовится к переезду</h3>
-          <p>Бытовые ситуации, сервисы, документы, коммуникация. Практика под реальные задачи.</p>
-        </div>
-
-        <div class="fit">
-          <div class="fit-tag"><span class="b"></span>Путешествия</div>
-          <h3>Тем, кто хочет свободнее путешествовать</h3>
-          <p>Аэропорт, отель, кафе, экскурсии, форс-мажоры — чтобы говорить без стресса.</p>
-        </div>
-
-        <div class="fit">
-          <div class="fit-tag"><span class="b"></span>С нуля</div>
-          <h3>Тем, кто начинает с нуля или «забыл всё»</h3>
-          <p>Понятный старт без перегруза: короткие уроки, регулярная практика и закрепление.</p>
-        </div>
-      </div>
-
-      <div class="small" style="margin-top:10px;">
-        Если твой сценарий другой — всё равно ок: в Telegram-боте уточним цель и подберём формат.
       </div>
     </div>
   </section>
@@ -784,8 +941,9 @@
 
       <div class="footer-nav" aria-label="Навигация внизу">
         <a href="#how">Как это работает</a>
-        <a href="#pricing">Тарифы</a>
         <a href="#fits">Кому подходит</a>
+        <a href="#pricing">Тарифы</a>
+        <a href="#roadmap">Как проходит обучение</a>
         <a href="#faq">Вопросы</a>
       </div>
     </div>
