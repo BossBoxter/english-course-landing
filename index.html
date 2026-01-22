@@ -26,6 +26,7 @@
       --brand:#7c5cff;
       --brand2:#29d3ff;
       --ok:#39d98a;
+      --danger:#ff3b3b;
       --shadow: 0 16px 50px rgba(0,0,0,.45);
       --radius: 18px;
       --radius2: 26px;
@@ -276,6 +277,22 @@
       letter-spacing:0;
       margin-top:4px;
     }
+
+    /* FIX: элементы для "перечёркнутый красной линией" + красный ноль */
+    .price .was{
+      display:inline-block;
+      text-decoration: line-through;
+      text-decoration-color: var(--danger);
+      text-decoration-thickness: 3px;
+      color: rgba(234,240,255,.78);
+    }
+    .price .now{
+      display:inline-block;
+      margin-left:10px;
+      color: var(--danger);
+      font-weight: 1000;
+    }
+
     ul.features{
       margin: 10px 0 0;
       padding: 0;
@@ -521,16 +538,24 @@
       </div>
 
       <div class="pricing">
+        <!-- FIXED: Start plan price (strikethrough red + red zero) + first feature -->
         <div class="plan">
           <h3>Start</h3>
-          <div class="price">1 499 ₽ <span>за 1 урок / тест-старт</span></div>
+
+          <div class="price">
+            <span class="was">1 499 ₽</span>
+            <span class="now">0 ₽</span>
+            <span>первый урок бесплатно</span>
+          </div>
+
           <ul class="features">
-            <li><span class="tick">✓</span><span>Определение уровня знаний и понятный план изучения</span></li>
+            <li><span class="tick">✓</span><span>Первый урок и диагностика бесплатно</span></li>
             <li><span class="tick">✓</span><span>Первый урок с практикой под твою цель</span></li>
             <li><span class="tick">✓</span><span>Подходит, чтобы быстро понять формат обучения</span></li>
           </ul>
+
           <div class="actions">
-            <a class="cta" href="https://t.me/myproj22bot?start=tariff_start" target="_blank" rel="noopener">Уточнить Start</a>
+            <a class="cta" href="https://t.me/myproj22bot?start=tariff_start" target="_blank" rel="noopener">Забрать бесплатный урок</a>
           </div>
         </div>
 
