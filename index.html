@@ -179,17 +179,19 @@
       transform: scale(1.06);
     }
     .hook > *{ position:relative; }
+
     .hook-grid{
       display:grid;
       grid-template-columns: 1.25fr .75fr;
       gap:14px;
       align-items:stretch;
     }
+
+    /* BADGE с градиентом как у guarantee (зелёный оттенок) */
     .hook-badge{
       display:inline-flex;
       align-items:center;
       gap:10px;
-      background: rgba(255,255,255,.92);
       color:#0b1020;
       padding:8px 12px;
       border-radius: 999px;
@@ -197,12 +199,16 @@
       font-weight:500;
       width: fit-content;
       margin-bottom: 12px;
+      background: linear-gradient(135deg, rgba(57,217,138,.92) 0%, rgba(41,211,255,.78) 100%);
+      border: 1px solid rgba(57,217,138,.35);
+      box-shadow: 0 14px 34px rgba(57,217,138,.16);
     }
     .hook-badge .dot{
       width:10px; height:10px; border-radius:99px;
-      background: linear-gradient(135deg, var(--ok) 0%, var(--brand2) 100%);
+      background: rgba(255,255,255,.88);
       flex: 0 0 auto;
     }
+
     .hook h1{
       margin:12px 0 0;
       font-size: clamp(28px, 4.2vw, 52px);
@@ -216,21 +222,9 @@
       color: rgba(234,240,255,.84);
       max-width: 75ch;
     }
-    .hook-points{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:14px;
-    }
-    .hook-pill{
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(16,26,52,.50);
-      padding:10px 12px;
-      border-radius: 999px;
-      color: rgba(234,240,255,.92);
-      font-size: 13px;
-      font-weight:500;
-    }
+
+    /* убрали pills: hook-points/hook-pill оставлены в css, но не используются */
+
     .hook-actions{
       margin-top:16px;
       display:flex;
@@ -485,14 +479,13 @@
       overflow:hidden;
       display:flex;
       flex-direction:column;
-      min-height: 560px;
+      min-height: 520px; /* стало меньше, т.к. убрали нижние блоки */
     }
     .plan.featured{
       border-color: rgba(41,211,255,.30);
       background: rgba(16,26,52,.55);
     }
 
-    /* красивый верх карточки тарифа */
     .plan-head{
       display:flex;
       align-items:flex-start;
@@ -554,15 +547,32 @@
       gap:10px;
       flex-wrap:wrap;
     }
+
+    /* диагональное зачёркивание */
     .price .was{
       display:inline-block;
+      position:relative;
       font-size: 26px;
       font-weight:500;
-      text-decoration: line-through;
-      text-decoration-color: var(--danger);
-      text-decoration-thickness: 3px;
       color: rgba(234,240,255,.80);
+      text-decoration: none; /* отключили стандартное */
+      padding: 0 2px;
     }
+    .price .was:after{
+      content:"";
+      position:absolute;
+      left:-6%;
+      right:-6%;
+      top: 12%;
+      height: 3px;
+      background: var(--danger);
+      transform: rotate(18deg); /* справа-верх -> слева-низ */
+      transform-origin: center;
+      border-radius: 2px;
+      opacity: .95;
+      pointer-events:none;
+    }
+
     .price .now{
       display:inline-block;
       font-size: 26px;
@@ -604,34 +614,6 @@
       color: var(--ok);
       font-size:12px;
       margin-top:1px;
-    }
-
-    .bonus{
-      margin-top:10px;
-      border:1px solid rgba(255,207,92,.26);
-      background: rgba(255,207,92,.08);
-      border-radius: 14px;
-      padding:10px;
-      color: rgba(234,240,255,.95);
-      font-size: 13px;
-      line-height: 1.45;
-      min-height: 92px;
-    }
-    .bonus .k{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-family: var(--mono);
-      font-size:12px;
-      color:#0b1020;
-      background: rgba(255,255,255,.92);
-      padding:6px 10px;
-      border-radius: 999px;
-      margin-bottom:8px;
-    }
-    .bonus .k .b{
-      width:10px; height:10px; border-radius:99px;
-      background: linear-gradient(135deg, var(--warn) 0%, var(--brand2) 100%);
     }
 
     .plan .actions{
@@ -826,9 +808,9 @@
       padding: 12px;
       margin-top: 10px;
       color: rgba(234,240,255,.82);
-      font-size: 14px;
-      line-height: 1.55;
+      line-height: 1.35;
       font-weight:500;
+      font-size: 9px; /* "очень мелкий" */
     }
 
     .sticky-cta{
@@ -868,7 +850,6 @@
       .sticky-cta{ display:block; }
       .topbar .cta{ display:none; }
       .plan{ min-height: auto; }
-      .bonus{ min-height: auto; }
     }
   </style>
 </head>
@@ -911,13 +892,6 @@
               Любой клиент 100% заговорит свободно по окончанию первого месяца при выполнении индивидуального плана.
               Методика выстроена так, чтобы начать говорить с первых занятий и закреплять навыки ежедневно.
             </p>
-
-            <div class="hook-points" aria-label="Ключевые преимущества">
-              <div class="hook-pill">Бесплатный пробный урок + диагностика</div>
-              <div class="hook-pill">Гарантия результата за 30 дней</div>
-              <div class="hook-pill">Авторская методика «с нуля»</div>
-              <div class="hook-pill">Контроль качества и прогресса</div>
-            </div>
 
             <div class="hook-actions">
               <a class="cta" href="https://t.me/myproj22bot?start=tariff_start" target="_blank" rel="noopener">Записаться на бесплатный урок</a>
@@ -1021,7 +995,7 @@
     <div class="wrap">
       <div class="section-title">
         <h2>Кому подходит</h2>
-        <div class="hint">Включая старт с полного нуля</div>
+        <div class="hint">Даже если с полного нуля</div>
       </div>
 
       <div class="fits-grid">
@@ -1099,11 +1073,6 @@
             <li><span class="tick">✓</span><span>Рекомендация маршрута под цель и график</span></li>
           </ul>
 
-          <div class="bonus">
-            <div class="k"><span class="b"></span>Результат</div>
-            Уже на первом уроке: первые фразы, диалоговые шаблоны и понятный план действий.
-          </div>
-
           <div class="actions">
             <a class="cta" href="https://t.me/myproj22bot?start=tariff_start" target="_blank" rel="noopener">Записаться на бесплатный урок</a>
           </div>
@@ -1134,11 +1103,6 @@
             <li><span class="tick">✓</span><span>Контроль качества обучения и прогресса</span></li>
           </ul>
 
-          <div class="bonus">
-            <div class="k"><span class="b"></span>Гарантия</div>
-            Свободная речь за 30 дней при выполнении согласованного плана.
-          </div>
-
           <div class="actions">
             <a class="cta" href="https://t.me/myproj22bot?start=tariff_smart" target="_blank" rel="noopener">Выбрать Smart</a>
           </div>
@@ -1168,11 +1132,6 @@
             <li><span class="tick">✓</span><span>Интенсивные сценарии и разбор ошибок</span></li>
             <li><span class="tick">✓</span><span>Плотный контроль и ускорение прогресса</span></li>
           </ul>
-
-          <div class="bonus">
-            <div class="k"><span class="b"></span>Гарантия</div>
-            Свободная речь за 30 дней при выполнении согласованного плана.
-          </div>
 
           <div class="actions">
             <a class="cta" href="https://t.me/myproj22bot?start=tariff_pro" target="_blank" rel="noopener">Выбрать Pro</a>
