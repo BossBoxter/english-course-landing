@@ -17,10 +17,10 @@
 
   <title>Английский без воды - быстрый старт</title>
 
-  <!-- Open Sans (Regular 400) -->
+  <!-- Overpass (Regular 400) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -37,7 +37,7 @@
       --radius2: 26px;
       --max: 1120px;
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      --sans: "Overpass", system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
     }
     *{ box-sizing:border-box; }
     body{
@@ -61,11 +61,20 @@
       background: rgba(7,10,20,.65);
       border-bottom: 1px solid var(--line);
     }
-    .topbar .wrap{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .topbar .wrap{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:nowrap;
+      min-width:0;
+    }
     .brand{
       display:flex; align-items:center; gap:10px;
       letter-spacing:.2px;
       white-space:nowrap;
+      min-width:0;
+      flex: 1 1 auto;
     }
     .logo{
       width:34px; height:34px;
@@ -83,23 +92,24 @@
       display:flex; gap:14px; align-items:center;
       color:var(--muted);
       font-size:14px;
+      flex: 0 0 auto;
     }
     .nav a{ opacity:.9; }
     .nav a:hover{ opacity:1; color:#fff; }
 
-    /* FIX: кнопка в топбаре на мобильном не должна обрезаться */
+    /* FIX: кнопка в топбаре на мобильном должна помещаться без обрезаний */
     .cta{
       display:inline-flex; align-items:center; justify-content:center;
       padding:12px 16px;
       border-radius: 14px;
       background: linear-gradient(135deg, var(--brand) 0%, var(--brand2) 120%);
       color:#081022;
-      font-weight:400; /* Open Sans Regular */
+      font-weight:400;
       border: 0;
       box-shadow: 0 14px 34px rgba(124,92,255,.22);
       cursor:pointer;
       white-space:nowrap;
-      min-width: max-content;
+      flex: 0 0 auto;
       max-width: 100%;
     }
     .cta.secondary{
@@ -150,27 +160,19 @@
       background: linear-gradient(135deg, var(--ok) 0%, var(--brand2) 100%);
     }
     h1{
-      margin:14px 0 10px;
+      margin:14px 0 0;
       font-size: clamp(28px, 3.6vw, 46px);
       line-height:1.05;
       letter-spacing:-.6px;
       font-weight:400;
     }
+
+    /* FIX: больше расстояние между H1 и lead */
     .lead{
-      margin:0 0 18px;
+      margin:18px 0 18px; /* было 0 0 18px */
       font-size: 16.5px;
       color: var(--muted);
       max-width: 64ch;
-      font-weight:400;
-    }
-    .pill-row{ display:flex; flex-wrap:wrap; gap:10px; margin: 14px 0 18px; }
-    .pill{
-      border:1px solid var(--line);
-      background: rgba(16,26,52,.55);
-      padding:10px 12px;
-      border-radius: 999px;
-      color:#dbe4ff;
-      font-size:13px;
       font-weight:400;
     }
 
@@ -395,12 +397,7 @@
       font-size: 12px;
     }
 
-    /* FIX: делаем низ футера двухстрочным:
-       1) legal на всю ширину
-       2) навигация ниже (как просили) */
-    .footer-legal{
-      width:100%;
-    }
+    .footer-legal{ width:100%; }
     .footer-nav{
       margin-top:12px;
       border-top: 1px solid var(--line);
@@ -462,13 +459,17 @@
       .sticky-cta{ display:block; }
     }
 
-    /* FIX: на очень узких экранах уменьшаем padding у кнопки в топбаре,
-       чтобы слово Telegram не обрезалось */
+    /* FIX: на очень узких экранах делаем кнопку компактнее, чтобы ничего не обрезалось */
     @media (max-width: 420px){
       .topbar .wrap{ gap:10px; }
       .cta{ padding:10px 12px; font-size:13px; }
       .brand{ gap:8px; }
       .wrap{ padding:18px 14px; }
+    }
+
+    /* EXTRA FIX: если экран совсем узкий, позволяем кнопке переносить на 2 строки без обрезаний */
+    @media (max-width: 360px){
+      .cta{ white-space:normal; text-align:center; line-height:1.1; padding:10px 10px; }
     }
   </style>
 </head>
@@ -508,14 +509,6 @@
             Начни с диагностики в Telegram - за пару минут поймём, что тебе нужно.
           </p>
 
-          <div class="pill-row">
-            <div class="pill">30–45 минут в день</div>
-            <div class="pill">Практика под твои задачи</div>
-            <div class="pill">План без «воды»</div>
-            <div class="pill">Помощь по вопросам</div>
-          </div>
-
-          <!-- FIX: убрали кнопки "Пройти диагностику" и "Посмотреть тарифы" из блока "Старт за 7 дней" -->
           <div class="small">
             Всё оформление и уточнение деталей - в Telegram-боте <span class="mono">@myproj22bot</span>.
           </div>
