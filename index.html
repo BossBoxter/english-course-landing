@@ -17,7 +17,6 @@
 
   <title>Английский без воды - быстрый старт</title>
 
-  <!-- Overpass (Regular 400) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400&display=swap" rel="stylesheet">
@@ -61,14 +60,16 @@
       background: rgba(7,10,20,.65);
       border-bottom: 1px solid var(--line);
     }
+
+    /* FIX: на мобильном бренд и кнопка не должны наезжать — переносим в 2 строки */
     .topbar .wrap{
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:12px;
-      flex-wrap:nowrap;
-      min-width:0;
+      flex-wrap:wrap; /* было nowrap */
     }
+
     .brand{
       display:flex; align-items:center; gap:10px;
       letter-spacing:.2px;
@@ -97,7 +98,6 @@
     .nav a{ opacity:.9; }
     .nav a:hover{ opacity:1; color:#fff; }
 
-    /* FIX: кнопка в топбаре на мобильном должна помещаться без обрезаний */
     .cta{
       display:inline-flex; align-items:center; justify-content:center;
       padding:12px 16px;
@@ -167,9 +167,8 @@
       font-weight:400;
     }
 
-    /* FIX: больше расстояние между H1 и lead */
     .lead{
-      margin:18px 0 18px; /* было 0 0 18px */
+      margin:18px 0 18px;
       font-size: 16.5px;
       color: var(--muted);
       max-width: 64ch;
@@ -288,7 +287,6 @@
       letter-spacing:0;
       margin-top:4px;
     }
-
     .price .row{
       display:flex;
       align-items:baseline;
@@ -346,7 +344,6 @@
     .plan .actions{ margin-top:auto; padding-top:14px; display:flex; gap:10px; flex-wrap:wrap; }
     .plan .actions .cta{ width:100%; border-radius: 16px; padding:13px 16px; }
 
-    /* FAQ (accordion via <details>) */
     .faq-card{
       border:1px solid var(--line);
       background: rgba(16,26,52,.55);
@@ -459,15 +456,13 @@
       .sticky-cta{ display:block; }
     }
 
-    /* FIX: на очень узких экранах делаем кнопку компактнее, чтобы ничего не обрезалось */
-    @media (max-width: 420px){
-      .topbar .wrap{ gap:10px; }
-      .cta{ padding:10px 12px; font-size:13px; }
-      .brand{ gap:8px; }
-      .wrap{ padding:18px 14px; }
+    /* FIX: на мобильном бренд занимает всю строку, кнопка уходит на следующую */
+    @media (max-width: 520px){
+      .brand{ flex: 1 1 100%; }
+      .cta{ width:100%; }
+      .topbar .wrap{ align-items:flex-start; }
     }
 
-    /* EXTRA FIX: если экран совсем узкий, позволяем кнопке переносить на 2 строки без обрезаний */
     @media (max-width: 360px){
       .cta{ white-space:normal; text-align:center; line-height:1.1; padding:10px 10px; }
     }
@@ -641,32 +636,26 @@
           <summary class="faq-q">Сколько времени нужно в день? <span class="chev">+</span></summary>
           <div class="faq-a">Обычно 30-40 минут на урок + 10–15 минут на практику. Но мы подстраиваемся под твой график: лучше стабильные короткие шаги, чем редкие «марафоны».</div>
         </details>
-
         <details class="faq-item">
           <summary class="faq-q">Если я совсем с нуля - ок? <span class="chev">+</span></summary>
           <div class="faq-a">Да. Начинаем с понятной базы и сразу переводим в практику: простые фразы, короткие диалоги, ситуации из жизни. Без перегруза терминами.</div>
         </details>
-
         <details class="faq-item">
           <summary class="faq-q">Как проходят уроки: видео, созвоны, текст? <span class="chev">+</span></summary>
           <div class="faq-a">Формат подбирается под цель и занятость. В основе: короткие уроки + практические задания. Детали и удобное расписание согласуем в Telegram после диагностики.</div>
         </details>
-
         <details class="faq-item">
           <summary class="faq-q">Можно ли учиться, если график плавающий? <span class="chev">+</span></summary>
           <div class="faq-a">Да. Мы собираем план так, чтобы ты мог двигаться даже с плавающим графиком: гибкие «окна» для практики и понятные короткие задачи.</div>
         </details>
-
         <details class="faq-item">
           <summary class="faq-q">Как быстро будет результат? <span class="chev">+</span></summary>
           <div class="faq-a">Скорость зависит от стартового уровня и регулярности. После диагностики в Telegram фиксируем цель и сроки, и ты получаешь план, который ведёт к результату без лишней теории.</div>
         </details>
-
         <details class="faq-item">
           <summary class="faq-q">Как начать с бесплатного урока (0 ₽)? <span class="chev">+</span></summary>
           <div class="faq-a">Нажми «Забрать бесплатный урок». Бот уточнит пару деталей и зафиксирует запись. Акция действует при записи в ближайшие 24 часа.</div>
         </details>
-
         <details class="faq-item">
           <summary class="faq-q">Как оплатить и что дальше? <span class="chev">+</span></summary>
           <div class="faq-a">Нажми «Написать в Telegram» или «Уточнить тариф». Бот задаст пару вопросов и подскажет следующий шаг по оплате и записи.</div>
@@ -675,26 +664,10 @@
     </div>
   </section>
 
-  <section>
-    <div class="wrap">
-      <div class="hero-card" style="padding:18px;">
-        <div class="section-title" style="margin:0 0 10px;">
-          <h2 style="margin:0;">Хочешь понять свой уровень и формат?</h2>
-          <div class="hint">2–3 минуты в Telegram</div>
-        </div>
-        <div class="hero-actions" style="display:flex; gap:10px; flex-wrap:wrap; margin-top: 6px;">
-          <a class="cta" href="https://t.me/myproj22bot?start=site_bottom" target="_blank" rel="noopener">Открыть Telegram и начать</a>
-          <a class="cta secondary" href="#pricing">Сначала тарифы</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <footer>
     <div class="wrap">
       <div class="footer-legal">
         <div class="mono">Запись и консультация: @myproj22bot</div>
-
         <div class="legal">
           Внимание: информация на этой странице носит справочно-информационный характер и не является публичной офертой в смысле статьи 437 ГК РФ.
           Указанные цены, состав услуг, формат занятий, условия оплаты и иные параметры могут отличаться в зависимости от выбранного тарифа,
