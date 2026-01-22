@@ -100,7 +100,6 @@
       white-space:nowrap;
     }
 
-    /* ЛОГО БОЛЬШЕ */
     .logo{
       width:44px; height:44px;
       border-radius:14px;
@@ -433,6 +432,7 @@
       overflow:hidden;
       min-height: 140px;
     }
+
     .fit:before{
       content:"";
       position:absolute; inset:-2px;
@@ -844,36 +844,18 @@
     .sticky-cta .bar .t2{ color:var(--muted); font-weight:500; font-size:14px; }
     .sticky-cta .bar .cta{ padding:12px 14px; border-radius: 14px; height: 48px; }
 
-    /* МОБИЛЬНАЯ ПЛОТНОСТЬ + ВЕРХНЯЯ ПЛАШКА “ВО ВЕСЬ ВЕРХ” */
+    /* МОБИЛЬНЫЙ “ПК-ЛУК”, НО ПЛОТНО И МЕЛЬЧЕ */
     @media (max-width: 920px){
-      .wrap{ padding:14px 12px; }              /* меньше внешние поля */
-      header.hero{ padding-top: 10px; padding-bottom: 10px; }
+      /* глобально уменьшаем типографику */
+      body{ line-height:1.38; }
+      .wrap{ padding:12px 10px; }                 /* меньше поля */
+      header.hero{ padding-top: 8px; padding-bottom: 8px; }
+      section{ padding:10px 0; }                  /* секции ближе */
 
-      section{ padding:12px 0; }              /* секции ближе */
-      .hook{ margin: 6px 0 12px; padding:14px; }
-      .hero-card{ padding:16px; }
-      .side-card{ padding:14px; gap:10px; }
-      .promo{ padding:12px; }
-      .card{ padding:14px; }
-      .fit{ padding:14px; min-height: 0; }
-      .plan{ padding:12px; }
-      .plan-head{ padding:10px; margin-bottom:8px; }
-      .roadmap{ padding:14px; }
-      .step-long{ padding:14px; }
-      .faq-card{ padding: 6px 12px; }
-      .grid3{ gap:10px; }
-      .fits-grid{ gap:10px; }
-      .pricing{ gap:10px; }
-      .steps-vertical{ gap:10px; }
-
-      .hook-grid{ grid-template-columns: 1fr; gap:10px; }
-      .hero-grid{ grid-template-columns: 1fr; gap:10px; }
-
+      /* верхняя плашка — только название во всю ширину */
       .nav{ display:none; }
       .sticky-cta{ display:block; }
       .topbar .cta{ display:none; }
-
-      /* верхняя плашка: только название во весь верх */
       .topbar .wrap{
         justify-content:center;
         padding-top: 10px;
@@ -884,13 +866,88 @@
         justify-content:center;
         gap:0;
       }
-      .logo{ display:none; }                   /* чтобы заголовок был ровно по центру */
+      .logo{ display:none; }
       .brand-title{
-        font-size: 18px;
+        font-size: 17px;
         letter-spacing: .2px;
         text-align:center;
         width:100%;
       }
+
+      /* плотность блоков */
+      .hook{ margin: 6px 0 10px; padding:12px; border-radius: 22px; }
+      .hook-grid{ grid-template-columns: 1fr; gap:10px; }
+      .hero-grid{ grid-template-columns: 1fr; gap:10px; }
+
+      .hero-card{ padding:14px; border-radius: 22px; }
+      .side-card{ padding:12px; gap:8px; border-radius: 22px; }
+      .promo{ padding:10px; border-radius: 14px; }
+
+      .grid3, .fits-grid, .pricing{ grid-template-columns: 1fr; gap:10px; }
+      .card{ padding:12px; }
+      .fit{ padding:12px; min-height: 0; }
+
+      .plan{ padding:12px; min-height:auto; }
+      .plan-head{ padding:10px; margin-bottom:8px; border-radius: 16px; }
+
+      .roadmap{ padding:12px; border-radius: 22px; }
+      .step-long{ padding:12px; gap:12px; border-radius: 16px; }
+      .steps-vertical{ gap:10px; }
+
+      .faq-card{ padding: 6px 12px; }
+      details.faq-item{ padding: 10px 0; }
+
+      /* уменьшаем шрифты локально */
+      .small{ font-size: 12.5px; margin-top:8px; }
+      .kicker{ font-size:12px; padding:6px 10px; }
+      .hook-badge{ font-size:12px; padding:7px 10px; margin-bottom:10px; }
+      .hook h1{ font-size: 26px; letter-spacing:-.6px; }
+      h1{ font-size: 24px; }
+      .lead{ font-size: 14px; margin:12px 0 12px; }
+      .hook .sub{ font-size: 14px; }
+
+      .section-title{ margin: 0 0 10px; }
+      .section-title h2{ font-size: 18px; }
+      .section-title .hint{ font-size: 12.5px; }
+
+      .card h3, .fit h3{ font-size: 14px; }
+      .card p, .fit p{ font-size: 13px; }
+
+      .promo .tag{ font-size: 11px; padding:5px 8px; }
+      .promo h3{ font-size:14px; margin:8px 0 6px; }
+      .promo p{ font-size: 13px; }
+
+      .plan-name{ font-size: 16px; }
+      .plan-sub{ font-size: 12px; }
+      .plan-chip{ font-size: 11px; padding:5px 8px; }
+      .price{ font-size: 24px; min-height: 76px; gap:5px; }
+      .price .was, .price .now{ font-size: 24px; }
+      .price span{ font-size: 12px; }
+      .price .note{ font-size: 12px; min-height: 14px; }
+
+      ul.features{ gap:7px; }
+      ul.features li span:last-child{ font-size: 13px; }
+      .tick{ width:16px; height:16px; border-radius:5px; font-size:11px; }
+
+      .step-long .n{ width:30px; height:30px; border-radius: 12px; }
+      .step-long h3{ font-size: 14px; }
+      .step-long p{ font-size: 13px; }
+
+      .guarantee{ padding:10px; border-radius: 14px; }
+      .guarantee .t, .guarantee .t span{ font-size: 13px; }
+      .g-badge{ width:28px; height:28px; border-radius: 10px; }
+
+      summary.faq-q{ font-size: 14px; padding: 4px 0; }
+      .faq-a{ font-size: 13px; }
+
+      /* кнопки компактнее, но одинаковые */
+      .cta{ height: 44px; padding:10px 14px; border-radius: 14px; font-size: 14px; }
+      .hook-actions{ gap:8px; padding-top:12px; }
+      .plan .actions{ gap:8px; padding-top:10px; }
+      .plan .actions .cta{ height: 44px; }
+      .sticky-cta{ left:10px; right:10px; bottom:10px; }
+      .sticky-cta .bar{ padding:10px; border-radius: 16px; }
+      .sticky-cta .bar .t2{ font-size: 12.5px; }
     }
   </style>
 </head>
