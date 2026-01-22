@@ -262,12 +262,14 @@
       font-size:12px;
     }
     .plan h3{ margin:0; font-size:16px; letter-spacing:-.2px; }
+
+    /* базовый размер для любых цен */
     .price{
       margin:8px 0 10px;
-      font-size: 26px;
       font-weight: 1000;
       letter-spacing:-.8px;
       line-height:1.1;
+      font-size: 26px;
     }
     .price span{
       display:block;
@@ -278,19 +280,34 @@
       margin-top:4px;
     }
 
-    /* FIX: элементы для "перечёркнутый красной линией" + красный ноль */
+    /* FIX: делаем перечеркнутую цену и 0 ₽ того же размера, что и 50 000 / 100 000 */
+    .price .row{
+      display:flex;
+      align-items:baseline;
+      gap:10px;
+      flex-wrap:wrap;
+    }
     .price .was{
       display:inline-block;
+      font-size: 26px;
+      font-weight: 1000;
       text-decoration: line-through;
       text-decoration-color: var(--danger);
       text-decoration-thickness: 3px;
-      color: rgba(234,240,255,.78);
+      color: rgba(234,240,255,.80);
     }
     .price .now{
       display:inline-block;
-      margin-left:10px;
-      color: var(--danger);
+      font-size: 26px;
       font-weight: 1000;
+      color: var(--danger);
+    }
+    .price .note{
+      margin-top:6px;
+      font-size:12px;
+      color: var(--muted);
+      font-weight:800;
+      letter-spacing:0;
     }
 
     ul.features{
@@ -481,10 +498,10 @@
 
         <div class="side-card">
           <div class="promo">
-            <span class="tag">СТАРТ</span>
-            <h3>Первый урок от 1 499 ₽</h3>
-            <p>Быстрый вход: понять уровень, получить понятный план и начать говорить без ступора.</p>
-            <div class="small">Детали формата - в Telegram при записи.</div>
+            <span class="tag">АКЦИЯ 24 ЧАСА</span>
+            <h3>Первый урок бесплатно (0 ₽)</h3>
+            <p>Если записаться в ближайшие 24 часа - первый урок и диагностика бесплатно. Дальше решаешь, продолжать или нет.</p>
+            <div class="small">Запись - в Telegram. Акция действует ограниченное время.</div>
           </div>
 
           <div class="promo">
@@ -538,20 +555,21 @@
       </div>
 
       <div class="pricing">
-        <!-- FIXED: Start plan price (strikethrough red + red zero) + first feature -->
         <div class="plan">
           <h3>Start</h3>
 
           <div class="price">
-            <span class="was">1 499 ₽</span>
-            <span class="now">0 ₽</span>
-            <span>первый урок бесплатно</span>
+            <div class="row">
+              <span class="was">1 499 ₽</span>
+              <span class="now">0 ₽</span>
+            </div>
+            <div class="note">первый урок бесплатно при записи в ближайшие 24 часа</div>
           </div>
 
           <ul class="features">
-            <li><span class="tick">✓</span><span>Первый урок и диагностика бесплатно</span></li>
-            <li><span class="tick">✓</span><span>Первый урок с практикой под твою цель</span></li>
-            <li><span class="tick">✓</span><span>Подходит, чтобы быстро понять формат обучения</span></li>
+            <li><span class="tick">✓</span><span>Первый урок и диагностика бесплатно (акция 24 часа)</span></li>
+            <li><span class="tick">✓</span><span>Практика под твою цель + понятные следующие шаги</span></li>
+            <li><span class="tick">✓</span><span>Если понравится - продолжим на Smart или Pro</span></li>
           </ul>
 
           <div class="actions">
@@ -588,7 +606,7 @@
       </div>
 
       <div class="small" style="margin-top:10px;">
-        Итоговое наполнение и расписание подтверждаются при записи в Telegram после диагностики.
+        Итоговое наполнение и расписание подтверждаются при записи в Telegram после диагностики. По акции: первый урок 0 ₽ при записи в ближайшие 24 часа.
       </div>
     </div>
   </section>
@@ -627,13 +645,8 @@
         </details>
 
         <details class="faq-item">
-          <summary class="faq-q">Можно ли начать с одного урока, без подписок? <span class="chev">+</span></summary>
-          <div class="faq-a">Да. Для этого и есть Start: один урок как тест-старт, чтобы понять формат и свой уровень, а дальше уже решать.</div>
-        </details>
-
-        <details class="faq-item">
-          <summary class="faq-q">Что если я «забиваю» и пропадаю? <span class="chev">+</span></summary>
-          <div class="faq-a">Такое бывает. Поэтому мы строим план не «идеальный», а реальный: короткие шаги, понятные задачи и темп под твою жизнь. В Telegram подберём режим, который ты выдержишь.</div>
+          <summary class="faq-q">Как начать с бесплатного урока (0 ₽)? <span class="chev">+</span></summary>
+          <div class="faq-a">Нажми «Забрать бесплатный урок». Бот уточнит пару деталей и зафиксирует запись. Акция действует при записи в ближайшие 24 часа.</div>
         </details>
 
         <details class="faq-item">
@@ -670,6 +683,7 @@
             Указанные цены, состав услуг, формат занятий, условия оплаты и иные параметры могут отличаться в зависимости от выбранного тарифа,
             стартового уровня, целей и доступного расписания. Окончательные условия, объём услуг и стоимость согласуются и подтверждаются
             при записи через Telegram-бота и/или в переписке после прохождения диагностики. Оплата производится только после подтверждения условий.
+            Условие акции «первый урок бесплатно (0 ₽)» действует при записи в ближайшие 24 часа и подтверждается при оформлении записи в Telegram.
           </div>
         </div>
 
