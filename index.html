@@ -43,7 +43,7 @@
     body{
       margin:0;
       font-family:var(--sans);
-      font-weight:500; /* единый “средний” вес */
+      font-weight:500;
       color:var(--text);
       background:
         radial-gradient(900px 500px at 15% 15%, rgba(124,92,255,.28), transparent 60%),
@@ -344,6 +344,59 @@
     .plan .actions{ margin-top:auto; padding-top:14px; display:flex; gap:10px; flex-wrap:wrap; }
     .plan .actions .cta{ width:100%; border-radius: 16px; padding:13px 16px; }
 
+    /* Кому подходит (оформление) */
+    .fits-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      align-items:stretch;
+    }
+    .fit{
+      border:1px solid var(--line);
+      background: rgba(16,26,52,.55);
+      border-radius: var(--radius);
+      padding:16px;
+      position:relative;
+      overflow:hidden;
+    }
+    .fit:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(260px 180px at 15% 20%, rgba(124,92,255,.16), transparent 70%),
+        radial-gradient(260px 180px at 85% 35%, rgba(41,211,255,.12), transparent 70%);
+      pointer-events:none;
+      opacity:.85;
+    }
+    .fit > *{ position:relative; }
+    .fit .fit-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-family: var(--mono);
+      font-size:12px;
+      color:#0b1020;
+      background: rgba(255,255,255,.92);
+      padding:6px 10px;
+      border-radius: 999px;
+      margin-bottom:10px;
+    }
+    .fit .fit-tag .b{
+      width:10px; height:10px; border-radius:99px;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand2) 100%);
+    }
+    .fit h3{
+      margin:0 0 6px;
+      font-size:15px;
+      letter-spacing:-.2px;
+      font-weight:500;
+    }
+    .fit p{
+      margin:0;
+      color: var(--muted);
+      font-weight:500;
+    }
+
     .faq-card{
       border:1px solid var(--line);
       background: rgba(16,26,52,.55);
@@ -453,10 +506,9 @@
       .grid3{ grid-template-columns: 1fr; }
       .grid2{ grid-template-columns: 1fr; }
       .pricing{ grid-template-columns: 1fr; }
+      .fits-grid{ grid-template-columns: 1fr; }
       .nav{ display:none; }
       .sticky-cta{ display:block; }
-
-      /* FIX: на телефоне скрываем верхнюю кнопку “Написать в Telegram” */
       .topbar .cta{ display:none; }
     }
   </style>
@@ -475,6 +527,7 @@
       <div class="nav" aria-label="Навигация">
         <a href="#how">Как это работает</a>
         <a href="#pricing">Тарифы</a>
+        <a href="#fits">Кому подходит</a>
         <a href="#faq">Вопросы</a>
       </div>
 
@@ -617,6 +670,58 @@
     </div>
   </section>
 
+  <!-- НОВЫЙ БЛОК: Кому подходит -->
+  <section id="fits">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Кому подходит</h2>
+        <div class="hint">Самые частые сценарии</div>
+      </div>
+
+      <div class="fits-grid">
+        <div class="fit">
+          <div class="fit-tag"><span class="b"></span>Школа</div>
+          <h3>Ученикам 1–11 классов</h3>
+          <p>Подтянуть базу, домашку, тексты и «разговорку», чтобы уверенно закрывать темы в школе.</p>
+        </div>
+
+        <div class="fit">
+          <div class="fit-tag"><span class="b"></span>ВУЗ</div>
+          <h3>Студентам 1–4 курсов</h3>
+          <p>Английский для учёбы: чтение материалов, термины, выступления, проекты и практика.</p>
+        </div>
+
+        <div class="fit">
+          <div class="fit-tag"><span class="b"></span>Работа</div>
+          <h3>Тем, кому нужен английский для работы</h3>
+          <p>Переписка, созвоны, встречи, интервью. Упор на понятность и уверенную речь.</p>
+        </div>
+
+        <div class="fit">
+          <div class="fit-tag"><span class="b"></span>Переезд</div>
+          <h3>Тем, кто готовится к переезду</h3>
+          <p>Бытовые ситуации, сервисы, документы, коммуникация. Практика под реальные задачи.</p>
+        </div>
+
+        <div class="fit">
+          <div class="fit-tag"><span class="b"></span>Путешествия</div>
+          <h3>Тем, кто хочет свободнее путешествовать</h3>
+          <p>Аэропорт, отель, кафе, экскурсии, форс-мажоры — чтобы говорить без стресса.</p>
+        </div>
+
+        <div class="fit">
+          <div class="fit-tag"><span class="b"></span>С нуля</div>
+          <h3>Тем, кто начинает с нуля или «забыл всё»</h3>
+          <p>Понятный старт без перегруза: короткие уроки, регулярная практика и закрепление.</p>
+        </div>
+      </div>
+
+      <div class="small" style="margin-top:10px;">
+        Если твой сценарий другой — всё равно ок: в Telegram-боте уточним цель и подберём формат.
+      </div>
+    </div>
+  </section>
+
   <section id="faq">
     <div class="wrap">
       <div class="section-title">
@@ -680,6 +785,7 @@
       <div class="footer-nav" aria-label="Навигация внизу">
         <a href="#how">Как это работает</a>
         <a href="#pricing">Тарифы</a>
+        <a href="#fits">Кому подходит</a>
         <a href="#faq">Вопросы</a>
       </div>
     </div>
