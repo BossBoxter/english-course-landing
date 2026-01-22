@@ -11,7 +11,7 @@
   <meta name="description" content="Английский с нуля до свободной речи за 30 дней. Авторская методика, контроль качества, гарантия результата. Всё оформление — в Telegram." />
 
   <meta property="og:title" content="Свободный английский за 30 дней — с нуля" />
-  <meta property="og:description" content="Любой клиент заговорит свободно за 1 месяц при выполнении плана. Пробный урок бесплатно. Скидки после диагностики." />
+  <meta property="og:description" content="Свободная разговорная речь за 1 месяц при выполнении плана. Пробный урок бесплатно. Всё оформление — в Telegram." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="favicon.png" />
 
@@ -118,6 +118,8 @@
       white-space:nowrap;
       flex: 0 0 auto;
       max-width: 100%;
+      height: 48px; /* унификация высоты кнопок */
+      line-height: 1;
     }
     .cta.secondary{
       background: transparent;
@@ -170,6 +172,7 @@
       font-size:13px;
       font-weight:500;
       width: fit-content;
+      margin-bottom: 12px; /* больше воздуха под бейджем */
     }
     .hook-badge .dot{
       width:10px; height:10px; border-radius:99px;
@@ -236,6 +239,7 @@
       display:flex;
       flex-direction:column;
       gap:10px;
+      margin-top:16px; /* больше расстояние от "С чего начать" до кнопок */
     }
     .hook-link{
       display:flex;
@@ -474,13 +478,18 @@
     }
     .plan h3{ margin:0; font-size:16px; letter-spacing:-.2px; font-weight:500; }
 
+    /* выравнивание цен/текста по высоте */
     .price{
       margin:6px 0 8px;
       letter-spacing:-.8px;
       line-height:1.1;
       font-size: 26px;
       font-weight:500;
-      min-height: 58px;
+      min-height: 86px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      gap:6px;
     }
     .price span{
       display:block;
@@ -488,7 +497,7 @@
       color: var(--muted);
       font-weight:500;
       letter-spacing:0;
-      margin-top:4px;
+      margin-top:0;
     }
     .price .row{
       display:flex;
@@ -512,11 +521,12 @@
       color: var(--danger);
     }
     .price .note{
-      margin-top:6px;
+      margin-top:0;
       font-size:13px;
       color: var(--muted);
       font-weight:500;
       letter-spacing:0;
+      min-height: 18px; /* фиксируем строку под заметку */
     }
 
     ul.features{
@@ -528,7 +538,8 @@
       gap:8px;
       color: var(--muted);
       font-weight:500;
-      min-height: 170px;
+      flex: 1 1 auto; /* растягивает фичи, чтобы кнопки встали на один уровень */
+      min-height: 0;
     }
     ul.features li{
       display:flex; gap:10px; align-items:flex-start;
@@ -555,7 +566,7 @@
       color: rgba(234,240,255,.95);
       font-size: 13px;
       line-height: 1.45;
-      min-height: 92px;
+      min-height: 92px; /* унификация блоков бонуса */
     }
     .bonus .k{
       display:inline-flex;
@@ -575,16 +586,22 @@
     }
 
     .plan .actions{
-      margin-top: 10px;
-      padding-top: 10px;
+      margin-top: 12px;
+      padding-top: 12px;
       display:flex;
       gap:10px;
       flex-wrap:wrap;
+      margin-top: auto; /* кнопки всегда внизу карточек */
     }
     .plan .actions .cta{
       width:100%;
       border-radius: 16px;
       padding:12px 14px;
+      height: 48px; /* одинаковая высота кнопок внутри карточек */
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      white-space:nowrap;
     }
 
     /* Roadmap */
@@ -789,7 +806,7 @@
     }
     .sticky-cta .bar .t1{ letter-spacing:-.2px; font-weight:500; }
     .sticky-cta .bar .t2{ color:var(--muted); font-weight:500; font-size:14px; }
-    .sticky-cta .bar .cta{ padding:12px 14px; border-radius: 14px; }
+    .sticky-cta .bar .cta{ padding:12px 14px; border-radius: 14px; height: 48px; }
 
     @media (max-width: 920px){
       header.hero{ padding-top: 12px; }
@@ -802,7 +819,6 @@
       .sticky-cta{ display:block; }
       .topbar .cta{ display:none; }
       .plan{ min-height: auto; }
-      ul.features{ min-height: auto; }
       .bonus{ min-height: auto; }
     }
   </style>
@@ -856,7 +872,7 @@
 
             <div class="hook-actions">
               <a class="cta" href="https://t.me/myproj22bot?start=tariff_start" target="_blank" rel="noopener">Записаться на бесплатный урок</a>
-              <a class="cta secondary" href="#pricing">Посмотреть скидки</a>
+              <a class="cta secondary" href="#pricing">Тарифы и скидки</a>
             </div>
 
             <div class="small">
@@ -874,10 +890,11 @@
                 <a class="hook-link" href="#faq"><span>Ответы на вопросы</span><span class="r">→</span></a>
               </div>
             </div>
+
             <div class="promo" style="margin:0;">
-              <span class="tag">СКИДКА 24 ЧАСА</span>
-              <h3 style="margin-top:10px;">-20% после пробного урока</h3>
-              <p>Если согласовать обучение в течение суток после диагностики — действует скидка 20% на первый месяц (подтверждается в Telegram).</p>
+              <span class="tag">ГАРАНТИЯ</span>
+              <h3 style="margin-top:10px;">Результат за 30 дней</h3>
+              <p>Старт с нуля, ежедневная практика и контроль качества. Выстроенный маршрут — чтобы говорить уверенно.</p>
             </div>
           </aside>
         </div>
@@ -903,8 +920,8 @@
           <div class="promo">
             <span class="tag">БЕСПЛАТНЫЙ СТАРТ</span>
             <h3>Пробный урок + диагностика: 0 ₽</h3>
-            <p>Определяем старт с нуля, ставим цель и выдаём план на 30 дней. Сразу на уроке — первые фразы и разговорная практика.</p>
-            <div class="small">Всё оформление — в Telegram. Скидки доступны после диагностики.</div>
+            <p>Определяем старт, ставим цель и выдаём план на 30 дней. Сразу на уроке — первые фразы и разговорная практика.</p>
+            <div class="small">Всё оформление — в Telegram.</div>
           </div>
 
           <div class="promo">
@@ -1006,7 +1023,7 @@
     <div class="wrap">
       <div class="section-title">
         <h2>Тарифы и скидки</h2>
-        <div class="hint">Скидки действуют 24 часа после диагностики</div>
+        <div class="hint">Выбери формат</div>
       </div>
 
       <div class="pricing">
@@ -1023,14 +1040,14 @@
           </div>
 
           <ul class="features">
-            <li><span class="tick">✓</span><span>Старт с нуля: первые фразы, понимание базовых конструкций</span></li>
+            <li><span class="tick">✓</span><span>Старт с нуля: первые фразы и базовые конструкции</span></li>
             <li><span class="tick">✓</span><span>Чёткая цель и план на 30 дней</span></li>
-            <li><span class="tick">✓</span><span>Рекомендация тарифа под цель, сроки и график</span></li>
+            <li><span class="tick">✓</span><span>Рекомендация маршрута под цель и график</span></li>
           </ul>
 
           <div class="bonus">
-            <div class="k"><span class="b"></span>Скидка</div>
-            -20% на первый месяц при согласовании обучения в течение 24 часов после диагностики (подтверждается в Telegram).
+            <div class="k"><span class="b"></span>Результат</div>
+            Уже на первом уроке: первые фразы, диалоговые шаблоны и понятный план действий.
           </div>
 
           <div class="actions">
@@ -1044,11 +1061,11 @@
 
           <div class="price">
             <div class="row">
-              <span class="was">62 500 ₽</span>
-              <span class="now">50 000 ₽</span>
+              <span class="was">50 000 ₽</span>
+              <span class="now">30 000 ₽</span>
             </div>
             <span>в месяц</span>
-            <div class="note">цена со скидкой -20% (24 часа после диагностики)</div>
+            <div class="note">&nbsp;</div>
           </div>
 
           <ul class="features">
@@ -1060,11 +1077,11 @@
 
           <div class="bonus">
             <div class="k"><span class="b"></span>Гарантия</div>
-            100% свободная речь за 30 дней при выполнении согласованного плана. Если цель не достигнута — продолжаем сопровождение до результата.
+            Свободная речь за 30 дней при выполнении согласованного плана.
           </div>
 
           <div class="actions">
-            <a class="cta" href="https://t.me/myproj22bot?start=tariff_smart" target="_blank" rel="noopener">Оформить Smart со скидкой</a>
+            <a class="cta" href="https://t.me/myproj22bot?start=tariff_smart" target="_blank" rel="noopener">Выбрать Smart</a>
           </div>
         </div>
 
@@ -1074,11 +1091,11 @@
 
           <div class="price">
             <div class="row">
-              <span class="was">142 900 ₽</span>
-              <span class="now">100 000 ₽</span>
+              <span class="was">90 000 ₽</span>
+              <span class="now">50 000 ₽</span>
             </div>
             <span>в месяц</span>
-            <div class="note">цена со скидкой -30% (24 часа после диагностики)</div>
+            <div class="note">&nbsp;</div>
           </div>
 
           <ul class="features">
@@ -1089,12 +1106,12 @@
           </ul>
 
           <div class="bonus">
-            <div class="k"><span class="b"></span>Скидка</div>
-            -30% на первый месяц при согласовании обучения в течение 24 часов после диагностики (подтверждается в Telegram).
+            <div class="k"><span class="b"></span>Гарантия</div>
+            Свободная речь за 30 дней при выполнении согласованного плана.
           </div>
 
           <div class="actions">
-            <a class="cta" href="https://t.me/myproj22bot?start=tariff_pro" target="_blank" rel="noopener">Оформить Pro со скидкой</a>
+            <a class="cta" href="https://t.me/myproj22bot?start=tariff_pro" target="_blank" rel="noopener">Выбрать Pro</a>
           </div>
         </div>
       </div>
@@ -1131,7 +1148,7 @@
             <div class="n">2</div>
             <div>
               <h3>Неделя 1: база для разговоров</h3>
-              <p>Собираем «скелет языка»: ключевые времена/структуры, произношение, базовый словарь и шаблоны диалогов.</p>
+              <p>Собираем «скелет языка»: ключевые структуры, произношение, базовый словарь и шаблоны диалогов.</p>
             </div>
           </div>
 
@@ -1156,7 +1173,7 @@
           <div class="g-badge">✓</div>
           <div class="t">
             Гарантия результата за 30 дней: ты 100% начинаешь свободно говорить при выполнении согласованного плана.
-            <span>Если результат не достигнут при соблюдении плана — продолжаем сопровождение до результата. Подтверждение условий — в Telegram.</span>
+            <span>Подтверждение условий — в Telegram.</span>
           </div>
         </div>
       </div>
@@ -1178,7 +1195,7 @@
 
         <details class="faq-item">
           <summary class="faq-q">Сколько времени нужно в день? <span class="chev">+</span></summary>
-          <div class="faq-a">Минимум — короткая ежедневная практика. На диагностике фиксируем реальный график и делаем план, который выдерживается без выгорания.</div>
+          <div class="faq-a">Минимум — короткая ежедневная практика. На старте фиксируем реальный график и делаем план, который выдерживается без выгорания.</div>
         </details>
 
         <details class="faq-item">
@@ -1187,13 +1204,8 @@
         </details>
 
         <details class="faq-item">
-          <summary class="faq-q">Как получить скидку 24 часа? <span class="chev">+</span></summary>
-          <div class="faq-a">После диагностики у тебя есть 24 часа, чтобы согласовать обучение со скидкой: Smart -20%, Pro -30%. Подтверждение — в Telegram.</div>
-        </details>
-
-        <details class="faq-item">
           <summary class="faq-q">Что если я не выполню план? <span class="chev">+</span></summary>
-          <div class="faq-a">План делается под твой график, чтобы его реально выполнять. Гарантия результата действует при соблюдении согласованного плана и регулярной практики.</div>
+          <div class="faq-a">План делается под твой график, чтобы его реально выполнять. Гарантия результата действует при соблюдении согласованного плана и регулярной практике.</div>
         </details>
       </div>
     </div>
@@ -1207,8 +1219,7 @@
         <div class="legal">
           Информация на странице носит справочно-информационный характер и не является публичной офертой (ст. 437 ГК РФ).
           Итоговый формат, расписание, условия и стоимость подтверждаются при оформлении в Telegram.
-          Гарантия результата за 30 дней действует при выполнении согласованного индивидуального плана и регулярной практики.
-          Скидки «24 часа» подтверждаются при оформлении в Telegram.
+          Гарантия результата за 30 дней действует при выполнении согласованного индивидуального плана и регулярной практике.
         </div>
       </div>
 
