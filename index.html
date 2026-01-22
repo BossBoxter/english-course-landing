@@ -62,6 +62,24 @@
     .small{ font-size: 14px; color: rgba(234,240,255,.82); margin-top:10px; font-weight:500; }
     .mono{ font-family: var(--mono); }
 
+    /* общий hover-эффект “приближения” */
+    .lift{
+      transition:
+        transform .16s ease,
+        box-shadow .16s ease,
+        border-color .16s ease,
+        background .16s ease;
+      transform: translateZ(0);
+      will-change: transform;
+    }
+    @media (hover:hover) and (pointer:fine){
+      .lift:hover{
+        transform: translateY(-3px) scale(1.01);
+        box-shadow: 0 22px 70px rgba(0,0,0,.42);
+        border-color: rgba(41,211,255,.22);
+      }
+    }
+
     .topbar{
       position:sticky; top:0; z-index:20;
       backdrop-filter: blur(10px);
@@ -118,8 +136,14 @@
       white-space:nowrap;
       flex: 0 0 auto;
       max-width: 100%;
-      height: 48px; /* унификация высоты кнопок */
+      height: 48px;
       line-height: 1;
+      transition: transform .14s ease, box-shadow .14s ease, filter .14s ease;
+      transform: translateZ(0);
+    }
+    @media (hover:hover) and (pointer:fine){
+      .cta:hover{ transform: translateY(-2px) scale(1.01); box-shadow: 0 18px 46px rgba(124,92,255,.28); filter: brightness(1.03); }
+      .cta.secondary:hover{ transform: translateY(-2px) scale(1.01); }
     }
     .cta.secondary{
       background: transparent;
@@ -172,7 +196,7 @@
       font-size:13px;
       font-weight:500;
       width: fit-content;
-      margin-bottom: 12px; /* больше воздуха под бейджем */
+      margin-bottom: 12px;
     }
     .hook-badge .dot{
       width:10px; height:10px; border-radius:99px;
@@ -239,7 +263,7 @@
       display:flex;
       flex-direction:column;
       gap:10px;
-      margin-top:16px; /* больше расстояние от "С чего начать" до кнопок */
+      margin-top:16px;
     }
     .hook-link{
       display:flex;
@@ -467,18 +491,42 @@
       border-color: rgba(41,211,255,.30);
       background: rgba(16,26,52,.55);
     }
-    .badge{
-      position:absolute; top:14px; right:14px;
+
+    /* красивый верх карточки тарифа */
+    .plan-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+      padding: 10px 10px 12px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(7,10,20,.30);
+      margin-bottom: 10px;
+    }
+    .plan-name{
+      font-size: 18px;
+      letter-spacing: -.2px;
+      line-height: 1.15;
+      margin: 0;
+    }
+    .plan-chip{
       background: rgba(255,255,255,.92);
       color:#071022;
       padding:6px 10px;
       border-radius:999px;
       font-size:12px;
       font-weight:500;
+      white-space: nowrap;
+      flex: 0 0 auto;
     }
-    .plan h3{ margin:0; font-size:16px; letter-spacing:-.2px; font-weight:500; }
+    .plan-sub{
+      margin-top:6px;
+      color: rgba(183,194,229,.92);
+      font-size: 13px;
+      font-weight:500;
+    }
 
-    /* выравнивание цен/текста по высоте */
     .price{
       margin:6px 0 8px;
       letter-spacing:-.8px;
@@ -490,6 +538,7 @@
       flex-direction:column;
       justify-content:flex-start;
       gap:6px;
+      padding: 0 6px;
     }
     .price span{
       display:block;
@@ -526,19 +575,19 @@
       color: var(--muted);
       font-weight:500;
       letter-spacing:0;
-      min-height: 18px; /* фиксируем строку под заметку */
+      min-height: 18px;
     }
 
     ul.features{
       margin: 8px 0 0;
-      padding: 0;
+      padding: 0 6px;
       list-style: none;
       display:flex;
       flex-direction:column;
       gap:8px;
       color: var(--muted);
       font-weight:500;
-      flex: 1 1 auto; /* растягивает фичи, чтобы кнопки встали на один уровень */
+      flex: 1 1 auto;
       min-height: 0;
     }
     ul.features li{
@@ -566,7 +615,7 @@
       color: rgba(234,240,255,.95);
       font-size: 13px;
       line-height: 1.45;
-      min-height: 92px; /* унификация блоков бонуса */
+      min-height: 92px;
     }
     .bonus .k{
       display:inline-flex;
@@ -591,13 +640,13 @@
       display:flex;
       gap:10px;
       flex-wrap:wrap;
-      margin-top: auto; /* кнопки всегда внизу карточек */
+      margin-top: auto;
     }
     .plan .actions .cta{
       width:100%;
       border-radius: 16px;
       padding:12px 14px;
-      height: 48px; /* одинаковая высота кнопок внутри карточек */
+      height: 48px;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -851,7 +900,7 @@
   <header class="hero">
     <div class="wrap">
 
-      <section class="hook" aria-label="Главный продающий блок">
+      <section class="hook lift" aria-label="Главный продающий блок">
         <div class="hook-grid">
           <div>
             <div class="hook-badge"><span class="dot"></span>С нуля до свободной речи за 30 дней — с гарантией</div>
@@ -872,7 +921,7 @@
 
             <div class="hook-actions">
               <a class="cta" href="https://t.me/myproj22bot?start=tariff_start" target="_blank" rel="noopener">Записаться на бесплатный урок</a>
-              <a class="cta secondary" href="#pricing">Тарифы и скидки</a>
+              <a class="cta secondary" href="#pricing">Тарифы</a>
             </div>
 
             <div class="small">
@@ -880,18 +929,18 @@
             </div>
           </div>
 
-          <aside class="hook-nav" aria-label="Быстрая навигация">
+          <aside class="hook-nav lift" aria-label="Быстрая навигация">
             <div>
               <h3>С чего начать</h3>
               <div class="hook-links" role="navigation">
-                <a class="hook-link" href="#how"><span>Как это работает</span><span class="r">→</span></a>
-                <a class="hook-link" href="#pricing"><span>Тарифы и скидки</span><span class="r">→</span></a>
-                <a class="hook-link" href="#roadmap"><span>План на 30 дней</span><span class="r">→</span></a>
-                <a class="hook-link" href="#faq"><span>Ответы на вопросы</span><span class="r">→</span></a>
+                <a class="hook-link lift" href="#how"><span>Как это работает</span><span class="r">→</span></a>
+                <a class="hook-link lift" href="#pricing"><span>Тарифы</span><span class="r">→</span></a>
+                <a class="hook-link lift" href="#roadmap"><span>План на 30 дней</span><span class="r">→</span></a>
+                <a class="hook-link lift" href="#faq"><span>Ответы на вопросы</span><span class="r">→</span></a>
               </div>
             </div>
 
-            <div class="promo" style="margin:0;">
+            <div class="promo lift" style="margin:0;">
               <span class="tag">ГАРАНТИЯ</span>
               <h3 style="margin-top:10px;">Результат за 30 дней</h3>
               <p>Старт с нуля, ежедневная практика и контроль качества. Выстроенный маршрут — чтобы говорить уверенно.</p>
@@ -901,7 +950,7 @@
       </section>
 
       <div class="hero-grid">
-        <div class="hero-card">
+        <div class="hero-card lift">
           <div class="kicker"><span class="dot"></span>Твоя выгода за 30 дней</div>
 
           <h1>Не «учёба», а результат: свободная речь в реальных ситуациях</h1>
@@ -916,21 +965,21 @@
           </div>
         </div>
 
-        <div class="side-card">
-          <div class="promo">
+        <div class="side-card lift">
+          <div class="promo lift">
             <span class="tag">БЕСПЛАТНЫЙ СТАРТ</span>
             <h3>Пробный урок + диагностика: 0 ₽</h3>
             <p>Определяем старт, ставим цель и выдаём план на 30 дней. Сразу на уроке — первые фразы и разговорная практика.</p>
             <div class="small">Всё оформление — в Telegram.</div>
           </div>
 
-          <div class="promo">
+          <div class="promo lift">
             <span class="tag">ГАРАНТИЯ</span>
             <h3>100% результат за месяц</h3>
             <p>При выполнении согласованного плана ты гарантированно начинаешь свободно говорить за 30 дней. Мы ведём тебя до результата.</p>
           </div>
 
-          <div class="promo">
+          <div class="promo lift">
             <span class="tag">БЕЗ ВОДЫ</span>
             <h3>Только то, что заставляет говорить</h3>
             <p>Минимум теории. Максимум разговорных сценариев: знакомство, работа, сервисы, поездки, бытовые диалоги.</p>
@@ -949,17 +998,17 @@
       </div>
 
       <div class="grid3">
-        <div class="card">
+        <div class="card lift">
           <div class="icon">1</div>
           <h3>Диагностика и старт «с нуля»</h3>
           <p>Определяем уровень на старте (даже если он нулевой) и сразу запускаем разговорную практику с первых минут.</p>
         </div>
-        <div class="card">
+        <div class="card lift">
           <div class="icon">2</div>
           <h3>Индивидуальный план на 30 дней</h3>
           <p>Составляем план: ежедневная практика, задания и разговорные сценарии. Всё под цель и реальный график.</p>
         </div>
-        <div class="card">
+        <div class="card lift">
           <div class="icon">3</div>
           <h3>100% свободная речь за месяц</h3>
           <p>Еженедельный контроль, корректировки и доведение до результата. Через 30 дней ты уверенно говоришь в реальных ситуациях.</p>
@@ -976,37 +1025,37 @@
       </div>
 
       <div class="fits-grid">
-        <div class="fit">
+        <div class="fit lift">
           <div class="fit-tag"><span class="b"></span>С нуля</div>
           <h3>Полный ноль</h3>
           <p>Если не можешь связать и двух фраз — это нормальная точка старта. Методика рассчитана на «0 → говорю» за 30 дней.</p>
         </div>
 
-        <div class="fit">
+        <div class="fit lift">
           <div class="fit-tag"><span class="b"></span>Работа</div>
           <h3>Созвоны и переписка</h3>
           <p>Диалоги, презентация себя, вопросы/ответы, рабочие сценарии. Упор на речь и уверенность.</p>
         </div>
 
-        <div class="fit">
+        <div class="fit lift">
           <div class="fit-tag"><span class="b"></span>Переезд</div>
           <h3>Быт и сервисы</h3>
           <p>Аренда, документы, магазины, медицина, общение. Чтобы говорить спокойно и понятно.</p>
         </div>
 
-        <div class="fit">
+        <div class="fit lift">
           <div class="fit-tag"><span class="b"></span>Путешествия</div>
           <h3>Без языкового стресса</h3>
           <p>Аэропорт, отель, кафе, экскурсии, форс-мажоры. Разговорные заготовки и тренировка.</p>
         </div>
 
-        <div class="fit">
+        <div class="fit lift">
           <div class="fit-tag"><span class="b"></span>Учёба</div>
           <h3>Школа/ВУЗ</h3>
           <p>База + устная практика: отвечать, понимать, читать и говорить без ступора.</p>
         </div>
 
-        <div class="fit">
+        <div class="fit lift">
           <div class="fit-tag"><span class="b"></span>Перезапуск</div>
           <h3>«Знал, но забыл»</h3>
           <p>Собираем ядро заново и быстро возвращаем разговорный навык через практику и повторения.</p>
@@ -1022,14 +1071,19 @@
   <section id="pricing">
     <div class="wrap">
       <div class="section-title">
-        <h2>Тарифы и скидки</h2>
+        <h2>Тарифы</h2>
         <div class="hint">Выбери формат</div>
       </div>
 
       <div class="pricing">
-        <div class="plan">
-          <div class="badge">0 ₽ старт</div>
-          <h3>Start</h3>
+        <div class="plan lift">
+          <div class="plan-head">
+            <div>
+              <div class="plan-name">Start</div>
+              <div class="plan-sub">Пробный старт</div>
+            </div>
+            <div class="plan-chip">0 ₽</div>
+          </div>
 
           <div class="price">
             <div class="row">
@@ -1055,9 +1109,14 @@
           </div>
         </div>
 
-        <div class="plan featured">
-          <div class="badge">лучший выбор</div>
-          <h3>Smart</h3>
+        <div class="plan featured lift">
+          <div class="plan-head">
+            <div>
+              <div class="plan-name">Smart</div>
+              <div class="plan-sub">Оптимальный формат</div>
+            </div>
+            <div class="plan-chip">выбор</div>
+          </div>
 
           <div class="price">
             <div class="row">
@@ -1085,9 +1144,14 @@
           </div>
         </div>
 
-        <div class="plan">
-          <div class="badge">интенсив</div>
-          <h3>Pro</h3>
+        <div class="plan lift">
+          <div class="plan-head">
+            <div>
+              <div class="plan-name">Pro</div>
+              <div class="plan-sub">Интенсивный формат</div>
+            </div>
+            <div class="plan-chip">интенсив</div>
+          </div>
 
           <div class="price">
             <div class="row">
@@ -1129,14 +1193,14 @@
         <div class="hint">Пошагово, чтобы заговорить с нуля</div>
       </div>
 
-      <div class="roadmap">
+      <div class="roadmap lift">
         <p class="road-intro">
           Весь курс построен под результат «свободная речь за 30 дней». Никаких разрозненных тем: только связный маршрут,
           ежедневная практика и контроль качества.
         </p>
 
         <div class="steps-vertical">
-          <div class="step-long">
+          <div class="step-long lift">
             <div class="n">1</div>
             <div>
               <h3>День 1: диагностика и запуск речи</h3>
@@ -1144,7 +1208,7 @@
             </div>
           </div>
 
-          <div class="step-long">
+          <div class="step-long lift">
             <div class="n">2</div>
             <div>
               <h3>Неделя 1: база для разговоров</h3>
@@ -1152,7 +1216,7 @@
             </div>
           </div>
 
-          <div class="step-long">
+          <div class="step-long lift">
             <div class="n">3</div>
             <div>
               <h3>Неделя 2–3: барьер исчезает</h3>
@@ -1160,7 +1224,7 @@
             </div>
           </div>
 
-          <div class="step-long">
+          <div class="step-long lift">
             <div class="n">4</div>
             <div>
               <h3>Неделя 4: свободная речь</h3>
@@ -1169,7 +1233,7 @@
           </div>
         </div>
 
-        <div class="guarantee">
+        <div class="guarantee lift">
           <div class="g-badge">✓</div>
           <div class="t">
             Гарантия результата за 30 дней: ты 100% начинаешь свободно говорить при выполнении согласованного плана.
@@ -1187,7 +1251,7 @@
         <div class="hint">Коротко и по делу</div>
       </div>
 
-      <div class="faq-card">
+      <div class="faq-card lift">
         <details class="faq-item">
           <summary class="faq-q">Я с полного нуля. Реально заговорить за 30 дней? <span class="chev">+</span></summary>
           <div class="faq-a">Да. Курс построен под нулевой старт: базовые конструкции + ежедневная разговорная практика. При выполнении плана результат гарантирован.</div>
@@ -1216,7 +1280,7 @@
       <div class="footer-legal">
         <div class="mono">Оформление и консультация: Telegram</div>
 
-        <div class="legal">
+        <div class="legal lift">
           Информация на странице носит справочно-информационный характер и не является публичной офертой (ст. 437 ГК РФ).
           Итоговый формат, расписание, условия и стоимость подтверждаются при оформлении в Telegram.
           Гарантия результата за 30 дней действует при выполнении согласованного индивидуального плана и регулярной практике.
@@ -1234,7 +1298,7 @@
   </footer>
 
   <div class="sticky-cta" aria-hidden="false">
-    <div class="bar">
+    <div class="bar lift">
       <div>
         <div class="t1">Бесплатный пробный урок</div>
         <div class="t2">Оформление в Telegram</div>
