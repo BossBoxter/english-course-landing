@@ -10,12 +10,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Английский с нуля до свободной речи за 30 дней. Авторская методика, контроль качества, гарантия результата. Всё оформление — в Telegram." />
 
-  <meta property="og:title" content="Свободный английский за 30 дней — с нуля" />
+  <meta property="og:title" content="Академия Фавикон — свободный английский за 30 дней" />
   <meta property="og:description" content="Свободная разговорная речь за 1 месяц при выполнении плана. Пробный урок бесплатно. Всё оформление — в Telegram." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="favicon.png" />
 
-  <title>Свободный английский за 30 дней — с нуля</title>
+  <title>Академия Фавикон</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,15 +88,22 @@
       min-width:0;
     }
     .brand{
-      display:flex; align-items:center; gap:10px;
+      display:flex; align-items:center; gap:12px;
       letter-spacing:.2px;
       white-space:nowrap;
       min-width:0;
       flex: 1 1 auto;
     }
+    .brand-title{
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+
+    /* ЛОГО БОЛЬШЕ */
     .logo{
-      width:34px; height:34px;
-      border-radius:12px;
+      width:44px; height:44px;
+      border-radius:14px;
       overflow:hidden;
       border: 1px solid rgba(255,255,255,.14);
       box-shadow: 0 10px 26px rgba(0,0,0,.25);
@@ -179,7 +186,6 @@
       align-items:stretch;
     }
 
-    /* левую колонку делаем flex, чтобы кнопки прижать вниз */
     .hook-left{
       display:flex;
       flex-direction:column;
@@ -357,11 +363,9 @@
       border-radius: 16px;
       padding:14px;
     }
-    /* зелёный градиент для блока "Результат за 30 дней" */
     .promo.promo-green{
       border:1px solid rgba(57,217,138,.26);
-      background:
-        linear-gradient(135deg, rgba(57,217,138,.18) 0%, rgba(41,211,255,.12) 100%);
+      background: linear-gradient(135deg, rgba(57,217,138,.18) 0%, rgba(41,211,255,.12) 100%);
     }
 
     .promo .tag{
@@ -378,8 +382,8 @@
     .promo p{ margin:0; color:var(--muted); font-weight:500; }
 
     section{ padding:18px 0; }
-    .grid3{ display:grid; grid-template-columns: repeat(3,1fr); gap:14px; }
 
+    .grid3{ display:grid; grid-template-columns: repeat(3,1fr); gap:14px; }
     .card{
       border:1px solid var(--line);
       background: rgba(16,26,52,.55);
@@ -397,6 +401,7 @@
       color:#fff;
       font-weight:500;
     }
+
     .section-title{
       display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
       margin: 0 0 12px;
@@ -552,8 +557,6 @@
       gap:10px;
       flex-wrap:wrap;
     }
-
-    /* аккуратное диагональное зачёркивание по центру цены */
     .price .was{
       display:inline-block;
       position:relative;
@@ -577,7 +580,6 @@
       opacity: .98;
       pointer-events:none;
     }
-
     .price .now{
       display:inline-block;
       font-size: 26px;
@@ -842,17 +844,53 @@
     .sticky-cta .bar .t2{ color:var(--muted); font-weight:500; font-size:14px; }
     .sticky-cta .bar .cta{ padding:12px 14px; border-radius: 14px; height: 48px; }
 
+    /* МОБИЛЬНАЯ ПЛОТНОСТЬ + ВЕРХНЯЯ ПЛАШКА “ВО ВЕСЬ ВЕРХ” */
     @media (max-width: 920px){
-      header.hero{ padding-top: 12px; }
-      .hook-grid{ grid-template-columns: 1fr; }
-      .hero-grid{ grid-template-columns: 1fr; }
-      .grid3{ grid-template-columns: 1fr; }
-      .pricing{ grid-template-columns: 1fr; }
-      .fits-grid{ grid-template-columns: 1fr; }
+      .wrap{ padding:14px 12px; }              /* меньше внешние поля */
+      header.hero{ padding-top: 10px; padding-bottom: 10px; }
+
+      section{ padding:12px 0; }              /* секции ближе */
+      .hook{ margin: 6px 0 12px; padding:14px; }
+      .hero-card{ padding:16px; }
+      .side-card{ padding:14px; gap:10px; }
+      .promo{ padding:12px; }
+      .card{ padding:14px; }
+      .fit{ padding:14px; min-height: 0; }
+      .plan{ padding:12px; }
+      .plan-head{ padding:10px; margin-bottom:8px; }
+      .roadmap{ padding:14px; }
+      .step-long{ padding:14px; }
+      .faq-card{ padding: 6px 12px; }
+      .grid3{ gap:10px; }
+      .fits-grid{ gap:10px; }
+      .pricing{ gap:10px; }
+      .steps-vertical{ gap:10px; }
+
+      .hook-grid{ grid-template-columns: 1fr; gap:10px; }
+      .hero-grid{ grid-template-columns: 1fr; gap:10px; }
+
       .nav{ display:none; }
       .sticky-cta{ display:block; }
       .topbar .cta{ display:none; }
-      .plan{ min-height: auto; }
+
+      /* верхняя плашка: только название во весь верх */
+      .topbar .wrap{
+        justify-content:center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      .brand{
+        flex: 1 1 auto;
+        justify-content:center;
+        gap:0;
+      }
+      .logo{ display:none; }                   /* чтобы заголовок был ровно по центру */
+      .brand-title{
+        font-size: 18px;
+        letter-spacing: .2px;
+        text-align:center;
+        width:100%;
+      }
     }
   </style>
 </head>
@@ -864,7 +902,7 @@
         <div class="logo" aria-hidden="true">
           <img src="favicon.png" alt="">
         </div>
-        <div>Английский за 30 дней</div>
+        <div class="brand-title">Академия Фавикон</div>
       </div>
 
       <div class="nav" aria-label="Навигация">
@@ -1241,7 +1279,7 @@
 
   <footer>
     <div class="wrap">
-      <div class="mono">Оформление и консультация: Telegram</div>
+      <div class="mono">Академия Фавикон</div>
 
       <div class="legal lift">
         Информация на странице носит справочно-информационный характер и не является публичной офертой (ст. 437 ГК РФ).
