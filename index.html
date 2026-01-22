@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="ru">
 <head>
@@ -43,6 +44,7 @@
       --sans: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
     }
     *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
     body{
       margin:0;
       font-family:var(--sans);
@@ -58,7 +60,6 @@
     a{ color:inherit; text-decoration:none; }
     .wrap{ max-width:var(--max); margin:0 auto; padding:22px 18px; }
 
-    /* FIX: "маленький шрифт" -> нормальный рабочий */
     .small{ font-size: 14px; color: rgba(234,240,255,.82); margin-top:10px; font-weight:500; }
     .mono{ font-family: var(--mono); }
 
@@ -127,7 +128,138 @@
       font-weight:500;
     }
 
-    header.hero{ padding:44px 0 20px; }
+    /* NEW: продающий верхний блок */
+    header.hero{ padding:18px 0 20px; }
+    .hook{
+      border:1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      border-radius: var(--radius2);
+      padding:18px;
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+      margin: 8px 0 18px;
+    }
+    .hook:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(520px 260px at 10% 25%, rgba(124,92,255,.30), transparent 70%),
+        radial-gradient(520px 260px at 90% 25%, rgba(41,211,255,.18), transparent 70%),
+        radial-gradient(520px 260px at 60% 110%, rgba(57,217,138,.12), transparent 70%);
+      pointer-events:none;
+      opacity:.95;
+    }
+    .hook > *{ position:relative; }
+    .hook-grid{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    .hook-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background: rgba(255,255,255,.92);
+      color:#0b1020;
+      padding:8px 12px;
+      border-radius: 999px;
+      font-size:13px;
+      font-weight:500;
+      width: fit-content;
+    }
+    .hook-badge .dot{
+      width:10px; height:10px; border-radius:99px;
+      background: linear-gradient(135deg, var(--ok) 0%, var(--brand2) 100%);
+    }
+    .hook h1{
+      margin:12px 0 0;
+      font-size: clamp(28px, 4.2vw, 52px);
+      line-height:1.03;
+      letter-spacing:-.7px;
+      font-weight:500;
+    }
+    .hook .sub{
+      margin:14px 0 0;
+      font-size: 16px;
+      color: rgba(234,240,255,.84);
+      max-width: 75ch;
+    }
+    .hook-points{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+    }
+    .hook-pill{
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(16,26,52,.50);
+      padding:10px 12px;
+      border-radius: 999px;
+      color: rgba(234,240,255,.92);
+      font-size: 13px;
+      font-weight:500;
+    }
+    .hook-actions{
+      margin-top:16px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .hook-actions .cta{ padding:12px 16px; border-radius: 16px; }
+    .hook-actions .cta.secondary{ padding:12px 14px; }
+
+    .hook-nav{
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(7,10,20,.38);
+      border-radius: 18px;
+      padding:14px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:12px;
+      min-height: 100%;
+    }
+    .hook-nav h3{
+      margin:0;
+      font-size: 15px;
+      letter-spacing:-.2px;
+      font-weight:500;
+      color: rgba(234,240,255,.95);
+    }
+    .hook-links{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .hook-link{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:10px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(16,26,52,.40);
+      color: rgba(234,240,255,.90);
+      font-size: 14px;
+      font-weight:500;
+    }
+    .hook-link:hover{ border-color: rgba(41,211,255,.22); }
+    .hook-link .r{
+      width:28px; height:28px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex:0 0 auto;
+    }
+
+    /* Старый hero */
     .hero-grid{
       display:grid;
       grid-template-columns: 1.15fr .85fr;
@@ -210,6 +342,7 @@
     .promo p{ margin:0; color:var(--muted); font-weight:500; }
 
     section{ padding:18px 0; }
+
     .grid3{ display:grid; grid-template-columns: repeat(3,1fr); gap:14px; }
 
     .card{
@@ -241,7 +374,7 @@
     }
     .section-title .hint{
       color: var(--muted);
-      font-size: 14px; /* было 13 */
+      font-size: 14px;
       font-weight:500;
     }
 
@@ -299,7 +432,7 @@
       font-weight:500;
     }
 
-    /* Тарифы — уменьшаем «лишний воздух» */
+    /* Тарифы */
     .pricing{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -310,13 +443,13 @@
       border:1px solid var(--line);
       background: rgba(16,26,52,.55);
       border-radius: var(--radius2);
-      padding:14px; /* было 16 */
+      padding:14px;
       box-shadow: 0 18px 48px rgba(0,0,0,.32);
       position:relative;
       overflow:hidden;
       display:flex;
       flex-direction:column;
-      min-height: 520px; /* было 560 */
+      min-height: 520px;
     }
     .plan.featured{
       border-color: rgba(41,211,255,.30);
@@ -334,16 +467,16 @@
     .plan h3{ margin:0; font-size:16px; letter-spacing:-.2px; font-weight:500; }
 
     .price{
-      margin:6px 0 8px; /* меньше */
+      margin:6px 0 8px;
       letter-spacing:-.8px;
       line-height:1.1;
       font-size: 26px;
       font-weight:500;
-      min-height: 58px; /* меньше */
+      min-height: 58px;
     }
     .price span{
       display:block;
-      font-size: 13px; /* было 12 */
+      font-size: 13px;
       color: var(--muted);
       font-weight:500;
       letter-spacing:0;
@@ -372,14 +505,14 @@
     }
     .price .note{
       margin-top:6px;
-      font-size:13px; /* было 12 */
+      font-size:13px;
       color: var(--muted);
       font-weight:500;
       letter-spacing:0;
     }
 
     ul.features{
-      margin: 8px 0 0; /* меньше */
+      margin: 8px 0 0;
       padding: 0;
       list-style: none;
       display:flex;
@@ -387,7 +520,7 @@
       gap:8px;
       color: var(--muted);
       font-weight:500;
-      min-height: 148px; /* было 170 */
+      min-height: 148px;
     }
     ul.features li{
       display:flex; gap:10px; align-items:flex-start;
@@ -406,15 +539,15 @@
     }
 
     .bonus{
-      margin-top:10px; /* меньше */
+      margin-top:10px;
       border:1px solid rgba(255,207,92,.26);
       background: rgba(255,207,92,.08);
       border-radius: 14px;
       padding:10px;
       color: rgba(234,240,255,.95);
-      font-size: 13px; /* было 12 */
+      font-size: 13px;
       line-height: 1.45;
-      min-height: 82px; /* было 92 */
+      min-height: 82px;
     }
     .bonus .k{
       display:inline-flex;
@@ -433,9 +566,8 @@
       background: linear-gradient(135deg, var(--warn) 0%, var(--brand2) 100%);
     }
 
-    /* FIX: убрать большой «пустой хвост» перед кнопкой */
     .plan .actions{
-      margin-top: 10px; /* вместо auto */
+      margin-top: 10px;
       padding-top: 10px;
       display:flex;
       gap:10px;
@@ -444,10 +576,10 @@
     .plan .actions .cta{
       width:100%;
       border-radius: 16px;
-      padding:12px 14px; /* чуть компактнее */
+      padding:12px 14px;
     }
 
-    /* Как проходит обучение — 4 длинные карточки одна под другой */
+    /* Roadmap */
     .roadmap{
       border:1px solid var(--line);
       background: linear-gradient(180deg, rgba(16,26,52,.58), rgba(10,14,28,.42));
@@ -594,7 +726,7 @@
       margin-top: 24px;
       padding: 16px 0 22px;
       color: rgba(183,194,229,.90);
-      font-size: 14px; /* было 12 */
+      font-size: 14px;
       font-weight:500;
     }
     .footer-legal{ width:100%; }
@@ -618,7 +750,7 @@
       padding: 12px;
       margin-top: 10px;
       color: rgba(234,240,255,.82);
-      font-size: 14px; /* было 12 */
+      font-size: 14px;
       line-height: 1.55;
       font-weight:500;
     }
@@ -650,6 +782,8 @@
     .sticky-cta .bar .cta{ padding:12px 14px; border-radius: 14px; }
 
     @media (max-width: 920px){
+      header.hero{ padding-top: 12px; }
+      .hook-grid{ grid-template-columns: 1fr; }
       .hero-grid{ grid-template-columns: 1fr; }
       .grid3{ grid-template-columns: 1fr; }
       .pricing{ grid-template-columns: 1fr; }
@@ -690,6 +824,55 @@
 
   <header class="hero">
     <div class="wrap">
+
+      <!-- NEW: продающий видимый блок в самом начале -->
+      <holm class="hook" aria-label="Главный продающий блок">
+        <div class="hook-grid">
+          <div>
+            <div class="hook-badge"><span class="dot"></span>Лучший курс по обучению английскому: быстро и под любую цель</div>
+            <h1>Выучи английский быстро — для любых целей: школа, работа, переезд, путешествия</h1>
+            <p class="sub">
+              Это не «теория ради теории». С первого занятия — практика и понятный план. За 30 дней ты увидишь измеримый прогресс,
+              потому что обучение строится под твою цель и твой график.
+            </p>
+
+            <div class="hook-points" aria-label="Ключевые преимущества">
+              <div class="hook-pill">Пробный урок: 0 ₽ (24 часа)</div>
+              <div class="hook-pill">План под твоё время в неделю</div>
+              <div class="hook-pill">Практика в реальных сценариях</div>
+              <div class="hook-pill">Контроль прогресса</div>
+            </div>
+
+            <div class="hook-actions">
+              <a class="cta" href="https://t.me/myproj22bot?start=tariff_start" target="_blank" rel="noopener">Записаться на бесплатный урок</a>
+              <a class="cta secondary" href="#roadmap">Как проходит обучение</a>
+            </div>
+
+            <div class="small">
+              Всё оформление — в Telegram-боте <span class="mono">@myproj22bot</span>. Первый урок бесплатный при записи в ближайшие 24 часа.
+            </div>
+          </div>
+
+          <aside class="hook-nav" aria-label="Быстрая навигация">
+            <div>
+              <h3>С чего начать на сайте</h3>
+              <div class="hook-links" role="navigation">
+                <a class="hook-link" href="#roadmap"><span>Как проходит обучение</span><span class="r">→</span></a>
+                <a class="hook-link" href="#fits"><span>Кому подходит</span><span class="r">→</span></a>
+                <a class="hook-link" href="#pricing"><span>Тарифы и бонусы</span><span class="r">→</span></a>
+                <a class="hook-link" href="#faq"><span>Ответы на вопросы</span><span class="r">→</span></a>
+              </div>
+            </div>
+            <div class="promo" style="margin:0;">
+              <span class="tag">АКЦИЯ</span>
+              <h3 style="margin-top:10px;">20% после первого урока</h3>
+              <p>Если согласовать обучение в течение суток после пробного урока — действует скидка 20% (подтверждается в Telegram).</p>
+            </div>
+          </aside>
+        </div>
+      </holm>
+
+      <!-- Текущий блок -->
       <div class="hero-grid">
         <div class="hero-card">
           <div class="kicker"><span class="dot"></span>Фокус на прогресс за 30 дней</div>
@@ -727,6 +910,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </header>
 
@@ -889,6 +1073,7 @@
       <div class="small" style="margin-top:12px;">
         Итоговое наполнение и расписание подтверждаются при записи в Telegram после диагностики.
         Акция Start: первый урок 0 ₽ при записи в ближайшие 24 часа. Бонусы подтверждаются при оформлении записи в Telegram.
+        Дополнительно: скидка 20% действует при согласовании обучения в течение суток после первого урока (подтверждается в Telegram).
       </div>
     </div>
   </section>
@@ -981,7 +1166,7 @@
 
         <details class="faq-item">
           <summary class="faq-q">Как работают бонусы со скидками? <span class="chev">+</span></summary>
-          <div class="faq-a">Start: 10% на последующие занятия (не по тарифам). Smart: скидка 20% при записи в течение суток после диагностики. Pro: скидка 30% при записи в течение суток после диагностики. Подтверждение — при оформлении в Telegram.</div>
+          <div class="faq-a">Start: 10% на последующие занятия (не по тарифам). Smart: скидка 20% при записи в течение суток после диагностики. Pro: скидка 30% при записи в течение суток после диагностики. Дополнительно: скидка 20% при согласовании обучения в течение суток после первого урока. Подтверждение — при оформлении в Telegram.</div>
         </details>
       </div>
     </div>
@@ -1037,3 +1222,4 @@
   </script>
 </body>
 </html>
+```
