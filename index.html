@@ -8,10 +8,10 @@
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Английский с нуля до свободной речи за 30 дней. Авторская методика, контроль качества, гарантия результата. Всё оформление — в Telegram." />
+  <meta name="description" content="Академия Фавикон: разговорный английский за 30 дней. Авторская методика, контроль качества, прозрачные тарифы." />
 
-  <meta property="og:title" content="Академия Фавикон — свободный английский за 30 дней" />
-  <meta property="og:description" content="Свободная разговорная речь за 1 месяц при выполнении плана. Пробный урок бесплатно. Всё оформление — в Telegram." />
+  <meta property="og:title" content="Академия Фавикон — разговорный английский за 30 дней" />
+  <meta property="og:description" content="План на 30 дней, ежедневная практика, контроль качества. Тарифы Start / Smart / Pro." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="favicon.png" />
 
@@ -56,8 +56,6 @@
     }
     a{ color:inherit; text-decoration:none; }
     .wrap{ max-width:var(--max); margin:0 auto; padding:22px 18px; }
-
-    .small{ font-size: 14px; color: rgba(234,240,255,.82); margin-top:10px; font-weight:500; }
     .mono{ font-family: var(--mono); }
 
     .lift{
@@ -178,42 +176,14 @@
     }
     .hook > *{ position:relative; }
 
-    .hook-grid{
-      display:grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap:14px;
-      align-items:stretch;
-    }
-
     .hook-left{
       display:flex;
       flex-direction:column;
       min-height: 100%;
     }
 
-    .hook-badge{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      color:#0b1020;
-      padding:8px 12px;
-      border-radius: 999px;
-      font-size:13px;
-      font-weight:500;
-      width: fit-content;
-      margin-bottom: 12px;
-      background: linear-gradient(135deg, rgba(57,217,138,.92) 0%, rgba(41,211,255,.78) 100%);
-      border: 1px solid rgba(57,217,138,.35);
-      box-shadow: 0 14px 34px rgba(57,217,138,.16);
-    }
-    .hook-badge .dot{
-      width:10px; height:10px; border-radius:99px;
-      background: rgba(255,255,255,.88);
-      flex: 0 0 auto;
-    }
-
     .hook h1{
-      margin:12px 0 0;
+      margin:0;
       font-size: clamp(28px, 4.2vw, 52px);
       line-height:1.03;
       letter-spacing:-.7px;
@@ -239,55 +209,6 @@
     }
     .hook-actions .cta{ padding:12px 16px; border-radius: 16px; }
     .hook-actions .cta.secondary{ padding:12px 14px; }
-
-    .hook-nav{
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(7,10,20,.38);
-      border-radius: 18px;
-      padding:14px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      gap:12px;
-      min-height: 100%;
-    }
-    .hook-nav h3{
-      margin:0;
-      font-size: 15px;
-      letter-spacing:-.2px;
-      font-weight:500;
-      color: rgba(234,240,255,.95);
-    }
-    .hook-links{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      margin-top:16px;
-    }
-    .hook-link{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      padding:10px 12px;
-      border-radius: 14px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(16,26,52,.40);
-      color: rgba(234,240,255,.90);
-      font-size: 14px;
-      font-weight:500;
-    }
-    .hook-link:hover{ border-color: rgba(41,211,255,.22); }
-    .hook-link .r{
-      width:28px; height:28px;
-      border-radius:10px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.18);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex:0 0 auto;
-    }
 
     .hero-grid{
       display:grid;
@@ -339,7 +260,7 @@
       font-weight:500;
     }
     .lead{
-      margin:18px 0 18px;
+      margin:18px 0 0;
       font-size: 16.5px;
       color: var(--muted);
       max-width: 70ch;
@@ -362,11 +283,6 @@
       border-radius: 16px;
       padding:14px;
     }
-    .promo.promo-green{
-      border:1px solid rgba(57,217,138,.26);
-      background: linear-gradient(135deg, rgba(57,217,138,.18) 0%, rgba(41,211,255,.12) 100%);
-    }
-
     .promo .tag{
       display:inline-block;
       font-family: var(--mono);
@@ -381,25 +297,6 @@
     .promo p{ margin:0; color:var(--muted); font-weight:500; }
 
     section{ padding:18px 0; }
-
-    .grid3{ display:grid; grid-template-columns: repeat(3,1fr); gap:14px; }
-    .card{
-      border:1px solid var(--line);
-      background: rgba(16,26,52,.55);
-      border-radius: var(--radius);
-      padding:16px;
-    }
-    .card h3{ margin:0 0 6px; font-size:15px; letter-spacing:-.2px; font-weight:500; }
-    .card p{ margin:0; color:var(--muted); font-weight:500; }
-    .icon{
-      width:34px; height:34px; border-radius: 12px;
-      background: linear-gradient(135deg, rgba(124,92,255,.35), rgba(41,211,255,.22));
-      display:flex; align-items:center; justify-content:center;
-      border:1px solid rgba(255,255,255,.12);
-      margin-bottom:10px;
-      color:#fff;
-      font-weight:500;
-    }
 
     .section-title{
       display:flex; align-items:flex-end; justify-content:space-between; gap:12px;
@@ -417,6 +314,83 @@
       font-weight:500;
     }
 
+    /* Большой блок "Как это работает" */
+    .how-big{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(16,26,52,.58), rgba(10,14,28,.42));
+      border-radius: var(--radius2);
+      padding:18px;
+      box-shadow: 0 18px 48px rgba(0,0,0,.22);
+      position:relative;
+      overflow:hidden;
+    }
+    .how-big:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(520px 260px at 15% 15%, rgba(124,92,255,.16), transparent 70%),
+        radial-gradient(520px 260px at 85% 25%, rgba(41,211,255,.10), transparent 70%);
+      pointer-events:none;
+      opacity:.70;
+      filter: blur(18px);
+      transform: scale(1.06);
+    }
+    .how-big > *{ position:relative; }
+
+    .how-cols{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      align-items:start;
+      margin-top:12px;
+    }
+    .how-block{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(16,26,52,.45);
+      border-radius: 18px;
+      padding:14px;
+    }
+    .how-block h3{
+      margin:0 0 8px;
+      font-size: 16px;
+      letter-spacing:-.2px;
+      font-weight:500;
+    }
+    .how-block p{
+      margin:0;
+      color: var(--muted);
+      font-weight:500;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .how-list{
+      margin:10px 0 0;
+      padding:0;
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      color: var(--muted);
+      font-weight:500;
+      font-size: 14px;
+    }
+    .how-list li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+    .tick{
+      width:18px; height:18px; border-radius:6px;
+      background: rgba(57,217,138,.18);
+      border: 1px solid rgba(57,217,138,.30);
+      display:flex; align-items:center; justify-content:center;
+      flex:0 0 auto;
+      color: var(--ok);
+      font-size:12px;
+      margin-top:1px;
+    }
+
+    /* Кому подходит */
     .fits-grid{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -432,7 +406,6 @@
       overflow:hidden;
       min-height: 140px;
     }
-
     .fit:before{
       content:"";
       position:absolute; inset:-2px;
@@ -473,6 +446,7 @@
       font-weight:500;
     }
 
+    /* Тарифы */
     .pricing{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -607,21 +581,11 @@
       font-weight:500;
       flex: 1 1 auto;
       min-height: 0;
+      font-size: 14px;
     }
     ul.features li{
       display:flex; gap:10px; align-items:flex-start;
       padding-top: 2px;
-    }
-    .tick{
-      width:18px; height:18px; border-radius:6px;
-      background: rgba(57,217,138,.18);
-      border: 1px solid rgba(57,217,138,.30);
-      display:flex; align-items:center; justify-content:center;
-      flex:0 0 auto;
-      font-weight:500;
-      color: var(--ok);
-      font-size:12px;
-      margin-top:1px;
     }
 
     .plan .actions{
@@ -643,6 +607,7 @@
       white-space:nowrap;
     }
 
+    /* План на 30 дней */
     .roadmap{
       border:1px solid var(--line);
       background: linear-gradient(180deg, rgba(16,26,52,.58), rgba(10,14,28,.42));
@@ -708,39 +673,7 @@
       font-size: 14px;
     }
 
-    .guarantee{
-      margin-top:14px;
-      border:1px solid rgba(57,217,138,.26);
-      background: rgba(57,217,138,.08);
-      border-radius: 16px;
-      padding:12px;
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-    }
-    .g-badge{
-      width:32px; height:32px;
-      border-radius: 12px;
-      display:flex; align-items:center; justify-content:center;
-      background: rgba(57,217,138,.18);
-      border:1px solid rgba(57,217,138,.30);
-      color: var(--ok);
-      flex:0 0 auto;
-      font-weight:500;
-    }
-    .guarantee .t{
-      color: rgba(234,240,255,.95);
-      font-weight:500;
-      font-size: 14px;
-    }
-    .guarantee .t span{
-      display:block;
-      color: var(--muted);
-      margin-top:6px;
-      font-weight:500;
-      font-size: 14px;
-    }
-
+    /* FAQ */
     .faq-card{
       border:1px solid var(--line);
       background: rgba(16,26,52,.55);
@@ -783,6 +716,7 @@
       margin: 6px 0 0;
       padding-right: 34px;
       font-size: 14px;
+      line-height: 1.55;
     }
 
     footer{
@@ -793,19 +727,6 @@
       font-size: 14px;
       font-weight:500;
     }
-    .footer-nav{
-      margin-top:12px;
-      border-top: 1px solid var(--line);
-      padding-top:12px;
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
-      color: rgba(183,194,229,.92);
-      font-size:14px;
-    }
-    .footer-nav a{ opacity:.92; }
-    .footer-nav a:hover{ opacity:1; color:#fff; }
-
     .legal{
       border: 1px solid var(--line);
       background: rgba(7,10,20,.35);
@@ -815,7 +736,7 @@
       color: rgba(234,240,255,.82);
       line-height: 1.35;
       font-weight:500;
-      font-size: 9px;
+      font-size: 5px; /* в 2 раза меньше */
     }
 
     .sticky-cta{
@@ -846,13 +767,11 @@
 
     /* МОБИЛЬНЫЙ “ПК-ЛУК”, НО ПЛОТНО И МЕЛЬЧЕ */
     @media (max-width: 920px){
-      /* глобально уменьшаем типографику */
       body{ line-height:1.38; }
-      .wrap{ padding:12px 10px; }                 /* меньше поля */
+      .wrap{ padding:12px 10px; }
       header.hero{ padding-top: 8px; padding-bottom: 8px; }
-      section{ padding:10px 0; }                  /* секции ближе */
+      section{ padding:10px 0; }
 
-      /* верхняя плашка — только название во всю ширину */
       .nav{ display:none; }
       .sticky-cta{ display:block; }
       .topbar .cta{ display:none; }
@@ -874,17 +793,18 @@
         width:100%;
       }
 
-      /* плотность блоков */
       .hook{ margin: 6px 0 10px; padding:12px; border-radius: 22px; }
-      .hook-grid{ grid-template-columns: 1fr; gap:10px; }
       .hero-grid{ grid-template-columns: 1fr; gap:10px; }
 
       .hero-card{ padding:14px; border-radius: 22px; }
       .side-card{ padding:12px; gap:8px; border-radius: 22px; }
       .promo{ padding:10px; border-radius: 14px; }
 
-      .grid3, .fits-grid, .pricing{ grid-template-columns: 1fr; gap:10px; }
-      .card{ padding:12px; }
+      .how-big{ padding:12px; border-radius: 22px; }
+      .how-cols{ grid-template-columns: 1fr; gap:10px; }
+      .how-block{ padding:12px; border-radius: 16px; }
+
+      .fits-grid, .pricing{ grid-template-columns: 1fr; gap:10px; }
       .fit{ padding:12px; min-height: 0; }
 
       .plan{ padding:12px; min-height:auto; }
@@ -897,25 +817,24 @@
       .faq-card{ padding: 6px 12px; }
       details.faq-item{ padding: 10px 0; }
 
-      /* уменьшаем шрифты локально */
-      .small{ font-size: 12.5px; margin-top:8px; }
-      .kicker{ font-size:12px; padding:6px 10px; }
-      .hook-badge{ font-size:12px; padding:7px 10px; margin-bottom:10px; }
       .hook h1{ font-size: 26px; letter-spacing:-.6px; }
       h1{ font-size: 24px; }
-      .lead{ font-size: 14px; margin:12px 0 12px; }
-      .hook .sub{ font-size: 14px; }
+      .lead{ font-size: 14px; margin:12px 0 0; }
 
       .section-title{ margin: 0 0 10px; }
       .section-title h2{ font-size: 18px; }
       .section-title .hint{ font-size: 12.5px; }
 
-      .card h3, .fit h3{ font-size: 14px; }
-      .card p, .fit p{ font-size: 13px; }
-
       .promo .tag{ font-size: 11px; padding:5px 8px; }
       .promo h3{ font-size:14px; margin:8px 0 6px; }
       .promo p{ font-size: 13px; }
+
+      .how-block h3{ font-size: 14px; }
+      .how-block p, .how-list{ font-size: 13px; }
+      .tick{ width:16px; height:16px; border-radius:5px; font-size:11px; }
+
+      .fit h3{ font-size: 14px; }
+      .fit p{ font-size: 13px; }
 
       .plan-name{ font-size: 16px; }
       .plan-sub{ font-size: 12px; }
@@ -924,23 +843,14 @@
       .price .was, .price .now{ font-size: 24px; }
       .price span{ font-size: 12px; }
       .price .note{ font-size: 12px; min-height: 14px; }
-
-      ul.features{ gap:7px; }
-      ul.features li span:last-child{ font-size: 13px; }
-      .tick{ width:16px; height:16px; border-radius:5px; font-size:11px; }
-
+      ul.features{ font-size: 13px; gap:7px; }
       .step-long .n{ width:30px; height:30px; border-radius: 12px; }
       .step-long h3{ font-size: 14px; }
       .step-long p{ font-size: 13px; }
 
-      .guarantee{ padding:10px; border-radius: 14px; }
-      .guarantee .t, .guarantee .t span{ font-size: 13px; }
-      .g-badge{ width:28px; height:28px; border-radius: 10px; }
-
       summary.faq-q{ font-size: 14px; padding: 4px 0; }
       .faq-a{ font-size: 13px; }
 
-      /* кнопки компактнее, но одинаковые */
       .cta{ height: 44px; padding:10px 14px; border-radius: 14px; font-size: 14px; }
       .hook-actions{ gap:8px; padding-top:12px; }
       .plan .actions{ gap:8px; padding-top:10px; }
@@ -948,6 +858,8 @@
       .sticky-cta{ left:10px; right:10px; bottom:10px; }
       .sticky-cta .bar{ padding:10px; border-radius: 16px; }
       .sticky-cta .bar .t2{ font-size: 12.5px; }
+
+      .legal{ font-size: 4px; } /* ещё плотнее на телефоне */
     }
   </style>
 </head>
@@ -966,7 +878,7 @@
         <a href="#how">Как это работает</a>
         <a href="#fits">Кому подходит</a>
         <a href="#pricing">Тарифы</a>
-        <a href="#roadmap">Как проходит обучение</a>
+        <a href="#roadmap">План на 30 дней</a>
         <a href="#faq">Вопросы</a>
       </div>
 
@@ -980,83 +892,52 @@
     <div class="wrap">
 
       <section class="hook lift" aria-label="Главный продающий блок">
-        <div class="hook-grid">
-          <div class="hook-left">
-            <div class="hook-badge"><span class="dot"></span>С нуля до свободной речи за 30 дней — с гарантией</div>
+        <div class="hook-left">
+          <h1>Заговори на английском свободно за один месяц — даже с полного нуля</h1>
 
-            <h1>Заговори на английском свободно за один месяц — даже с полного нуля</h1>
+          <div class="spacer-4" aria-hidden="true"></div>
 
-            <div class="spacer-4" aria-hidden="true"></div>
+          <p class="sub">
+            Любой клиент 100% заговорит свободно по окончанию первого месяца при выполнении индивидуального плана.
+            Методика выстроена так, чтобы начать говорить с первых занятий и закреплять навыки ежедневно.
+          </p>
 
-            <p class="sub">
-              Любой клиент 100% заговорит свободно по окончанию первого месяца при выполнении индивидуального плана.
-              Методика выстроена так, чтобы начать говорить с первых занятий и закреплять навыки ежедневно.
-            </p>
-
-            <div class="small">
-              Всё оформление — в Telegram.
-            </div>
-
-            <div class="hook-actions">
-              <a class="cta" href="https://t.me/myproj22bot?start=tariff_start" target="_blank" rel="noopener">Записаться на бесплатный урок</a>
-              <a class="cta secondary" href="#pricing">Тарифы</a>
-            </div>
+          <div class="hook-actions">
+            <a class="cta" href="https://t.me/myproj22bot?start=tariff_start" target="_blank" rel="noopener">Записаться на бесплатный урок</a>
+            <a class="cta secondary" href="#pricing">Тарифы</a>
           </div>
-
-          <aside class="hook-nav lift" aria-label="Быстрая навигация">
-            <div>
-              <h3>С чего начать</h3>
-              <div class="hook-links" role="navigation">
-                <a class="hook-link lift" href="#how"><span>Как это работает</span><span class="r">→</span></a>
-                <a class="hook-link lift" href="#pricing"><span>Тарифы</span><span class="r">→</span></a>
-                <a class="hook-link lift" href="#roadmap"><span>План на 30 дней</span><span class="r">→</span></a>
-                <a class="hook-link lift" href="#faq"><span>Ответы на вопросы</span><span class="r">→</span></a>
-              </div>
-            </div>
-
-            <div class="promo promo-green lift" style="margin:0;">
-              <span class="tag">ГАРАНТИЯ</span>
-              <h3 style="margin-top:10px;">Результат за 30 дней</h3>
-              <p>Старт с нуля, ежедневная практика и контроль качества. Выстроенный маршрут — чтобы говорить уверенно.</p>
-            </div>
-          </aside>
         </div>
       </section>
 
       <div class="hero-grid">
         <div class="hero-card lift">
-          <div class="kicker"><span class="dot"></span>Твоя выгода за 30 дней</div>
+          <div class="kicker"><span class="dot"></span>Фокус на результат</div>
 
-          <h1>Не «учёба», а результат: свободная речь в реальных ситуациях</h1>
+          <h1>Не «учёба», а навык: свободная речь в реальных ситуациях</h1>
 
           <p class="lead">
-            Ты начинаешь говорить сразу. Мы строим план под старт с нуля: базовые конструкции, ядро словаря, произношение, понимание речи.
-            Каждый день — короткая практика. Каждую неделю — контроль и корректировка. Итог за месяц — уверенная разговорная речь.
+            Курс строится как маршрут: сначала — базовые конструкции и разговорные шаблоны, затем — ежедневная практика и закрепление,
+            после — расширение сценариев и доведение речи до уверенного уровня.
           </p>
-
-          <div class="small">
-            Всё оформление — в Telegram.
-          </div>
         </div>
 
         <div class="side-card lift">
           <div class="promo lift">
-            <span class="tag">БЕСПЛАТНЫЙ СТАРТ</span>
+            <span class="tag">СТАРТ</span>
             <h3>Пробный урок + диагностика: 0 ₽</h3>
-            <p>Определяем старт, ставим цель и выдаём план на 30 дней. Сразу на уроке — первые фразы и разговорная практика.</p>
-            <div class="small">Всё оформление — в Telegram.</div>
+            <p>Определяем стартовую точку, ставим цель и выдаём понятный план на 30 дней. На уроке — первые фразы и разговорная практика.</p>
           </div>
 
           <div class="promo lift">
-            <span class="tag">ГАРАНТИЯ</span>
-            <h3>100% результат за месяц</h3>
-            <p>При выполнении согласованного плана ты гарантированно начинаешь свободно говорить за 30 дней. Мы ведём тебя до результата.</p>
+            <span class="tag">ПОНЯТНО</span>
+            <h3>Без воды и перегруза</h3>
+            <p>Короткие объяснения, много примеров, разговорные сценарии и регулярная практика. Всё выстроено под реальный прогресс.</p>
           </div>
 
           <div class="promo lift">
-            <span class="tag">БЕЗ ВОДЫ</span>
-            <h3>Только то, что заставляет говорить</h3>
-            <p>Минимум теории. Максимум разговорных сценариев: знакомство, работа, сервисы, поездки, бытовые диалоги.</p>
+            <span class="tag">КОНТРОЛЬ</span>
+            <h3>Проверка и корректировка</h3>
+            <p>Проверяем речь, понимание и ошибки. При необходимости корректируем план, чтобы держать темп и улучшать результат.</p>
           </div>
         </div>
       </div>
@@ -1068,24 +949,59 @@
     <div class="wrap">
       <div class="section-title">
         <h2>Как это работает</h2>
-        <div class="hint">С нуля — к свободной речи за 30 дней</div>
+        <div class="hint"></div>
       </div>
 
-      <div class="grid3">
-        <div class="card lift">
-          <div class="icon">1</div>
-          <h3>Диагностика и старт «с нуля»</h3>
-          <p>Определяем уровень на старте (даже если он нулевой) и сразу запускаем разговорную практику с первых минут.</p>
+      <div class="how-big lift">
+        <p class="road-intro" style="margin:0;">
+          Здесь нет «разрозненных тем». Обучение устроено как система: ты понимаешь, что делаешь каждый день, зачем это нужно,
+          и как это приводит к росту разговорного навыка.
+        </p>
+
+        <div class="how-cols">
+          <div class="how-block lift">
+            <h3>Старт и диагностика</h3>
+            <p>
+              На первом занятии фиксируем стартовую точку, цель и условия: сколько времени в неделю реально выделять.
+              После этого ты получаешь маршрут на 30 дней: что учим, что тренируем, как закрепляем.
+            </p>
+            <ul class="how-list">
+              <li><span class="tick">✓</span><span>Уровень и основные пробелы</span></li>
+              <li><span class="tick">✓</span><span>Цель и результат на месяц</span></li>
+              <li><span class="tick">✓</span><span>План под реальный график</span></li>
+            </ul>
+          </div>
+
+          <div class="how-block lift">
+            <h3>Как строится навык речи</h3>
+            <p>
+              Главный принцип: «говорить сразу». Ты получаешь рабочие конструкции и повторяешь их в сценариях.
+              Ежедневно — короткая практика. Регулярно — контроль и исправление ошибок, чтобы речь становилась устойчивой.
+            </p>
+            <ul class="how-list">
+              <li><span class="tick">✓</span><span>Разговорные шаблоны и сценарии</span></li>
+              <li><span class="tick">✓</span><span>Ежедневная практика (коротко, но регулярно)</span></li>
+              <li><span class="tick">✓</span><span>Проверка прогресса и корректировка</span></li>
+            </ul>
+          </div>
         </div>
-        <div class="card lift">
-          <div class="icon">2</div>
-          <h3>Индивидуальный план на 30 дней</h3>
-          <p>Составляем план: ежедневная практика, задания и разговорные сценарии. Всё под цель и реальный график.</p>
-        </div>
-        <div class="card lift">
-          <div class="icon">3</div>
-          <h3>100% свободная речь за месяц</h3>
-          <p>Еженедельный контроль, корректировки и доведение до результата. Через 30 дней ты уверенно говоришь в реальных ситуациях.</p>
+
+        <div class="how-cols">
+          <div class="how-block lift">
+            <h3>Что именно происходит на занятиях</h3>
+            <p>
+              Занятия — это практика: диалоги, ответы на вопросы, объяснение мыслей, проговаривание конструкций,
+              отработка типовых ошибок. Теория даётся ровно в том объёме, который нужен для речи.
+            </p>
+          </div>
+
+          <div class="how-block lift">
+            <h3>Как фиксируется результат</h3>
+            <p>
+              Результат измеряется действиями: можешь поддержать диалог, объяснить мысль, ответить на вопросы, понять типовые ответы
+              в бытовых и рабочих сценариях. Мы проверяем это по чек-пунктам в процессе.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -1095,49 +1011,45 @@
     <div class="wrap">
       <div class="section-title">
         <h2>Кому подходит</h2>
-        <div class="hint">Даже если с полного нуля</div>
+        <div class="hint"></div>
       </div>
 
       <div class="fits-grid">
         <div class="fit lift">
           <div class="fit-tag"><span class="b"></span>С нуля</div>
           <h3>Полный ноль</h3>
-          <p>Если не можешь связать и двух фраз — это нормальная точка старта. Методика рассчитана на «0 → говорю» за 30 дней.</p>
+          <p>Стартуем с базовых конструкций и разговорных шаблонов, чтобы ты начал говорить сразу.</p>
         </div>
 
         <div class="fit lift">
           <div class="fit-tag"><span class="b"></span>Работа</div>
           <h3>Созвоны и переписка</h3>
-          <p>Диалоги, презентация себя, вопросы/ответы, рабочие сценарии. Упор на речь и уверенность.</p>
+          <p>Практика сценариев: представиться, уточнить, согласовать, ответить на вопросы, поддержать диалог.</p>
         </div>
 
         <div class="fit lift">
           <div class="fit-tag"><span class="b"></span>Переезд</div>
           <h3>Быт и сервисы</h3>
-          <p>Аренда, документы, магазины, медицина, общение. Чтобы говорить спокойно и понятно.</p>
+          <p>Реальные ситуации: аренда, магазины, медицина, документы, общение.</p>
         </div>
 
         <div class="fit lift">
           <div class="fit-tag"><span class="b"></span>Путешествия</div>
-          <h3>Без языкового стресса</h3>
-          <p>Аэропорт, отель, кафе, экскурсии, форс-мажоры. Разговорные заготовки и тренировка.</p>
+          <h3>Комфорт в поездках</h3>
+          <p>Аэропорт, отель, кафе, экскурсии, форс-мажоры — готовые диалоги и тренировка.</p>
         </div>
 
         <div class="fit lift">
           <div class="fit-tag"><span class="b"></span>Учёба</div>
           <h3>Школа/ВУЗ</h3>
-          <p>База + устная практика: отвечать, понимать, читать и говорить без ступора.</p>
+          <p>База + практика: отвечать, понимать, читать и говорить без ступора.</p>
         </div>
 
         <div class="fit lift">
           <div class="fit-tag"><span class="b"></span>Перезапуск</div>
           <h3>«Знал, но забыл»</h3>
-          <p>Собираем ядро заново и быстро возвращаем разговорный навык через практику и повторения.</p>
+          <p>Быстро возвращаем разговорный навык через практику и повторения.</p>
         </div>
-      </div>
-
-      <div class="small" style="margin-top:12px;">
-        Всё оформление — в Telegram.
       </div>
     </div>
   </section>
@@ -1146,7 +1058,7 @@
     <div class="wrap">
       <div class="section-title">
         <h2>Тарифы</h2>
-        <div class="hint">Выбери формат</div>
+        <div class="hint"></div>
       </div>
 
       <div class="pricing">
@@ -1168,9 +1080,9 @@
           </div>
 
           <ul class="features">
-            <li><span class="tick">✓</span><span>Старт с нуля: первые фразы и базовые конструкции</span></li>
-            <li><span class="tick">✓</span><span>Чёткая цель и план на 30 дней</span></li>
-            <li><span class="tick">✓</span><span>Рекомендация маршрута под цель и график</span></li>
+            <li><span class="tick">✓</span><span>Определяем старт и цель</span></li>
+            <li><span class="tick">✓</span><span>Выдаём план на 30 дней</span></li>
+            <li><span class="tick">✓</span><span>На уроке — разговорная практика</span></li>
           </ul>
 
           <div class="actions">
@@ -1197,10 +1109,10 @@
           </div>
 
           <ul class="features">
-            <li><span class="tick">✓</span><span>План «0 → говорю» на 30 дней (ежедневная практика)</span></li>
-            <li><span class="tick">✓</span><span>Разговорные сценарии под жизнь/работу/переезд</span></li>
-            <li><span class="tick">✓</span><span>Еженедельные проверки и корректировка плана</span></li>
-            <li><span class="tick">✓</span><span>Контроль качества обучения и прогресса</span></li>
+            <li><span class="tick">✓</span><span>Индивидуальный план на месяц</span></li>
+            <li><span class="tick">✓</span><span>Ежедневная практика и закрепление</span></li>
+            <li><span class="tick">✓</span><span>Проверки и корректировки</span></li>
+            <li><span class="tick">✓</span><span>Контроль качества обучения</span></li>
           </ul>
 
           <div class="actions">
@@ -1227,20 +1139,16 @@
           </div>
 
           <ul class="features">
-            <li><span class="tick">✓</span><span>Максимум практики: говоришь почти каждый день</span></li>
-            <li><span class="tick">✓</span><span>Быстрое снятие языкового барьера с нуля</span></li>
-            <li><span class="tick">✓</span><span>Интенсивные сценарии и разбор ошибок</span></li>
-            <li><span class="tick">✓</span><span>Плотный контроль и ускорение прогресса</span></li>
+            <li><span class="tick">✓</span><span>Максимум практики и разговорных сценариев</span></li>
+            <li><span class="tick">✓</span><span>Ускоренная отработка ошибок</span></li>
+            <li><span class="tick">✓</span><span>Интенсивная поддержка темпа</span></li>
+            <li><span class="tick">✓</span><span>Фокус на быстрый рост речи</span></li>
           </ul>
 
           <div class="actions">
             <a class="cta" href="https://t.me/myproj22bot?start=tariff_pro" target="_blank" rel="noopener">Выбрать Pro</a>
           </div>
         </div>
-      </div>
-
-      <div class="small" style="margin-top:12px;">
-        Всё оформление — в Telegram. Скидки действуют 24 часа после диагностики и подтверждаются в Telegram.
       </div>
     </div>
   </section>
@@ -1249,54 +1157,45 @@
     <div class="wrap">
       <div class="section-title">
         <h2>План на 30 дней</h2>
-        <div class="hint">Пошагово, чтобы заговорить с нуля</div>
+        <div class="hint"></div>
       </div>
 
       <div class="roadmap lift">
         <p class="road-intro">
-          Весь курс построен под результат «свободная речь за 30 дней». Никаких разрозненных тем: только связный маршрут,
-          ежедневная практика и контроль качества.
+          Весь месяц — это последовательные шаги: постановка базы, ежедневная практика, расширение сценариев и финальная стабилизация речи.
         </p>
 
         <div class="steps-vertical">
           <div class="step-long lift">
             <div class="n">1</div>
             <div>
-              <h3>День 1: диагностика и запуск речи</h3>
-              <p>Определяем стартовую точку (включая ноль). Сразу ставим базовые конструкции и начинаем говорить короткими фразами.</p>
+              <h3>День 1: старт и запуск речи</h3>
+              <p>Фиксируем старт и цель. Даём первую рабочую базу и сразу начинаем говорить короткими фразами.</p>
             </div>
           </div>
 
           <div class="step-long lift">
             <div class="n">2</div>
             <div>
-              <h3>Неделя 1: база для разговоров</h3>
-              <p>Собираем «скелет языка»: ключевые структуры, произношение, базовый словарь и шаблоны диалогов.</p>
+              <h3>Неделя 1: основа</h3>
+              <p>Ключевые конструкции, произношение, базовый словарь и шаблоны диалогов.</p>
             </div>
           </div>
 
           <div class="step-long lift">
             <div class="n">3</div>
             <div>
-              <h3>Неделя 2–3: барьер исчезает</h3>
-              <p>Ежедневная практика, разбор ошибок, расширение сценариев. Ты начинаешь говорить длиннее и увереннее.</p>
+              <h3>Неделя 2–3: расширение и уверенность</h3>
+              <p>Ежедневная практика, разбор ошибок, расширение сценариев и скорость реакции в диалоге.</p>
             </div>
           </div>
 
           <div class="step-long lift">
             <div class="n">4</div>
             <div>
-              <h3>Неделя 4: свободная речь</h3>
-              <p>Сшиваем всё в устойчивый навык: скорость, понимание на слух, реакция в диалоге, уверенность. Финальная проверка результата.</p>
+              <h3>Неделя 4: стабилизация навыка</h3>
+              <p>Доводим речь до устойчивости: связность, уверенность, понимание типовых ответов и свободное общение в сценариях.</p>
             </div>
-          </div>
-        </div>
-
-        <div class="guarantee lift">
-          <div class="g-badge">✓</div>
-          <div class="t">
-            Гарантия результата за 30 дней: ты 100% начинаешь свободно говорить при выполнении согласованного плана.
-            <span>Подтверждение условий — в Telegram.</span>
           </div>
         </div>
       </div>
@@ -1307,28 +1206,63 @@
     <div class="wrap">
       <div class="section-title">
         <h2>Вопросы</h2>
-        <div class="hint">Коротко и по делу</div>
+        <div class="hint"></div>
       </div>
 
       <div class="faq-card lift">
         <details class="faq-item">
-          <summary class="faq-q">Я с полного нуля. Реально заговорить за 30 дней? <span class="chev">+</span></summary>
-          <div class="faq-a">Да. Курс построен под нулевой старт: базовые конструкции + ежедневная разговорная практика. При выполнении плана результат гарантирован.</div>
+          <summary class="faq-q">Я с полного нуля. Как быстро начну говорить? <span class="chev">+</span></summary>
+          <div class="faq-a">С первых занятий. Сначала — базовые конструкции и разговорные шаблоны, затем — ежедневная практика, чтобы речь закреплялась.</div>
         </details>
 
         <details class="faq-item">
           <summary class="faq-q">Сколько времени нужно в день? <span class="chev">+</span></summary>
-          <div class="faq-a">Минимум — короткая ежедневная практика. На старте фиксируем реальный график и делаем план, который выдерживается без выгорания.</div>
+          <div class="faq-a">План строится под твой реальный график. В основе — короткая ежедневная практика, чтобы был стабильный рост без перегруза.</div>
         </details>
 
         <details class="faq-item">
-          <summary class="faq-q">Что именно значит «свободно говорить»? <span class="chev">+</span></summary>
-          <div class="faq-a">Ты уверенно строишь фразы, поддерживаешь диалог, объясняешь мысли и понимаешь типовые ответы в реальных сценариях (быт, сервисы, работа, поездки).</div>
+          <summary class="faq-q">Что именно делаем на уроках? <span class="chev">+</span></summary>
+          <div class="faq-a">Разговорная практика, диалоги, ответы на вопросы, проговаривание конструкций, исправление ошибок. Теория даётся только под практику.</div>
         </details>
 
         <details class="faq-item">
-          <summary class="faq-q">Что если я не выполню план? <span class="chev">+</span></summary>
-          <div class="faq-a">План делается под твой график, чтобы его реально выполнять. Гарантия результата действует при соблюдении согласованного плана и регулярной практике.</div>
+          <summary class="faq-q">Как контролируется прогресс? <span class="chev">+</span></summary>
+          <div class="faq-a">Есть контрольные точки и проверки: речь, понимание, ошибки. По результатам корректируем план и усиливаем слабые места.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Как проходит оплата? <span class="chev">+</span></summary>
+          <div class="faq-a">Оплата производится только после согласования тарифа, формата и расписания. Условия подтверждаются при оформлении.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Можно ли оплатить за месяц целиком или частями? <span class="chev">+</span></summary>
+          <div class="faq-a">Формат оплаты зависит от выбранного тарифа и согласованных условий. Это фиксируется при оформлении.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Что если пропускаю занятия? <span class="chev">+</span></summary>
+          <div class="faq-a">План строится так, чтобы его можно было выдерживать. Если возникают пропуски, пересобираем нагрузку и возвращаем темп.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Онлайн или офлайн? <span class="chev">+</span></summary>
+          <div class="faq-a">Формат занятий зависит от согласованных условий. Основной акцент — на практике и регулярности.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Под какие цели подходит обучение? <span class="chev">+</span></summary>
+          <div class="faq-a">Работа, переезд, путешествия, учёба, повседневное общение. Сценарии и словарь подбираются под твою цель.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Что входит в тарифы Smart и Pro? <span class="chev">+</span></summary>
+          <div class="faq-a">План на месяц, практика, контроль и корректировки. Отличие — в интенсивности и объёме сопровождения. Детали фиксируются при оформлении.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Какой тариф выбрать? <span class="chev">+</span></summary>
+          <div class="faq-a">Если нужен уверенный темп без перегруза — Smart. Если нужен максимальный темп и интенсив — Pro. Начать можно со Start.</div>
         </details>
       </div>
     </div>
@@ -1343,22 +1277,14 @@
         Итоговый формат, расписание, условия и стоимость подтверждаются при оформлении в Telegram.
         Гарантия результата за 30 дней действует при выполнении согласованного индивидуального плана и регулярной практике.
       </div>
-
-      <div class="footer-nav" aria-label="Навигация внизу">
-        <a href="#how">Как это работает</a>
-        <a href="#fits">Кому подходит</a>
-        <a href="#pricing">Тарифы</a>
-        <a href="#roadmap">План на 30 дней</a>
-        <a href="#faq">Вопросы</a>
-      </div>
     </div>
   </footer>
 
   <div class="sticky-cta" aria-hidden="false">
     <div class="bar lift">
       <div>
-        <div class="t1">Бесплатный пробный урок</div>
-        <div class="t2">Оформление в Telegram</div>
+        <div class="t1">Записаться на пробный урок</div>
+        <div class="t2">Переход в Telegram</div>
       </div>
       <a class="cta" href="https://t.me/myproj22bot?start=sticky" target="_blank" rel="noopener">Открыть Telegram</a>
     </div>
@@ -1371,7 +1297,6 @@
       if(!utm) return;
 
       var links = document.querySelectorAll('a[href^="https://t.me/myproj22bot?start="]');
-
       links.forEach(function(a){
         var u = new URL(a.href);
         var start = u.searchParams.get("start") || "site";
