@@ -265,11 +265,6 @@
       letter-spacing:-.3px;
       font-weight:500;
     }
-    .section-title .hint{
-      color: var(--muted);
-      font-size: 14px;
-      font-weight:500;
-    }
 
     /* Большой блок "Как это работает" */
     .how-big{
@@ -676,10 +671,25 @@
       line-height: 1.55;
     }
 
+    /* Нижняя CTA-секция (видна на мобиле, у подвала) */
+    .footer-cta{
+      display:none;
+      margin-top: 10px;
+      border:1px solid var(--line);
+      background: rgba(7,10,20,.35);
+      border-radius: 18px;
+      padding: 12px;
+    }
+    .footer-cta .cta{
+      width:100%;
+      height: 48px;
+      border-radius: 16px;
+    }
+
     footer{
       border-top: 1px solid var(--line);
-      margin-top: 24px;
-      padding: 16px 0 22px;
+      margin-top: 20px;
+      padding: 14px 0 18px;
       color: rgba(183,194,229,.90);
       font-size: 14px;
       font-weight:500;
@@ -703,6 +713,12 @@
       bottom: 14px;
       z-index: 50;
       display:none;
+      transition: opacity .16s ease, transform .16s ease;
+    }
+    .sticky-cta.hidden{
+      opacity:0;
+      transform: translateY(10px);
+      pointer-events:none;
     }
     .sticky-cta .bar{
       max-width: var(--max);
@@ -722,93 +738,109 @@
     .sticky-cta .bar .t2{ color:var(--muted); font-weight:500; font-size:14px; }
     .sticky-cta .bar .cta{ padding:12px 14px; border-radius: 14px; height: 48px; }
 
+    /* МОБИЛЬНЫЙ: логотип виден, название больше, блоки плотнее */
     @media (max-width: 920px){
-      body{ line-height:1.38; }
-      .wrap{ padding:12px 10px; }
-      header.hero{ padding-top: 8px; padding-bottom: 8px; }
-      section{ padding:10px 0; }
+      body{ line-height:1.34; }
+      .wrap{ padding:10px 10px; }
+      header.hero{ padding-top: 6px; padding-bottom: 6px; }
+      section{ padding:7px 0; }
 
+      /* верхняя плашка: показываем логотип и увеличиваем заголовок */
       .nav{ display:none; }
       .sticky-cta{ display:block; }
       .topbar .cta{ display:none; }
       .topbar .wrap{
         justify-content:center;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 8px;
+        padding-bottom: 8px;
       }
       .brand{
         flex: 1 1 auto;
         justify-content:center;
-        gap:0;
+        gap:10px;
       }
-      .logo{ display:none; }
+      .logo{
+        display:flex;
+        width:38px; height:38px;
+        border-radius: 12px;
+      }
       .brand-title{
-        font-size: 17px;
+        font-size: 20px;
         letter-spacing: .2px;
         text-align:center;
-        width:100%;
+        width:auto;
+        max-width: 78vw;
       }
 
-      .hook{ margin: 6px 0 10px; padding:12px; border-radius: 22px; }
-      .hero-grid{ grid-template-columns: 1fr; gap:10px; }
+      /* плотнее по вертикали */
+      .hook{ margin: 5px 0 8px; padding:10px; border-radius: 20px; }
+      .hero-grid{ grid-template-columns: 1fr; gap:8px; }
 
-      .hero-card{ padding:14px; border-radius: 22px; }
+      .hero-card{ padding:12px; border-radius: 20px; }
+      .how-big{ padding:10px; border-radius: 20px; }
+      .how-cols{ grid-template-columns: 1fr; gap:8px; margin-top:10px; }
+      .how-block{ padding:10px; border-radius: 14px; }
 
-      .how-big{ padding:12px; border-radius: 22px; }
-      .how-cols{ grid-template-columns: 1fr; gap:10px; }
-      .how-block{ padding:12px; border-radius: 16px; }
+      .fits-grid, .pricing{ grid-template-columns: 1fr; gap:8px; }
+      .fit{ padding:10px; min-height: 0; }
 
-      .fits-grid, .pricing{ grid-template-columns: 1fr; gap:10px; }
-      .fit{ padding:12px; min-height: 0; }
+      .plan{ padding:10px; min-height:auto; }
+      .plan-head{ padding:9px; margin-bottom:7px; border-radius: 14px; }
 
-      .plan{ padding:12px; min-height:auto; }
-      .plan-head{ padding:10px; margin-bottom:8px; border-radius: 16px; }
+      .roadmap{ padding:10px; border-radius: 20px; }
+      .road-intro{ margin: 0 0 10px; font-size: 13px; }
+      .steps-vertical{ gap:8px; }
+      .step-long{ padding:10px; gap:10px; border-radius: 14px; }
 
-      .roadmap{ padding:12px; border-radius: 22px; }
-      .step-long{ padding:12px; gap:12px; border-radius: 16px; }
-      .steps-vertical{ gap:10px; }
+      .faq-card{ padding: 6px 10px; }
+      details.faq-item{ padding: 9px 0; }
 
-      .faq-card{ padding: 6px 12px; }
-      details.faq-item{ padding: 10px 0; }
-
+      /* типографика компактнее */
       .hook h1{ font-size: 26px; letter-spacing:-.6px; }
-      h1{ font-size: 24px; }
-      .lead{ font-size: 14px; margin:12px 0 0; }
+      h1{ font-size: 22px; margin:10px 0 0; }
+      .lead{ font-size: 13.5px; margin:10px 0 0; }
 
-      .section-title{ margin: 0 0 10px; }
-      .section-title h2{ font-size: 18px; }
+      .section-title{ margin: 0 0 8px; }
+      .section-title h2{ font-size: 17px; }
 
-      .how-block h3{ font-size: 14px; }
-      .how-block p, .how-list{ font-size: 13px; }
+      .how-block h3{ font-size: 14px; margin-bottom:6px; }
+      .how-block p, .how-list{ font-size: 12.8px; }
+      .how-list{ gap:6px; margin-top:8px; }
       .tick{ width:16px; height:16px; border-radius:5px; font-size:11px; }
 
-      .fit h3{ font-size: 14px; }
-      .fit p{ font-size: 13px; }
+      .fit .fit-tag{ padding:5px 8px; margin-bottom:8px; }
+      .fit h3{ font-size: 13.5px; }
+      .fit p{ font-size: 12.8px; }
 
-      .plan-name{ font-size: 16px; }
-      .plan-sub{ font-size: 12px; }
+      .plan-name{ font-size: 15.5px; }
+      .plan-sub{ font-size: 12px; margin-top:5px; }
       .plan-chip{ font-size: 11px; padding:5px 8px; }
-      .price{ font-size: 24px; min-height: 76px; gap:5px; }
-      .price .was, .price .now{ font-size: 24px; }
+      .price{ font-size: 23px; min-height: 70px; gap:4px; margin:5px 0 7px; }
+      .price .was, .price .now{ font-size: 23px; }
       .price span{ font-size: 12px; }
-      .price .note{ font-size: 12px; min-height: 14px; }
-      ul.features{ font-size: 13px; gap:7px; }
-      .step-long .n{ width:30px; height:30px; border-radius: 12px; }
-      .step-long h3{ font-size: 14px; }
-      .step-long p{ font-size: 13px; }
+      ul.features{ font-size: 12.8px; gap:6px; margin-top:7px; }
 
-      summary.faq-q{ font-size: 14px; padding: 4px 0; }
-      .faq-a{ font-size: 13px; }
+      .step-long .n{ width:30px; height:30px; border-radius: 12px; }
+      .step-long h3{ font-size: 13.8px; margin-bottom:5px; }
+      .step-long p{ font-size: 12.8px; }
+
+      summary.faq-q{ font-size: 13.8px; padding: 4px 0; }
+      .faq-a{ font-size: 12.8px; }
 
       .cta{ height: 44px; padding:10px 14px; border-radius: 14px; font-size: 14px; }
-      .hook-actions{ gap:8px; padding-top:12px; }
-      .plan .actions{ gap:8px; padding-top:10px; }
+      .hook-actions{ gap:8px; padding-top:10px; }
+      .plan .actions{ gap:8px; padding-top:9px; }
       .plan .actions .cta{ height: 44px; }
+
       .sticky-cta{ left:10px; right:10px; bottom:10px; }
       .sticky-cta .bar{ padding:10px; border-radius: 16px; }
       .sticky-cta .bar .t2{ font-size: 12.5px; }
 
-      .legal{ font-size: 4px; }
+      /* нижняя CTA-секция включается на мобиле */
+      .footer-cta{ display:block; }
+
+      footer{ margin-top: 14px; padding: 12px 0 16px; }
+      .legal{ font-size: 4px; padding:10px; }
     }
   </style>
 </head>
@@ -876,7 +908,6 @@
     <div class="wrap">
       <div class="section-title">
         <h2>Как это работает</h2>
-        <div class="hint"></div>
       </div>
 
       <div class="how-big lift">
@@ -937,7 +968,6 @@
     <div class="wrap">
       <div class="section-title">
         <h2>Кому подходит</h2>
-        <div class="hint"></div>
       </div>
 
       <div class="fits-grid">
@@ -984,7 +1014,6 @@
     <div class="wrap">
       <div class="section-title">
         <h2>Тарифы</h2>
-        <div class="hint"></div>
       </div>
 
       <div class="pricing">
@@ -1036,8 +1065,8 @@
 
           <ul class="features">
             <li><span class="tick">✓</span><span>Продвинутые сценарии: работа, сервисы, переговоры, сложные диалоги</span></li>
-            <li><span class="tick">✓</span><span>Сильнее прокачиваем связность речи и скорость реакции</span></li>
-            <li><span class="tick">✓</span><span>Ошибки и произношение: точечная коррекция под твою речь</span></li>
+            <li><span class="tick">✓</span><span>Связность речи и скорость реакции: говоришь увереннее и быстрее</span></li>
+            <li><span class="tick">✓</span><span>Точечная коррекция: ошибки + произношение под твою речь</span></li>
             <li><span class="tick">✓</span><span>Контроль прогресса и корректировка фокуса</span></li>
           </ul>
 
@@ -1065,8 +1094,8 @@
           </div>
 
           <ul class="features">
-            <li><span class="tick">✓</span><span>Более плотный график и больше практики для быстрого роста</span></li>
-            <li><span class="tick">✓</span><span>Подробное изучение языка: конструкции, точность, расширение словаря</span></li>
+            <li><span class="tick">✓</span><span>Плотнее график: больше практики и быстрее рост за тот же срок</span></li>
+            <li><span class="tick">✓</span><span>Подробная проработка языка: конструкции, точность, расширение словаря</span></li>
             <li><span class="tick">✓</span><span>Глубокая работа над ошибками и произношением</span></li>
             <li><span class="tick">✓</span><span>Интенсивные разговорные тренировки и закрепление</span></li>
           </ul>
@@ -1083,7 +1112,6 @@
     <div class="wrap">
       <div class="section-title">
         <h2>План на 30 дней</h2>
-        <div class="hint"></div>
       </div>
 
       <div class="roadmap lift">
@@ -1132,7 +1160,6 @@
     <div class="wrap">
       <div class="section-title">
         <h2>Вопросы</h2>
-        <div class="hint"></div>
       </div>
 
       <div class="faq-card lift">
@@ -1179,9 +1206,15 @@
     </div>
   </section>
 
-  <footer>
+  <footer id="page-footer">
     <div class="wrap">
-      <div class="mono">Академия Фавикон</div>
+
+      <!-- На мобиле: кнопка внизу страницы над названием -->
+      <div class="footer-cta lift" id="footerCta">
+        <a class="cta" href="https://t.me/myproj22bot?start=tariff_start" target="_blank" rel="noopener">Записаться на пробный урок</a>
+      </div>
+
+      <div class="mono" id="footerBrand">Академия Фавикон</div>
 
       <div class="legal lift">
         Информация на странице носит справочно-информационный характер и не является публичной офертой (ст. 437 ГК РФ).
@@ -1191,7 +1224,8 @@
     </div>
   </footer>
 
-  <div class="sticky-cta" aria-hidden="false">
+  <!-- Плавающая CTA (мобила): скрывается, когда пользователь дошёл до нижней CTA-секции -->
+  <div class="sticky-cta" aria-hidden="false" id="stickyCta">
     <div class="bar lift">
       <div>
         <div class="t1">Записаться на пробный урок</div>
@@ -1205,15 +1239,56 @@
     (function(){
       var qs = new URLSearchParams(location.search);
       var utm = qs.get("utm") || qs.get("src") || "";
-      if(!utm) return;
+      if(utm){
+        var links = document.querySelectorAll('a[href^="https://t.me/myproj22bot?start="]');
+        links.forEach(function(a){
+          var u = new URL(a.href);
+          var start = u.searchParams.get("start") || "site";
+          u.searchParams.set("start", start + "_" + utm.replace(/[^a-zA-Z0-9_-]/g,"").slice(0,24));
+          a.href = u.toString();
+        });
+      }
 
-      var links = document.querySelectorAll('a[href^="https://t.me/myproj22bot?start="]');
-      links.forEach(function(a){
-        var u = new URL(a.href);
-        var start = u.searchParams.get("start") || "site";
-        u.searchParams.set("start", start + "_" + utm.replace(/[^a-zA-Z0-9_-]/g,"").slice(0,24));
-        a.href = u.toString();
-      });
+      // Мобильно: плавающая кнопка видна всегда, но у нижней части страницы заменяется на кнопку в контенте
+      var sticky = document.getElementById("stickyCta");
+      var footerCta = document.getElementById("footerCta");
+
+      function isMobile(){
+        return window.matchMedia && window.matchMedia("(max-width: 920px)").matches;
+      }
+
+      function setupStickySwap(){
+        if(!sticky || !footerCta) return;
+
+        // На десктопе ничего не делаем
+        if(!isMobile()){
+          sticky.classList.remove("hidden");
+          return;
+        }
+
+        if(!("IntersectionObserver" in window)){
+          // fallback: если скролл близко к низу
+          window.addEventListener("scroll", function(){
+            var rect = footerCta.getBoundingClientRect();
+            var vh = window.innerHeight || document.documentElement.clientHeight;
+            if(rect.top < vh - 60) sticky.classList.add("hidden");
+            else sticky.classList.remove("hidden");
+          }, {passive:true});
+          return;
+        }
+
+        var obs = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){
+            if(e.isIntersecting) sticky.classList.add("hidden");
+            else sticky.classList.remove("hidden");
+          });
+        }, { root: null, threshold: 0.12 });
+
+        obs.observe(footerCta);
+      }
+
+      setupStickySwap();
+      window.addEventListener("resize", function(){ setupStickySwap(); }, {passive:true});
     })();
   </script>
 </body>
